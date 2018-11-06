@@ -1,20 +1,20 @@
 let config = {
-  title: `HUNDRED`,
-  author: 'Junho Baik',
-  description: "Junho Baik's blog",
-  siteUrl: 'https://junhobaik.github.io',
+  title: `SITE TITLE`,
+  author: 'author',
+  description: "",
+  siteUrl: '',
 
   // header config
   titleLogo: () => {
     return require('./src/images/profile.png');
   },
   titleLogoShow: true,
-  bio: 'Jr. FRONT END DEVELOPER',
+  bio: './conifg.js 에서 설정을 수정해주세요',
   bioShow: true,
 
   // addtional
-  googleAnalyticsTrackingId: 'UA-103592668-4',
-  disqusShortname: 'dev-hundred-blog',
+  googleAnalyticsTrackingId: '',
+  disqusShortname: '',
 };
 
 /********************************************** */
