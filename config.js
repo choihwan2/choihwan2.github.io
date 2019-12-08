@@ -1,20 +1,23 @@
 let config = {
-  title: `HUNDRED`,
-  author: 'Junho Baik',
-  description: "Junho Baik's blog",
-  siteUrl: 'https://junhobaik.github.io',
+  title: 'TITLE',
+  author: 'Author',
+  description: 'Site description',
+  siteUrl: 'https://',
 
   // # Header config
   titleLogo: () => {
-    return require('./src/images/profile.png');
+    // need a square image
+    
+    // return require('./src/images/profile.png'); // file
+    return 'https://source.unsplash.com/random/100x100' // url
   },
   titleLogoShow: true,
-  bio: 'Jr. FRONT END DEVELOPER',
+  bio: "edit your 'config.js' file",
   bioShow: true,
 
   // # Addtional
-  googleAnalyticsTrackingId: 'UA-103592668-4',
-  disqusShortname: 'dev-hundred-blog',
+  googleAnalyticsTrackingId: '',
+  disqusShortname: '',
 
   // ## google AdSense
   // In addition, client-id in '/static/ads.txt' file needs to be modified
