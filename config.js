@@ -1,8 +1,8 @@
 let config = {
-  title: 'TITLE',
-  author: 'Author',
-  description: 'Site description',
-  siteUrl: 'https://',
+  title: 'Hwans blog',
+  author: 'Hwan',
+  description: 'Description',
+  siteUrl: 'https://choihwan2.github.io/',
 
   // # Header config
   titleLogo: () => {
@@ -12,7 +12,7 @@ let config = {
     return 'https://source.unsplash.com/random/100x100' // url
   },
   titleLogoShow: true,
-  bio: "edit your 'config.js' file",
+  bio: "hohoho",
   bioShow: true,
 
   // # Addtional
