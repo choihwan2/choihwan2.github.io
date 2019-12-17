@@ -9,7 +9,7 @@ let config = {
     // need a square image
     
     // return require('./src/images/profile.png'); // file
-    return './src/images/dog.png' // url
+    return './src/images/dog.jpg' // url
   },
   titleLogoShow: true,
   bio: "Coding...",
