@@ -9,7 +9,7 @@ let config = {
     // need a square image
     
     // return require('./src/images/profile.png'); // file
-    return './src/images/dog.jpg' // url
+    return 'https://source.unsplash.com/random/100x100' // url
   },
   titleLogoShow: true,
   bio: "Coding...",
