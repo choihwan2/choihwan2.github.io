@@ -6,7 +6,7 @@ class Footer extends Component {
       <footer id="footer">
         <div className="copyright">
           <span>
-            © <a href="mailto:junhobaik@gmail.com">Junho Baik</a> 2018, All
+            © <a href="mailto:junhobaik@gmail.com">Junho Baik</a> 2019, All
             rights reserved. Powered by {` `}
             <a href="https://www.gatsbyjs.org/">Gatsby</a>
           </span>

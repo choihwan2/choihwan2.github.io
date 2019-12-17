@@ -1,7 +1,7 @@
 let config = {
-  title: 'Hwans blog',
-  author: 'Hwan',
-  description: 'Description',
+  title: 'Happy Hwan',
+  author: 'Hwan Choi',
+  description: 'Hwan Log',
   siteUrl: 'https://choihwan2.github.io/',
 
   // # Header config
@@ -9,10 +9,10 @@ let config = {
     // need a square image
     
     // return require('./src/images/profile.png'); // file
-    return 'https://source.unsplash.com/random/100x100' // url
+    return './src/images/dog.png' // url
   },
   titleLogoShow: true,
-  bio: "hohoho",
+  bio: "Coding...",
   bioShow: true,
 
   // # Addtional
