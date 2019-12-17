@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Hwans blog - rss]]></title><description><![CDATA[Description]]></description><link>https://choihwan2.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 17 Dec 2019 10:20:56 GMT</lastBuildDate><item><title><![CDATA[First Post, README]]></title><description><![CDATA[기본적인 설정, 포스트 작성 예시는 Documents를 확인하세요. Documnets Github Repository Demo blog]]></description><link>https://choihwan2.github.io/first-post/</link><guid isPermaLink="false">https://choihwan2.github.io/first-post/</guid><pubDate>Tue, 06 Nov 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;기본적인 설정, 포스트 작성 예시는 Documents를 확인하세요.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/junhobaik/junhobaik.github.io/wiki/Documents&quot;&gt;Documnets&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/junhobaik/junhobaik.github.io&quot;&gt;Github Repository&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://junhobaik.github.io/&quot;&gt;Demo blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item></channel></rss>
