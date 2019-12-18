@@ -8,8 +8,8 @@ let config = {
   titleLogo: () => {
     // need a square image
     
-    // return require('./src/images/profile.png'); // file
-    return 'https://source.unsplash.com/random/100x100' // url
+    return require('./src/images/profile.png'); // file
+    //return 'https://source.unsplash.com/random/100x100' // url
   },
   titleLogoShow: true,
   bio: "Coding...",
@@ -17,7 +17,7 @@ let config = {
 
   // # Addtional
   googleAnalyticsTrackingId: '',
-  disqusShortname: '',
+  disqusShortname: 'choihwan2',
 
   // ## google AdSense
   // In addition, client-id in '/static/ads.txt' file needs to be modified
