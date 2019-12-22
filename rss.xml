@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Happy Hwan - rss]]></title><description><![CDATA[Hwan Log]]></description><link>https://choihwan2.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 22 Dec 2019 12:57:10 GMT</lastBuildDate><item><title><![CDATA[파이썬 정리 -02]]></title><description><![CDATA[시작하기에 앞서 파이썬에서 웹 크롤링하는 것에 대한 정리이다.    등 다양한 라이브러리를 사용하면서 진행해보았다. requests URL에 요청을 보내고 그에 맞는 응답을 해석하고 크롤링 해보았다. flask…]]></description><link>https://choihwan2.github.io/python-post-02/</link><guid isPermaLink="false">https://choihwan2.github.io/python-post-02/</guid><pubDate>Wed, 18 Dec 2019 18:20:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Happy Hwan - rss]]></title><description><![CDATA[Hwan Log]]></description><link>https://choihwan2.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 22 Dec 2019 14:48:31 GMT</lastBuildDate><item><title><![CDATA[파이썬 정리 -02]]></title><description><![CDATA[시작하기에 앞서 파이썬에서 웹 크롤링하는 것에 대한 정리이다.    등 다양한 라이브러리를 사용하면서 진행해보았다. requests URL에 요청을 보내고 그에 맞는 응답을 해석하고 크롤링 해보았다. flask…]]></description><link>https://choihwan2.github.io/python-post-02/</link><guid isPermaLink="false">https://choihwan2.github.io/python-post-02/</guid><pubDate>Thu, 19 Dec 2019 18:20:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
 &lt;p&gt;파이썬에서 웹 크롤링하는 것에 대한 정리이다. &lt;code class=&quot;language-text&quot;&gt;bs4&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;flask&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;jinja&lt;/code&gt; 등 다양한 라이브러리를 사용하면서 진행해보았다.&lt;/p&gt;
-&lt;h1&gt;requests&lt;/h1&gt;
+&lt;h2&gt;requests&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;URL에 요청을 보내고 그에 맞는 응답을 해석하고 크롤링 해보았다.&lt;/li&gt;
 &lt;/ul&gt;
@@ -235,10 +235,10 @@ def render_template(str, **args) :
 &lt;h3&gt;참고링크&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://snacky.tistory.com/7&quot;&gt;jinja라이브러리&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[파이썬 정리 -01]]></title><description><![CDATA[시작하기에 앞서 멀티캠퍼스 3주차 깃 특강중에 배웠던 파이썬을 정리해보자.  정말 간단하게 배우고 있는 중이라 매우 기본적인 내용이 많다. String 문자열을 출력할때는 음수도 사용가능하다. -1이면 뒤부터 시작! List와 Dictionary…]]></description><link>https://choihwan2.github.io/python-post-01/</link><guid isPermaLink="false">https://choihwan2.github.io/python-post-01/</guid><pubDate>Wed, 18 Dec 2019 17:40:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[파이썬 정리 -01]]></title><description><![CDATA[시작하기에 앞서 멀티캠퍼스 3주차 깃 특강중에 배웠던 파이썬을 정리해보자.  정말 간단하게 배우고 있는 중이라 매우 기본적인 내용이 많다. String 문자열을 출력할때는 음수도 사용가능하다. -1이면 뒤부터 시작! List와 Dictionary…]]></description><link>https://choihwan2.github.io/python-post-01/</link><guid isPermaLink="false">https://choihwan2.github.io/python-post-01/</guid><pubDate>Thu, 19 Dec 2019 17:40:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
 &lt;p&gt;멀티캠퍼스 3주차 깃 특강중에 배웠던 파이썬을 정리해보자. &lt;/p&gt;
 &lt;p&gt;정말 간단하게 배우고 있는 중이라 매우 기본적인 내용이 많다.&lt;/p&gt;
-&lt;h1&gt;String&lt;/h1&gt;
+&lt;h2&gt;String&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;
       &lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# 1. 글자 합체&lt;/span&gt;
 
