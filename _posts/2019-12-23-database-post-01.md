@@ -17,13 +17,6 @@ keywords:
 처음 배우는 데이터베이스지만 과거에 부스트코스 안드로이드 프로그래밍을 하면서 다뤄봤던 적이 있던 주제였다. 그 때 당시에는 따라 쓰기에 급급하고 매번 구글링으로만 해결하던 문제들을 이해하도록 노력해보자!
 
 
-## 환경설정
-
-* [Database 18c Express Edition](https://www.oracle.com/database/technologies/xe-downloads.html) 이전버전 다운로드.
-
-* [SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html) 써도 되지만 이클리스에서 제공함. 
-
-  자바 환경이 구축된 공간에서는Windows 64-bit with JDK 8 included 으로 돌리는게 편함 .
 
 
 ## 생성과 실행.
@@ -263,8 +256,16 @@ SQL> purge recyclebin;
 
 
 
-
-
 > 처음 시작시 데이터베이스의 생성(oracle에서는 스키마 생성)과  흐름을 이해하는게 부족한 것 같다. 
 >
 > 특히 select 문의 like 부분은 한번씩 와서 확인할 수 있도록 해보자. 나중에 도움이 될것같다.
+
+
+
+## 환경설정
+
+* [Database 18c Express Edition](https://www.oracle.com/database/technologies/xe-downloads.html) 이전버전 다운로드.
+
+* [SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html) 써도 되지만 이클리스에서 제공함. 
+
+  자바 환경이 구축된 공간에서는Windows 64-bit with JDK 8 included 으로 돌리는게 편함 .
