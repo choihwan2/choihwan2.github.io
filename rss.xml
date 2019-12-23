@@ -1,12 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Happy Hwan - rss]]></title><description><![CDATA[Hwan Log]]></description><link>https://choihwan2.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 23 Dec 2019 05:10:00 GMT</lastBuildDate><item><title><![CDATA[데이터베이스 정리 -01]]></title><description><![CDATA[Database Database 18c Express Edition 이전버전 다운로드. Developer tools SQL Developer 써도 되지만 이클리스에서 제공함.  Windows 64-bit with JDK 8 included…]]></description><link>https://choihwan2.github.io/database-post-01/</link><guid isPermaLink="false">https://choihwan2.github.io/database-post-01/</guid><pubDate>Mon, 23 Dec 2019 11:20:00 GMT</pubDate><content:encoded>&lt;h2&gt;Database&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.oracle.com/database/technologies/xe-downloads.html&quot;&gt;Database 18c Express Edition&lt;/a&gt; 이전버전 다운로드.&lt;/p&gt;
-&lt;h2&gt;Developer tools&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.oracle.com/tools/downloads/sqldev-downloads.html&quot;&gt;SQL Developer&lt;/a&gt; 써도 되지만 이클리스에서 제공함. &lt;/p&gt;
-&lt;p&gt;Windows 64-bit with JDK 8 included 으로 돌리는게 편함 자바 환경이 구축된 공간에서는.&lt;/p&gt;
-&lt;p&gt;다 설치한후&lt;/p&gt;
-&lt;h2&gt;실행해보기&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Happy Hwan - rss]]></title><description><![CDATA[Hwan Log]]></description><link>https://choihwan2.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 23 Dec 2019 08:44:08 GMT</lastBuildDate><item><title><![CDATA[데이터베이스 정리 -01]]></title><description><![CDATA[…]]></description><link>https://choihwan2.github.io/database-post-01/</link><guid isPermaLink="false">https://choihwan2.github.io/database-post-01/</guid><pubDate>Mon, 23 Dec 2019 17:36:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
+&lt;p&gt;멀티캠퍼스에서 데이터베이스 관련 수업이 시작되었다. 처음 배우는 데이터베이스지만 과거에 부스트코스 안드로이드 프로그래밍을 하면서 다뤄봤던 적이 있던 주제였다. 그 때 당시에는 따라 쓰기에 급급하고 매번 구글링으로만 해결하던 문제들을 이해하도록 노력해보자!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;환경설정&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;관리자 계정으로 접속한다.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.oracle.com/database/technologies/xe-downloads.html&quot;&gt;Database 18c Express Edition&lt;/a&gt; 이전버전 다운로드.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.oracle.com/tools/downloads/sqldev-downloads.html&quot;&gt;SQL Developer&lt;/a&gt; 써도 되지만 이클리스에서 제공함. &lt;/p&gt;
+&lt;p&gt;자바 환경이 구축된 공간에서는Windows 64-bit with JDK 8 included 으로 돌리는게 편함 .&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;생성과 실행.&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;관리자 계정 접속.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
       &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;C:&lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;Users&lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;student&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;sqlplus system/비밀번호
@@ -25,27 +30,193 @@ SQL&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&l
 &lt;blockquote&gt;
 &lt;p&gt; 잘된예시&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;그냥 접글하려 하지만 락이 걸려있음.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;SQL&amp;gt; conn hr/hr
-ERROR:
-ORA-28000: the account is locked&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;hr/hr에 접근하려 하지만 락이 걸려있음. 접근하기 위해서는 관리자에서 락을 풀어줘야한다.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;
-      &lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;SQL&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; conn hr&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;hr
+ERROR:
+ORA&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;28000&lt;/span&gt;: the account &lt;span class=&quot;token operator&quot;&gt;is&lt;/span&gt; locked
+
+&lt;span class=&quot;token keyword&quot;&gt;alter&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;user&lt;/span&gt; hr identified &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; hr account &lt;span class=&quot;token keyword&quot;&gt;unlock&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--락을 풀어주는 부분&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
-&lt;p&gt;C:\oraclexe\app\oracle\oradata\XE :실질적인 데이터가 들어있는 파일들.&lt;/p&gt;
-&lt;p&gt;테이블 스페이스 : 어떠한 계정에 들어갈 데이터들의 공간. -&gt; 테이블을 만들면 실질적인 데이터 들은 oradata로 들어간다. 잘 못 만들면 system 쪽으로 들어가 성능 저하가 일어남.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;TABLESPACE 생성&lt;/li&gt;
+&lt;/ul&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;
       &lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;TABLESPACE&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;NAME&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
 datafile &lt;span class=&quot;token string&quot;&gt;&apos;C:\oraclexe\app\oracle\oradata\XE\&amp;lt;NAME&gt;.dbf&apos;&lt;/span&gt;
 size &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;M
-autoextend &lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;M maxsize UNLIMITED&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+autoextend &lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;M maxsize UNLIMITED&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--TABLESPACE를 만드는 부분이다.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
-&lt;p&gt;오라클에서 계정을 만들고 아무것도 하지않으면 시스템영역을 사용해버림. 설정을 해줘야한ㄷ.&lt;/p&gt;
-&lt;p&gt;default 를 정하는 부분이 이부분.&lt;/p&gt;
-&lt;p&gt;오라클에서 계정은 스키마라고 부릅니다.&lt;/p&gt;
-&lt;p&gt;정규화과정 = 테이블을 쪼개는 것. 중복되는 데이터들을 뽑아내서 쭊쭊~&lt;/p&gt;</content:encoded></item><item><title><![CDATA[파이썬 정리 -02]]></title><description><![CDATA[시작하기에 앞서 파이썬에서 웹 크롤링하는 것에 대한 정리이다.    등 다양한 라이브러리를 사용하면서 진행해보았다. requests URL에 요청을 보내고 그에 맞는 응답을 해석하고 크롤링 해보았다. flask…]]></description><link>https://choihwan2.github.io/python-post-02/</link><guid isPermaLink="false">https://choihwan2.github.io/python-post-02/</guid><pubDate>Wed, 18 Dec 2019 18:20:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;C:\oraclexe\app\oracle\oradata\XE :실질적인 데이터가 들어있는 디렉토리.&lt;/p&gt;
+&lt;p&gt;테이블 스페이스 : 어떠한 계정에 들어갈 데이터들의 공간. &lt;/p&gt;
+&lt;p&gt;테이블을 만들면 실질적인 데이터 들은 oradata로 들어간다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;
+      &lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;user&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;NAME&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; identified &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;PASSWORD&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; 
+&lt;span class=&quot;token comment&quot;&gt;--계정이름고 비밀번호 정하기.&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;TABLESPACE&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;FILENAME&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;token comment&quot;&gt;--기본값일 파일 이름 안해줄시 system에 연결이 되어버린다..&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;오라클에서 계정을 만들고 default 값을 설정하지않으면 시스템영역을 사용해버림.  주의하자.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;오라클에서 계정은 스키마라고 부릅니다.  SQL에서는 데이터베이스를 말하는 부분.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;정규화과정 = 테이블을 쪼개는 것. 중복되는 데이터들을 뽑아내서 테이블을 만드는것.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;권한과 삭제&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;
+      &lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;grant&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;resource&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;dba &lt;span class=&quot;token keyword&quot;&gt;to&lt;/span&gt; test01&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;token comment&quot;&gt;--권한부여 권한없이 접근할경우 접근되지않음.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;revoke&lt;/span&gt; dba &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; test01&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;token comment&quot;&gt;--dba 권한만 뺏음. 커넥트 권한은 있음.&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;revoke&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;connect&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; test01&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--connect 권한마저 뺏어버림&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;drop&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;user&lt;/span&gt; test01 &lt;span class=&quot;token keyword&quot;&gt;cascade&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;token comment&quot;&gt;--test01 삭제 뒤의 cascade 는 강제성을줌&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h2&gt;SELECT와 관련된 명령문&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;
+      &lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;desc&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--emp의 구조를 보여주세요.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;distinct&lt;/span&gt; job
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;token comment&quot;&gt;--distinct 중복제거.&lt;/span&gt;
+
+
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;12&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; 연산식도 사용가능&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;12&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;연봉&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;token comment&quot;&gt;--연산식의 이름을 설정도 가능. 유일하게 `&quot;`을 사용. 나머지는 다`&apos;`으로 사용한다.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  sal&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;comm &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;실급여&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;nvl&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;token comment&quot;&gt;--nvl = null 이라면 -1 이라는 값으로 바꿔줘. oracle 함수임.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; empno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; nvl&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;to_char&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mgr&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&amp;lt;&amp;lt;CEO&gt;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;매니저 코드&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--nvl 을 사용할때는 컬럼의 타입을 잘 확인해야함.  desc로 잘 확인하여 맞춰주자.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ename&lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;  &apos;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt;job
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;  
+&lt;span class=&quot;token comment&quot;&gt;--|| 문자열 연결.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;\&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;\&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;token comment&quot;&gt;--`dual`가상의 테이블로 값을 확인.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sysdate
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;token comment&quot;&gt;--날짜정보.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;user&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;token comment&quot;&gt;--로그인한 유저의 정보.&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--nvl 로 null 형식의 값을 초기화시켜준다.&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; empno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; nvl&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;to_char&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mgr&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;&amp;lt;&amp;lt;CEO&gt;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;매니저 코드&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--문자열 삽입&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ename&lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;  &apos;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt;job
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--간단한 값 표시.&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--row 제한을 걸때 where 절&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; deptno
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; job &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;MANAGER&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; deptno
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; upper&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;job&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; upper&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;manager&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; hiredate
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; hiredate &lt;span class=&quot;token operator&quot;&gt;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;82/01/01&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;-- &amp;lt;&gt;은 != 의 의미이다.&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; hiredate
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; hiredate &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&gt;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;82/01/23&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--between and = between 은 =이 포함된다. 작은값이 꼭 앞에 오기.&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal 
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2450&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;AND&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal 
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;BETWEEN&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2450&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--in 연산자&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; deptno
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;or&lt;/span&gt; deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; deptno
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; deptno &lt;span class=&quot;token operator&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dept
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;loc&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;DALLAS&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;CHICAGO&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;-- like 연산자&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--A로 시작&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; ename &lt;span class=&quot;token operator&quot;&gt;like&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;A%&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--A로 끝나냐&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; ename &lt;span class=&quot;token operator&quot;&gt;like&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;%A&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--A가 포함&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; ename &lt;span class=&quot;token operator&quot;&gt;like&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;%A%&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--A가 포함되긴 하는데 뒤에서 세번째&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; ename &lt;span class=&quot;token operator&quot;&gt;like&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;%A__&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--81년도에 입사한 사원 목록.&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; hiredate &lt;span class=&quot;token operator&quot;&gt;like&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;%81%&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;SQL&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;purge&lt;/span&gt; recyclebin&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--쓰레기값을 날려보자&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h3&gt;SQL 명령어 분류&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Query : SELECT&lt;/li&gt;
+&lt;li&gt;DML : INSERT, UPDATE, DELETE (롤백이 여지가 있음.)&lt;/li&gt;
+&lt;li&gt;Transaction Control : COMMIT, ROLLBACK&lt;/li&gt;
+&lt;li&gt;DDL : CREATE, DROP, TRUNCATE, ALTER (롤백의 여지가 없다.)&lt;/li&gt;
+&lt;li&gt;DCL : GRANT, REVOKE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;처음 시작시 데이터베이스의 생성(oracle에서는 스키마 생성)과  흐름을 이해하는게 부족한 것 같다. &lt;/p&gt;
+&lt;p&gt;특히 select 문의 like 부분은 한번씩 와서 확인할 수 있도록 해보자. 나중에 도움이 될것같다.&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[파이썬 정리 -02]]></title><description><![CDATA[시작하기에 앞서 파이썬에서 웹 크롤링하는 것에 대한 정리이다.    등 다양한 라이브러리를 사용하면서 진행해보았다. requests URL에 요청을 보내고 그에 맞는 응답을 해석하고 크롤링 해보았다. flask…]]></description><link>https://choihwan2.github.io/python-post-02/</link><guid isPermaLink="false">https://choihwan2.github.io/python-post-02/</guid><pubDate>Wed, 18 Dec 2019 18:20:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
 &lt;p&gt;파이썬에서 웹 크롤링하는 것에 대한 정리이다. &lt;code class=&quot;language-text&quot;&gt;bs4&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;flask&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;jinja&lt;/code&gt; 등 다양한 라이브러리를 사용하면서 진행해보았다.&lt;/p&gt;
 &lt;h1&gt;requests&lt;/h1&gt;
 &lt;ul&gt;
