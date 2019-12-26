@@ -1,12 +1,813 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Happy Hwan - rss]]></title><description><![CDATA[Hwan Log]]></description><link>https://choihwan2.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 23 Dec 2019 09:17:21 GMT</lastBuildDate><item><title><![CDATA[데이터베이스 정리 -01]]></title><description><![CDATA[…]]></description><link>https://choihwan2.github.io/database-post-01/</link><guid isPermaLink="false">https://choihwan2.github.io/database-post-01/</guid><pubDate>Mon, 23 Dec 2019 17:36:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Happy Hwan - rss]]></title><description><![CDATA[Hwan Log]]></description><link>https://choihwan2.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 26 Dec 2019 10:49:47 GMT</lastBuildDate><item><title><![CDATA[데이터베이스 정리 -03]]></title><description><![CDATA[시작하기에 앞서 Oracle Database를 활용하여 데이터베이스 기초를 배우고 있는 중이다. ddl과 dml에 대해서 학습하고 정리해본 내용이다. where & order by 기본적으로 SCOTT/TIGER에서 진행하였다. 단일행 함수(dual…]]></description><link>https://choihwan2.github.io/database-post-03/</link><guid isPermaLink="false">https://choihwan2.github.io/database-post-03/</guid><pubDate>Thu, 26 Dec 2019 19:45:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
+&lt;p&gt;Oracle Database를 활용하여 데이터베이스 기초를 배우고 있는 중이다. ddl과 dml에 대해서 학습하고 정리해본 내용이다.&lt;/p&gt;
+&lt;h2&gt;where &amp;#x26; order by&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;기본적으로 SCOTT/TIGER에서 진행하였다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;
+      &lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;--where 절에서는 as 사용 x&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;sal&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;nvl&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;총급여&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; nvl&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--정렬&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;sal&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;nvl&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;총급여&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--셀값만 준다면 기본적으로는 오름차순 (asc인데 생략가능)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;sal&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;nvl&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;총급여&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; sal &lt;span class=&quot;token keyword&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--desc는 내림차순&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;sal&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;nvl&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;총급여&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; sal &lt;span class=&quot;token keyword&quot;&gt;asc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; comm &lt;span class=&quot;token keyword&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--각각 조건도 가능.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; nvl&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;총급여&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; comm &lt;span class=&quot;token operator&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;null&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--is null is not null로도 사용가능.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; nvl&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;총급여&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; comm &lt;span class=&quot;token operator&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;null&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;총급여&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h2&gt;단일행 함수(dual)&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;
+      &lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;-- 단일행 함수&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; dname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; lower&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;dname&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; loc&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; lower&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;loc&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dept&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;44.55&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;44.55&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; trunc&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;44.55&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--round 반올림, 몇번째 짜리까지 반올림, 소수점 잘림.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0.03&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;TAX&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--기본적인 연산도 가능하다.&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--어디서부터 시작해서 몇개 나오는지&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; hiredate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; substr&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;hiredate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; substr&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;hiredate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;like&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--날짜에 관련된 함수와 형식변환&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sysdate &lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;substr&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sysdate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sysdate &lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to_char&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sysdate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;YY&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sysdate &lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to_char&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sysdate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;YYYY&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sysdate &lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to_char&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sysdate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;MM&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sysdate &lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to_char&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sysdate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;day&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sysdate &lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to_char&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sysdate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;mm&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sysdate &lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to_char&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sysdate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;dd&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--emp에서 사원들의 사원명, 입사월, 요일 정보를 출력하세요.&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to_char&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;hiredate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;mm&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;입사월&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to_char&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;hiredate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;day&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;입사 요일&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;입사월&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sysdate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to_date&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;2019/12/24&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sysdate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to_date&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;2019-12-24&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sysdate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to_date&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;29 12 24&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;dd-mm-yy&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;-- decode 함수&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--decode(어디에서,몇번째,해줄것, 몇번재, 해줄것)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; decode&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1.2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.7&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;보너스&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; deptno&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;join&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;join은 두 개의 상관있는 테이블을 연결하여 서로의 테이블에서 데이터를 가져올 때 사용된다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;
+      &lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;dname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;loc
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;dept
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; EMP&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DEPTNO &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; dept&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--두 개의 테이블이 어떤 관계인지 정의내려줘야한다.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ENAME&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; EMP&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DEPTNO&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; DNAME&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; LOC
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; EMP&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;DEPT
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; EMP&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DEPTNO &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; DEPT&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DEPTNO&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;dname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;loc
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dept d
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--sal &gt; 2000 크면서 deptno가 20인 사원의 이름, sal loc 출력&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; loc
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dept d
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DEPTNO &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DEPTNO &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;SAL &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2000&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DEPTNO &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- Ansi join 표준(맘대로 하면 복잡하니 표준을 만들자) : , =&gt; (inner) join where =&gt; on&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--inner join 둘의 공통&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; loc
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e &lt;span class=&quot;token keyword&quot;&gt;join&lt;/span&gt; dept d
+&lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2000&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--outer join&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--Oracle&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--null 쪽에 + 마킹 : +가 있는 쪽에 있는 모든걸 보여준다 null 이여도.&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; loc
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dept d
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--Ansi join&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- right 쪽이 테이블이 마스터가 된다. &lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- 기준이 교집합에서 오른쪽이 다 차있는 교집합이라고 생각하면 될듯 .&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; loc
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e &lt;span class=&quot;token keyword&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;outer&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;join&lt;/span&gt; dept d
+&lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- non equi join&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; salgrade&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;-- oracle join&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;grade
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; salgrade
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;between&lt;/span&gt; losal &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; hisal&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+
+&lt;span class=&quot;token comment&quot;&gt;--ansi join&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; grade
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp &lt;span class=&quot;token keyword&quot;&gt;join&lt;/span&gt; salgrade
+&lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;between&lt;/span&gt; losal &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; hisal&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- n개의 테이블 join&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- 사원명, sal, 부서이름, salgrade&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--oracle&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; grade
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dept&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; salgrade
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; dept&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;between&lt;/span&gt; losal &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; hisal&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+
+&lt;span class=&quot;token comment&quot;&gt;-- ansi join&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; grade
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp 
+	&lt;span class=&quot;token keyword&quot;&gt;join&lt;/span&gt; dept
+	&lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; dept&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno
+	&lt;span class=&quot;token keyword&quot;&gt;join&lt;/span&gt; salgrade
+	&lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;between&lt;/span&gt; losal &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; hisal 
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1500&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- oracle self join&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- 사원의 이름과 그 사원의 상사 이름 출력&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ename
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; emp m
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mgr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;empno&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ename
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; emp m
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mgr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;empno&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;-- 상사보다 월급을 더 많이 받는 직원&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sal
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; emp m
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mgr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;empno&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sal &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--ansi left와 right 는 outer 생략가능. &lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ename
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e &lt;span class=&quot;token keyword&quot;&gt;join&lt;/span&gt; emp m
+&lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mgr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;empno&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ename &lt;span class=&quot;token string&quot;&gt;&quot;사원명&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ename &lt;span class=&quot;token string&quot;&gt;&quot;상사이름&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sal
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e 
+&lt;span class=&quot;token keyword&quot;&gt;join&lt;/span&gt; emp m
+&lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mgr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;empno
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sal &lt;span class=&quot;token operator&quot;&gt;&gt;=&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h2&gt;집계함수&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;
+      &lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;--집계함수&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;--안됨.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;전체 평균급여&quot;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;원&apos;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp &lt;span class=&quot;token keyword&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; deptno&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--집계함수에서는 group by로 들어간 아이만 select 절에 들어갈 수 있다.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; dname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mgr&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;join&lt;/span&gt; dept
+&lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; dept&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno
+&lt;span class=&quot;token keyword&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; dname
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; dname&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--부서번호, 부서이름, 부서평균급여, 부서에 있는 사람수, 부서별 최소,최대 월급&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dept d
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno
+&lt;span class=&quot;token keyword&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dname&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+
+&lt;span class=&quot;token comment&quot;&gt;--group by 이후 조건을 주는것이 having 절&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;having&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--평균 급여가 2000이상인 사람.&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;평균급여&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dept d
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno
+&lt;span class=&quot;token keyword&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dname
+&lt;span class=&quot;token keyword&quot;&gt;having&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h2&gt;subQuery&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;
+      &lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;--subQuery&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--Ford 보다 급여가 많은 사원 목록&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sal &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; ename &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;FORD&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; 
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sal &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; ename &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;FORD&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+
+&lt;span class=&quot;token comment&quot;&gt;-- 전체 평균 급여보다 적게 받는 사원 목록&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;-- 부서별 최고 급여를 받는 사원 목록&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e
+&lt;span class=&quot;token keyword&quot;&gt;join&lt;/span&gt; dept
+&lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; dept&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno
+&lt;span class=&quot;token keyword&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+
+&lt;span class=&quot;token comment&quot;&gt;--부서별 최고 급여 받는 사원&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp &lt;span class=&quot;token keyword&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; deptno&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp &lt;span class=&quot;token keyword&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; deptno&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; deptno&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- rownum: 자동적으로 1~n 개의 수가 column에 주어짐.&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; rownum&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; rownum&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; rownum&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp &lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--급여 top 3&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; rownum&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp &lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; sal &lt;span class=&quot;token keyword&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; rownum &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; rownum&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp &lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; sal &lt;span class=&quot;token keyword&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; rownum &lt;span class=&quot;token operator&quot;&gt;between&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;6&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;--rownum 은 1부터 시작하는 경우가 아니니 작동하지 않음.&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--oracle page 처리&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; rownum &lt;span class=&quot;token keyword&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;#, ename, job, sal&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp &lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; sal &lt;span class=&quot;token keyword&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;# between 6 and 10;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--rownum을 먼저 생성한후 그것을 row#으로 받고 그다음 그 목록에서 6~10의 수를 보여줌.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;</content:encoded></item><item><title><![CDATA[데이터베이스 정리 -02]]></title><description><![CDATA[시작하기에 앞서 Oracle Database를 활용하여 데이터베이스 기초를 배우고 있는 중이다. 다양한 Select, join, 집계함수, subQuery에 대해서 학습하고 정리해본 내용이다. where & order by 기본적으로 SCOTT…]]></description><link>https://choihwan2.github.io/database-post-02/</link><guid isPermaLink="false">https://choihwan2.github.io/database-post-02/</guid><pubDate>Thu, 26 Dec 2019 19:24:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
+&lt;p&gt;Oracle Database를 활용하여 데이터베이스 기초를 배우고 있는 중이다. 다양한 Select, join, 집계함수, subQuery에 대해서 학습하고 정리해본 내용이다.&lt;/p&gt;
+&lt;h2&gt;where &amp;#x26; order by&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;기본적으로 SCOTT/TIGER에서 진행하였다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;
+      &lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;--where 절에서는 as 사용 x&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;sal&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;nvl&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;총급여&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; nvl&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--정렬&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;sal&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;nvl&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;총급여&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--셀값만 준다면 기본적으로는 오름차순 (asc인데 생략가능)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;sal&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;nvl&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;총급여&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; sal &lt;span class=&quot;token keyword&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--desc는 내림차순&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;sal&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;nvl&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;총급여&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; sal &lt;span class=&quot;token keyword&quot;&gt;asc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; comm &lt;span class=&quot;token keyword&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--각각 조건도 가능.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; nvl&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;총급여&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; comm &lt;span class=&quot;token operator&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;null&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--is null is not null로도 사용가능.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; nvl&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;comm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;총급여&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; comm &lt;span class=&quot;token operator&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;null&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;총급여&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h2&gt;단일행 함수(dual)&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;
+      &lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;-- 단일행 함수&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; dname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; lower&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;dname&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; loc&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; lower&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;loc&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dept&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;44.55&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;44.55&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; trunc&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;44.55&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--round 반올림, 몇번째 짜리까지 반올림, 소수점 잘림.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0.03&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;TAX&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--기본적인 연산도 가능하다.&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--어디서부터 시작해서 몇개 나오는지&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; hiredate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; substr&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;hiredate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; substr&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;hiredate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;like&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--날짜에 관련된 함수와 형식변환&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sysdate &lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;substr&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sysdate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sysdate &lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to_char&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sysdate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;YY&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sysdate &lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to_char&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sysdate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;YYYY&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sysdate &lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to_char&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sysdate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;MM&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sysdate &lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to_char&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sysdate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;day&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sysdate &lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to_char&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sysdate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;mm&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sysdate &lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to_char&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sysdate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;dd&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--emp에서 사원들의 사원명, 입사월, 요일 정보를 출력하세요.&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to_char&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;hiredate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;mm&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;입사월&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to_char&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;hiredate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;day&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;입사 요일&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;입사월&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sysdate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to_date&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;2019/12/24&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sysdate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to_date&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;2019-12-24&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sysdate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to_date&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;29 12 24&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;dd-mm-yy&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;-- decode 함수&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--decode(어디에서,몇번째,해줄것, 몇번재, 해줄것)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; decode&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1.2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.7&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;보너스&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; deptno&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;join&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;join은 두 개의 상관있는 테이블을 연결하여 서로의 테이블에서 데이터를 가져올 때 사용된다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;
+      &lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;dname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;loc
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;dept
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; EMP&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DEPTNO &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; dept&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--두 개의 테이블이 어떤 관계인지 정의내려줘야한다.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ENAME&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; EMP&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DEPTNO&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; DNAME&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; LOC
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; EMP&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;DEPT
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; EMP&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DEPTNO &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; DEPT&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DEPTNO&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;dname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;loc
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dept d
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--sal &gt; 2000 크면서 deptno가 20인 사원의 이름, sal loc 출력&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; loc
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dept d
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DEPTNO &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DEPTNO &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;SAL &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2000&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DEPTNO &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- Ansi join 표준(맘대로 하면 복잡하니 표준을 만들자) : , =&gt; (inner) join where =&gt; on&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--inner join 둘의 공통&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; loc
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e &lt;span class=&quot;token keyword&quot;&gt;join&lt;/span&gt; dept d
+&lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2000&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--outer join&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--Oracle&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--null 쪽에 + 마킹 : +가 있는 쪽에 있는 모든걸 보여준다 null 이여도.&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; loc
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dept d
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--Ansi join&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- right 쪽이 테이블이 마스터가 된다. &lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- 기준이 교집합에서 오른쪽이 다 차있는 교집합이라고 생각하면 될듯 .&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; loc
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e &lt;span class=&quot;token keyword&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;outer&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;join&lt;/span&gt; dept d
+&lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- non equi join&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; salgrade&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;-- oracle join&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;grade
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; salgrade
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;between&lt;/span&gt; losal &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; hisal&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+
+&lt;span class=&quot;token comment&quot;&gt;--ansi join&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; grade
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp &lt;span class=&quot;token keyword&quot;&gt;join&lt;/span&gt; salgrade
+&lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;between&lt;/span&gt; losal &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; hisal&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- n개의 테이블 join&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- 사원명, sal, 부서이름, salgrade&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--oracle&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; grade
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dept&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; salgrade
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; dept&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;between&lt;/span&gt; losal &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; hisal&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+
+&lt;span class=&quot;token comment&quot;&gt;-- ansi join&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; grade
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp 
+	&lt;span class=&quot;token keyword&quot;&gt;join&lt;/span&gt; dept
+	&lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; dept&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno
+	&lt;span class=&quot;token keyword&quot;&gt;join&lt;/span&gt; salgrade
+	&lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;between&lt;/span&gt; losal &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; hisal 
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1500&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- oracle self join&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- 사원의 이름과 그 사원의 상사 이름 출력&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ename
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; emp m
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mgr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;empno&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ename
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; emp m
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mgr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;empno&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;-- 상사보다 월급을 더 많이 받는 직원&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sal
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; emp m
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mgr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;empno&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sal &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--ansi left와 right 는 outer 생략가능. &lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ename
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e &lt;span class=&quot;token keyword&quot;&gt;join&lt;/span&gt; emp m
+&lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mgr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;empno&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ename &lt;span class=&quot;token string&quot;&gt;&quot;사원명&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ename &lt;span class=&quot;token string&quot;&gt;&quot;상사이름&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sal
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e 
+&lt;span class=&quot;token keyword&quot;&gt;join&lt;/span&gt; emp m
+&lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mgr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;empno
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sal &lt;span class=&quot;token operator&quot;&gt;&gt;=&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h2&gt;집계함수&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;
+      &lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;--집계함수&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;--안됨.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;전체 평균급여&quot;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;원&apos;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp &lt;span class=&quot;token keyword&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; deptno&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--집계함수에서는 group by로 들어간 아이만 select 절에 들어갈 수 있다.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; dname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mgr&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;join&lt;/span&gt; dept
+&lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; dept&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno
+&lt;span class=&quot;token keyword&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; dname
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; dname&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--부서번호, 부서이름, 부서평균급여, 부서에 있는 사람수, 부서별 최소,최대 월급&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dept d
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno
+&lt;span class=&quot;token keyword&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dname&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+
+&lt;span class=&quot;token comment&quot;&gt;--group by 이후 조건을 주는것이 having 절&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;having&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--평균 급여가 2000이상인 사람.&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;평균급여&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dept d
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno
+&lt;span class=&quot;token keyword&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dname
+&lt;span class=&quot;token keyword&quot;&gt;having&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h2&gt;subQuery&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;
+      &lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;--subQuery&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--Ford 보다 급여가 많은 사원 목록&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sal &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; ename &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;FORD&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; 
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sal &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; ename &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;FORD&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+
+&lt;span class=&quot;token comment&quot;&gt;-- 전체 평균 급여보다 적게 받는 사원 목록&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;-- 부서별 최고 급여를 받는 사원 목록&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp e
+&lt;span class=&quot;token keyword&quot;&gt;join&lt;/span&gt; dept
+&lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; dept&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno
+&lt;span class=&quot;token keyword&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+
+&lt;span class=&quot;token comment&quot;&gt;--부서별 최고 급여 받는 사원&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp &lt;span class=&quot;token keyword&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; deptno&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; deptno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp &lt;span class=&quot;token keyword&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; deptno&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; deptno&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- rownum: 자동적으로 1~n 개의 수가 column에 주어짐.&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; rownum&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; rownum&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+&lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; rownum&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp &lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--급여 top 3&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; rownum&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp &lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; sal &lt;span class=&quot;token keyword&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; rownum &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; rownum&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp &lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; sal &lt;span class=&quot;token keyword&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; rownum &lt;span class=&quot;token operator&quot;&gt;between&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;6&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;--rownum 은 1부터 시작하는 경우가 아니니 작동하지 않음.&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--oracle page 처리&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; rownum &lt;span class=&quot;token keyword&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;#, ename, job, sal&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp &lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; sal &lt;span class=&quot;token keyword&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;# between 6 and 10;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--rownum을 먼저 생성한후 그것을 row#으로 받고 그다음 그 목록에서 6~10의 수를 보여줌.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;</content:encoded></item><item><title><![CDATA[Mac에서 Oracle Database 사용하기]]></title><description><![CDATA[시작하기 앞서서 멀티캠퍼스 데이터베이스 수업시간에 Oracle…]]></description><link>https://choihwan2.github.io/mac-oracle/</link><guid isPermaLink="false">https://choihwan2.github.io/mac-oracle/</guid><pubDate>Wed, 25 Dec 2019 22:53:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기 앞서서&lt;/h2&gt;
+&lt;p&gt;멀티캠퍼스 데이터베이스 수업시간에 Oracle 데이터베이스를 활용하는 수업을 진행하였다. 처음으로 배우는 데이터베이스다 보니 뭔가 개념적으로 확실하게 이해되는 것이 좀 부족했던 것 같아 집에서 더 공부를 하고자 노트북을 키게 됐다. 그러나... 내가 사용하는 맥북에서는 Oracle 데이터베이스 설치가 바로는 불가하다는 것을 알게되었다...&lt;/p&gt;
+&lt;h2&gt;Docker&lt;/h2&gt;
+&lt;p&gt;그래서 구글링 결과! Docker라는 것을 통해 설치를 할 수 있다는 것을 알게되었고 바로 시도하기로 하였다. 여기서 Docker란 컨테이너 기반의 오픈소스 가상화 플랫폼으로 실행 환경에 상관없이 동일한 환경을 제공해주는(?) 아주 편리한 녀석인 것 같았다. 지금 나의 상황으로는 컨테이너 기반은 뭔지.. 또 이게 어떻게 동작하는지 잘 알 수 없기에 후에 공부하고 알게되면 그 때 또 포스트를 작성하도록 하겠다.&lt;/p&gt;
+&lt;p&gt;먼저 &lt;a href=&quot;https://hub.docker.com/editions/community/docker-ce-desktop-mac&quot;&gt;Docker 홈페이지&lt;/a&gt;로 접속하여 가입 후 다운을 받았고 실행까지 성공하였다. 실행을 하고 나면 이제 터미널에서 docker 명령어들을 사용가능한데 터미널에서 &lt;strong&gt;docker search oracle-xe-11g&lt;/strong&gt; 를 입력하여 다운로드할 이미지들을 검색하였다.
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 43.75644994840041%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAABoUlEQVQoz31Q2U7CQBTtk4mauCQKgrLUspSttGwtIItYFZf4FSZGQ0JQUAibRn3RZ7/3eO8Iiob4cHLvzGTOJo0GD2g9DtAbv6A7fhYYvX9g+PqGVm+I61YHN7f3uGre4bLRRKPdRbs/RvOhjzuancHjzz58ghSx9hEwCpCTJrajKazLETjCBnZiabhU/RvOkIZVXxhrfhVL7l0sODxYdMlYnuwr3iAhBKl4fIHcwSnS1WMYlSMizkHN7sGyz8V9tnYikNmvC+zqJlxhjUSS2KI5hSeWgjuiQ7LsMyKrI7lnI1GswRNPw6dlETHLUHMlgTAJMILpAqUw4AjGsRmIiTndWcQZSkAyyYVRPhRk7G5dVqEYeXHWigeCiAXYmaiFXMwj3CEhdi1lKYZOhMmSLRzwY4BmhmKyaybVBHkNsXwV3kTmF+HsZAiHKeqOCdkN21ZSeXJ99CVEpNPYimHBG8/MjzzpVDKpQ/7MH7k38RCKCyd+qsA3mX6K7aV+uWMW/UvId7xL3J9eskWkqFWBTF0FC3XqLYcNJfr9adbJf5E/AUGrIkIHommrAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;image-20191225222855710&quot;
+        title=&quot;&quot;
+        src=&quot;/static/295f43f7e2eb23ac4dd2caa6c9bf58a2/799d3/image-20191225222855710.png&quot;
+        srcset=&quot;/static/295f43f7e2eb23ac4dd2caa6c9bf58a2/00d96/image-20191225222855710.png 148w,
+/static/295f43f7e2eb23ac4dd2caa6c9bf58a2/0b23c/image-20191225222855710.png 295w,
+/static/295f43f7e2eb23ac4dd2caa6c9bf58a2/799d3/image-20191225222855710.png 590w,
+/static/295f43f7e2eb23ac4dd2caa6c9bf58a2/2a3d6/image-20191225222855710.png 885w,
+/static/295f43f7e2eb23ac4dd2caa6c9bf58a2/ae92f/image-20191225222855710.png 1180w,
+/static/295f43f7e2eb23ac4dd2caa6c9bf58a2/0732e/image-20191225222855710.png 1938w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  &lt;/p&gt;
+&lt;p&gt;나는 &lt;a href=&quot;https://whitepaek.tistory.com/40&quot;&gt;여기&lt;/a&gt;블로그를 보면서 했기 때문에 똑같이 &lt;strong&gt;jaspeen/oracle-xe-11g&lt;/strong&gt;를 다운 받아 진행하였고 &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;docker run --name oracle11g-test -d -p 8080:8080 -p 1521:1521 jaspeen/oracle-xe-11g&lt;/strong&gt; 이 명령어를 통해 docker에서 컨테이너 생성과 실행을 할 수 있었다.&lt;/p&gt;
+&lt;p&gt;그 후 &lt;strong&gt;docker exec -it oracle11g-test sqlplus&lt;/strong&gt; 입력으로 오라클 데이터베이스 실행을 성공할 수 있었다! 아마 나보다는 위에 설명해놓은 블로그가 더 예쁘고 자세히 설명해 놓았으니.. 저걸 보고 따라하는게 더 좋을 것 같기도 하다.&lt;/p&gt;
+&lt;p&gt;정지 후 다시 시작할때는 &lt;strong&gt;docker start oracle11g-test&lt;/strong&gt; 으로 docker에서 실행한 후 진행 할 수 있으면 될 것 같다.&lt;/p&gt;
+&lt;h2&gt;Eclipse에서의 Oracle Databas연동&lt;/h2&gt;
+&lt;p&gt;그 후에 나머지 SQL devloper라던가.. 나머지 환경 설정은 쉽게 할 수 있었다. 하지만.. 이클립스에서 바로바로 확인 할 수 있는 환경을 하기 위해서는 또 다른 설정이 필요하였다. 먼저 &lt;a href=&quot;https://www.oracle.com/database/technologies/jdbcdriver-ucp-downloads.html&quot;&gt;이곳&lt;/a&gt; 에서 ojdbc6.jar 를 다운 받고 시작하자.&lt;/p&gt;
+&lt;p&gt;도커와 다른 설정을 마쳤으면 이클립스에서의 Perspective 를 java EE로 설정해주자.
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0fc79968d64570fbd8485360b1f8dc5c/ed416/image-20191225224439918.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 61.26482213438735%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAAB0ElEQVQoz4WT2Y6bQBBF+YrMBANma8CAm33HqyzHHjsveYgi5Q/y/+831cAoeGRNHo6qKKpvd98C6XQ9o98RdY9k3yDb1mg3DQ7HHd5ue1xub9jsDqjbbqCsW0RZiSgtwJN8yHlcIG8bVIcG0uW0gxumMG0G3bGhWgxJUaLf7tHfjmjO37HK9nDSLbFDkLbgJBbGGbKypryEzzMEUQKPc0ibtkRaVGCeB92ysLQcOK4Pz1uhPl3R//gD1v2C0fyE2f0GS49grgfbC+D46yFa1C8w2QqSS0XHD6EZJGbaJMig6hZeZBXN4YjL/U7XrBHS7jyO4foBZNXAQjMga2OcI32RFQheFQ0vCxVf1SUUEnwlwe58xf7bHVHewCefwrSizfmwUFmaT5GEwBxZ04cXC4ruJBLGOdbkFc8quEH0uaDtrWE6Hgw2IrwYBQ1YzooE+IAnCCPqXX0uqOr2Q0Ez7AdPZFV/YPHEt3mv9LH4LioGIwalGWx8plyd6s8QfUuTQZqfTghqVEyaHmm7RVJ3NBD6kPOaPCwGHwPyM5wIZjEuWmRVB+nhSspyEBYNQVKMTAv+TwY/yiAJ480ZthsM0xSnEn/BekLURv7VPhLlFf4CfQ5kuDOfcAsAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;image-20191225224439918&quot;
+        title=&quot;&quot;
+        src=&quot;/static/0fc79968d64570fbd8485360b1f8dc5c/799d3/image-20191225224439918.png&quot;
+        srcset=&quot;/static/0fc79968d64570fbd8485360b1f8dc5c/00d96/image-20191225224439918.png 148w,
+/static/0fc79968d64570fbd8485360b1f8dc5c/0b23c/image-20191225224439918.png 295w,
+/static/0fc79968d64570fbd8485360b1f8dc5c/799d3/image-20191225224439918.png 590w,
+/static/0fc79968d64570fbd8485360b1f8dc5c/2a3d6/image-20191225224439918.png 885w,
+/static/0fc79968d64570fbd8485360b1f8dc5c/ae92f/image-20191225224439918.png 1180w,
+/static/0fc79968d64570fbd8485360b1f8dc5c/ed416/image-20191225224439918.png 2530w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;그 후 아래의 DataSource Explorer에 있는 Database Connections에서 하나를 생성하자.
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/dc8ae7a26fe982d1ce896214efc10e3b/b5408/Eclipse_oracle.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 24.42827442827443%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAAArklEQVQY052QXQ6CMBCEuQQIpZTfQgFLaRNDQjRy/0uNpYJofNKHL7M7O2mT8ebbHWaa0Y0ThFRQRqE9K4h+gLDaDRq9MuCdRNl0KJoWpegh9Qg56uddX112MBd4ecXBSo6QJgiiGH5EEZBPfOuveoqTDepyu+9HxCkrKnhrIKQMUZI6CEtf80H25ZGN/U5YhqIWx4PH739CEtCcw+OtxC/Utsu1T7e/qbTdL8uEB2woi5JVdIISAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Eclipse_oracle&quot;
+        title=&quot;&quot;
+        src=&quot;/static/dc8ae7a26fe982d1ce896214efc10e3b/799d3/Eclipse_oracle.png&quot;
+        srcset=&quot;/static/dc8ae7a26fe982d1ce896214efc10e3b/00d96/Eclipse_oracle.png 148w,
+/static/dc8ae7a26fe982d1ce896214efc10e3b/0b23c/Eclipse_oracle.png 295w,
+/static/dc8ae7a26fe982d1ce896214efc10e3b/799d3/Eclipse_oracle.png 590w,
+/static/dc8ae7a26fe982d1ce896214efc10e3b/2a3d6/Eclipse_oracle.png 885w,
+/static/dc8ae7a26fe982d1ce896214efc10e3b/ae92f/Eclipse_oracle.png 1180w,
+/static/dc8ae7a26fe982d1ce896214efc10e3b/b5408/Eclipse_oracle.png 1924w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;후에 창에서 Driver 칸 옆에 있는 톱니바퀴를 클릭하자. 제 Theme 에서는 노란색 파인애플 처럼 생겼군요.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/72ae16c11ab46b65e188de4c13a1eb37/3a775/image-20191225224819896.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 111.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAACXBIWXMAABYlAAAWJQFJUiTwAAADXUlEQVQ4y32VWbLaVhCGtZKkXOVrBoEkNA9oQEhCAyC4I3dw7FTsSspP3oMXkcoSvDVv4nf3EbrBTrgPXzU6p/lP6/Qg6SHNsWyXCMo5fD9GEDIJ5tECRdWg2exQ1hukWYE0XyFOMxi2C9P2OhwfM30GRZdhBi6kVVEjr/fIyhbFZo+8aZGuGhRk46wU1otSDKYzjBSdMCBrVsfMxlBREKQfsPr4BcONASkkJ80LodJpU9MlJwuvB2NcDGW8GU2EHYynGE81jHomqkAm8V9f/YK/Pv+Nf75+w0izIWnuHCoJucUOxfVvyK/eorh5h0X7gGhzh3h7EDZa33X2lPUtwu0TtOoDLM+DYgSQnHmMMC3J4YDm/g8hWN6+R9LeI2xuXqa+wnz9iEn+ju5Th2IlkKa6hbzMkeVL6PTaquFA1U2yNjSKXDMdaJZLe/4ZPFiOC8NPwFrSzPJwfXjA5d0Ddoe32N7cw6+fsKDTs2aHtN4hzCrYYQp73rM4IYVFOJQ4jbQk1fQQFw0W5QZRXiMpKnqdJ1T7e1pbI1mtYVLSXg8nhIwLTtRo+gO8N1YNsJakkmpWt6h2N4Iob0i0xLLqDuDD/CSDEy7gxXQtxyTy/1igs+5x/ShYkxBHGKQr+IuCBEk0r6A7AQyGnPWj5T/zXU11+5kJldqM7pO1JH7vcnslyKiI+a64oC1vLl5vICt4M/6Xgaz+CNUjr7PosyBHuLt7pC7ZwY0zEf6IO+MMQyruHvE80USkap+Uqr3G5vogsuklOTQKn53G1EWyyhji0v8PsUd+/b1K/IMvnuHonGiJZb3Flg6o9gfk7aFLCq27lBQ3OgP9l7VEhKvtJUqKkqOzqLaa/S1+//gn2sdPcDafaDjEtFeI/ZfoBClMUbQEn9LDET1HdbL+EkJQs3xRKufwmOQFjj7sK+pQob7lrJ7DoC4xvYjsGdyQ/ELhp9AckCZeV8BcmD9bLmRZM8VgZfszk5mJGQ2OHoVKRzIi6pBFjjkRUDaZuXguEC1Xoo9ZnAv3P5CoQlNJpYnEU4oPkGw/gBvy1EhgBzGcE2v5Ie0l4hPAzr0QR8c1ePrcRUzjq2kv6XvS4ILap3fklnOCULwGT5jRVKVodCp2hVCpv3149DEb0jo/TzXj+fPwHSFX5/0oqz5BAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;image-20191225224819896&quot;
+        title=&quot;&quot;
+        src=&quot;/static/72ae16c11ab46b65e188de4c13a1eb37/799d3/image-20191225224819896.png&quot;
+        srcset=&quot;/static/72ae16c11ab46b65e188de4c13a1eb37/00d96/image-20191225224819896.png 148w,
+/static/72ae16c11ab46b65e188de4c13a1eb37/0b23c/image-20191225224819896.png 295w,
+/static/72ae16c11ab46b65e188de4c13a1eb37/799d3/image-20191225224819896.png 590w,
+/static/72ae16c11ab46b65e188de4c13a1eb37/2a3d6/image-20191225224819896.png 885w,
+/static/72ae16c11ab46b65e188de4c13a1eb37/3a775/image-20191225224819896.png 1044w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;그 다음 Oracle Thin Driver 버전 11를 선택하고 jar List에 있는 것을 모두 삭제하고 처음 받았던 ojdbc6.jar를 추가하고 User name과 Password를 적고 Test Connection후 성공이 나온다면 데이터베이스 공부를 시작하도록 하자!! 참고로 포트 번호는 글마다 다르던데 처음에 docker에서 명령어 사용으로 다르게 설정하거나 그럴 수 있는 것 같다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;나라가 이상하다고 나오는 경우가 있는데 그럴때는 시스템 환경설정에서 언어 및 지역을 미국으로 바꾸고 다시 한국으로 한다음 껐다가 키고 다시 하면 된다는 소리가 있다. SQL developer에서도 마찬가지로..&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[데이터베이스 정리 -01]]></title><description><![CDATA[…]]></description><link>https://choihwan2.github.io/database-post-01/</link><guid isPermaLink="false">https://choihwan2.github.io/database-post-01/</guid><pubDate>Mon, 23 Dec 2019 17:36:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
 &lt;p&gt;멀티캠퍼스에서 데이터베이스 관련 수업이 시작되었다.
 처음 배우는 데이터베이스지만 과거에 부스트코스 안드로이드 프로그래밍을 하면서 다뤄봤던 적이 있던 주제였다. 그 때 당시에는 따라 쓰기에 급급하고 매번 구글링으로만 해결하던 문제들을 이해하도록 노력해보자!&lt;/p&gt;
+&lt;h2&gt;환경설정&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.oracle.com/database/technologies/xe-downloads.html&quot;&gt;Database 18c Express Edition&lt;/a&gt; 이전버전 다운로드.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.oracle.com/tools/downloads/sqldev-downloads.html&quot;&gt;SQL Developer&lt;/a&gt; 써도 되지만 이클리스에서 제공함. &lt;/p&gt;
+&lt;p&gt;자바 환경이 구축된 공간에서는Windows 64-bit with JDK 8 included 으로 돌리는게 편함 .&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2&gt;생성과 실행&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;관리자 계정 접속.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;C:&lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;Users&lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;student&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;sqlplus system/비밀번호
+      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;C:&lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;Users&lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;student&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;sqlplus system/password
 
 
 SQL*Plus: Release &lt;span class=&quot;token number&quot;&gt;11.2&lt;/span&gt;.0.2.0 Production on 월 &lt;span class=&quot;token number&quot;&gt;12&lt;/span&gt;월 &lt;span class=&quot;token number&quot;&gt;23&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;:10:49 &lt;span class=&quot;token number&quot;&gt;2019&lt;/span&gt;
@@ -84,9 +885,9 @@ autoextend &lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; &lt;span 
 &lt;span class=&quot;token comment&quot;&gt;--distinct 중복제거.&lt;/span&gt;
 
 
-
 &lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;12&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; 연산식도 사용가능&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--연산식도 사용가능.&lt;/span&gt;
 
 &lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;12&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;연봉&quot;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; 
@@ -116,23 +917,24 @@ autoextend &lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; &lt;span 
 &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; 
 &lt;span class=&quot;token comment&quot;&gt;--로그인한 유저의 정보.&lt;/span&gt;
 
-&lt;span class=&quot;token comment&quot;&gt;--nvl 로 null 형식의 값을 초기화시켜준다.&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; empno&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; nvl&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;to_char&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mgr&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;&amp;lt;&amp;lt;CEO&gt;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;매니저 코드&quot;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--nvl 로 null 형식의 값을 초기화시켜준다.&lt;/span&gt;
 
-&lt;span class=&quot;token comment&quot;&gt;--문자열 삽입&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ename&lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;  &apos;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt;job
 &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--문자열 삽입&lt;/span&gt;
 
-&lt;span class=&quot;token comment&quot;&gt;--간단한 값 표시.&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dual&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--간단한 값 표시. 가상공간 dual을 사용&lt;/span&gt;
 
 &lt;span class=&quot;token comment&quot;&gt;--row 제한을 걸때 where 절&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; deptno
 &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
 &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; job &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;MANAGER&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
+&lt;span class=&quot;token comment&quot;&gt;--대문자로 통일&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; deptno
 &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
 &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; upper&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;job&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; upper&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;manager&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -141,25 +943,27 @@ autoextend &lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; &lt;span 
 &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
 &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; hiredate &lt;span class=&quot;token operator&quot;&gt;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;82/01/01&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-&lt;span class=&quot;token comment&quot;&gt;-- &amp;lt;&gt;은 != 의 의미이다.&lt;/span&gt;
+
 &lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; hiredate
 &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
 &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; hiredate &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&gt;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;82/01/23&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- &amp;lt;&gt;은 != 의 의미이다.&lt;/span&gt;
 
-&lt;span class=&quot;token comment&quot;&gt;--between and = between 은 =이 포함된다. 작은값이 꼭 앞에 오기.&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal 
 &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
 &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2450&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;AND&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;--between and = between 은 =이 포함된다. 작은값이 꼭 앞에 오기.&lt;/span&gt;
 
 &lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sal 
 &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
 &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; sal &lt;span class=&quot;token operator&quot;&gt;BETWEEN&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2450&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-&lt;span class=&quot;token comment&quot;&gt;--in 연산자&lt;/span&gt;
+
 &lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; deptno
 &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
 &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;or&lt;/span&gt; deptno &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
+&lt;span class=&quot;token comment&quot;&gt;--in 연산자&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; ename&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; deptno
 &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
 &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; deptno &lt;span class=&quot;token operator&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -194,15 +998,15 @@ autoextend &lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; &lt;span 
 &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
 &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; hiredate &lt;span class=&quot;token operator&quot;&gt;like&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;%81%&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-&lt;span class=&quot;token keyword&quot;&gt;SQL&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;purge&lt;/span&gt; recyclebin&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;--쓰레기값을 날려보자&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token comment&quot;&gt;--쓰레기값을 날려보자&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;SQL&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;purge&lt;/span&gt; recyclebin&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;h3&gt;SQL 명령어 분류&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Query : SELECT&lt;/li&gt;
 &lt;li&gt;DML : INSERT, UPDATE, DELETE (롤백이 여지가 있음.)&lt;/li&gt;
 &lt;li&gt;Transaction Control : COMMIT, ROLLBACK&lt;/li&gt;
-&lt;li&gt;DDL : CREATE, DROP, TRUNCATE, ALTER (롤백의 여지가 없다.)&lt;/li&gt;
+&lt;li&gt;DDL : CREATE, DROP, TRUNCATE, ALTER (&lt;strong&gt;롤백의 여지가 없다.&lt;/strong&gt;)&lt;/li&gt;
 &lt;li&gt;DCL : GRANT, REVOKE&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;제약조건&lt;/h2&gt;
@@ -239,6 +1043,7 @@ autoextend &lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; &lt;span 
 &lt;blockquote&gt;
 &lt;p&gt;처음 시작시 데이터베이스의 생성(oracle에서는 스키마 생성)과  흐름을 이해하는게 부족한 것 같다. &lt;/p&gt;
 &lt;p&gt;특히 select 문의 like 부분은 한번씩 와서 확인할 수 있도록 해보자. 나중에 도움이 될것같다.&lt;/p&gt;
+&lt;h1&gt;&amp;#x3C;&amp;#x3C;&amp;#x3C;&amp;#x3C;&amp;#x3C;&amp;#x3C;&amp;#x3C; HEAD&lt;/h1&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;환경설정&lt;/h2&gt;
 &lt;ul&gt;
@@ -246,10 +1051,25 @@ autoextend &lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; &lt;span 
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.oracle.com/tools/downloads/sqldev-downloads.html&quot;&gt;SQL Developer&lt;/a&gt; 써도 되지만 이클리스에서 제공함. &lt;/p&gt;
 &lt;p&gt;자바 환경이 구축된 공간에서는Windows 64-bit with JDK 8 included 으로 돌리는게 편함 .&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;d4f525ef8f2adbde4816c829181cea3e98f9d3de&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[파이썬 정리 -02]]></title><description><![CDATA[시작하기에 앞서 파이썬에서 웹 크롤링하는 것에 대한 정리이다.    등 다양한 라이브러리를 사용하면서 진행해보았다. requests URL에 요청을 보내고 그에 맞는 응답을 해석하고 크롤링 해보았다. flask…]]></description><link>https://choihwan2.github.io/python-post-02/</link><guid isPermaLink="false">https://choihwan2.github.io/python-post-02/</guid><pubDate>Wed, 18 Dec 2019 18:20:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[파이썬 정리 -02]]></title><description><![CDATA[시작하기에 앞서 파이썬에서 웹 크롤링하는 것에 대한 정리이다.    등 다양한 라이브러리를 사용하면서 진행해보았다. requests URL에 요청을 보내고 그에 맞는 응답을 해석하고 크롤링 해보았다. flask…]]></description><link>https://choihwan2.github.io/python-post-02/</link><guid isPermaLink="false">https://choihwan2.github.io/python-post-02/</guid><pubDate>Thu, 19 Dec 2019 18:20:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
 &lt;p&gt;파이썬에서 웹 크롤링하는 것에 대한 정리이다. &lt;code class=&quot;language-text&quot;&gt;bs4&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;flask&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;jinja&lt;/code&gt; 등 다양한 라이브러리를 사용하면서 진행해보았다.&lt;/p&gt;
-&lt;h1&gt;requests&lt;/h1&gt;
+&lt;h2&gt;requests&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;URL에 요청을 보내고 그에 맞는 응답을 해석하고 크롤링 해보았다.&lt;/li&gt;
 &lt;/ul&gt;
@@ -484,10 +1304,10 @@ def render_template(str, **args) :
 &lt;h3&gt;참고링크&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://snacky.tistory.com/7&quot;&gt;jinja라이브러리&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[파이썬 정리 -01]]></title><description><![CDATA[시작하기에 앞서 멀티캠퍼스 3주차 깃 특강중에 배웠던 파이썬을 정리해보자.  정말 간단하게 배우고 있는 중이라 매우 기본적인 내용이 많다. String 문자열을 출력할때는 음수도 사용가능하다. -1이면 뒤부터 시작! List와 Dictionary…]]></description><link>https://choihwan2.github.io/python-post-01/</link><guid isPermaLink="false">https://choihwan2.github.io/python-post-01/</guid><pubDate>Wed, 18 Dec 2019 17:40:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[파이썬 정리 -01]]></title><description><![CDATA[시작하기에 앞서 멀티캠퍼스 3주차 깃 특강중에 배웠던 파이썬을 정리해보자.  정말 간단하게 배우고 있는 중이라 매우 기본적인 내용이 많다. String 문자열을 출력할때는 음수도 사용가능하다. -1이면 뒤부터 시작! List와 Dictionary…]]></description><link>https://choihwan2.github.io/python-post-01/</link><guid isPermaLink="false">https://choihwan2.github.io/python-post-01/</guid><pubDate>Thu, 19 Dec 2019 17:40:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
 &lt;p&gt;멀티캠퍼스 3주차 깃 특강중에 배웠던 파이썬을 정리해보자. &lt;/p&gt;
 &lt;p&gt;정말 간단하게 배우고 있는 중이라 매우 기본적인 내용이 많다.&lt;/p&gt;
-&lt;h1&gt;String&lt;/h1&gt;
+&lt;h2&gt;String&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;
       &lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# 1. 글자 합체&lt;/span&gt;
 
