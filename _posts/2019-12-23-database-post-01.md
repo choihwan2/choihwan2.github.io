@@ -5,9 +5,7 @@ tags:
  - sql
  - database
  - TIL
-keywords:
- - database
- - sql
+ - oracle
 ---
 
 
@@ -18,13 +16,23 @@ keywords:
 
 
 
+## 환경설정
 
-## 생성과 실행.
+* [Database 18c Express Edition](https://www.oracle.com/database/technologies/xe-downloads.html) 이전버전 다운로드.
+
+* [SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html) 써도 되지만 이클리스에서 제공함. 
+
+  자바 환경이 구축된 공간에서는Windows 64-bit with JDK 8 included 으로 돌리는게 편함 .
+
+
+
+
+## 생성과 실행
 
 * 관리자 계정 접속.
 
 ```bash
-C:\Users\student>sqlplus system/비밀번호
+C:\Users\student>sqlplus system/password
 
 
 SQL*Plus: Release 11.2.0.2.0 Production on 월 12월 23 10:10:49 2019
@@ -119,9 +127,9 @@ from emp;
 --distinct 중복제거.
 
 
-
 select sal, sal*12
-from emp; => 연산식도 사용가능.
+from emp;
+--연산식도 사용가능.
 
 select sal, sal*12 as "연봉"
 from emp; 
@@ -151,23 +159,24 @@ select user
 from dual; 
 --로그인한 유저의 정보.
 
---nvl 로 null 형식의 값을 초기화시켜준다.
 select empno, ename, nvl(to_char(mgr), '<<CEO>>') as "매니저 코드"
 from emp;
+--nvl 로 null 형식의 값을 초기화시켜준다.
 
---문자열 삽입
 select ename, job, ename||'  '||job
 from emp;
+--문자열 삽입
 
---간단한 값 표시.
 select 20*20*4
 from dual;
+--간단한 값 표시. 가상공간 dual을 사용
 
 --row 제한을 걸때 where 절
 select ename, job, deptno
 from emp
 where job = 'MANAGER';
 
+--대문자로 통일
 select ename, job, deptno
 from emp
 where upper(job) = upper('manager');
@@ -176,25 +185,27 @@ select ename, hiredate
 from emp
 where hiredate >= '82/01/01';
 
--- <>은 != 의 의미이다.
+
 select ename, hiredate
 from emp
 where hiredate <> '82/01/23';
+-- <>은 != 의 의미이다.
 
---between and = between 은 =이 포함된다. 작은값이 꼭 앞에 오기.
 select ename, sal 
 from emp
 where sal >=2450 AND sal < 3000;
+--between and = between 은 =이 포함된다. 작은값이 꼭 앞에 오기.
 
 select ename, sal 
 from emp
 where sal BETWEEN 2450 AND 3000;
 
---in 연산자
+
 select ename, job, deptno
 from emp
 where deptno = 10 or deptno = 20;
 
+--in 연산자
 select ename, job, deptno
 from emp
 where deptno in (10,20);
@@ -229,8 +240,8 @@ select *
 from emp
 where hiredate like '%81%';
 
-SQL> purge recyclebin;
 --쓰레기값을 날려보자
+SQL> purge recyclebin;
 ```
 
 ### SQL 명령어 분류
@@ -238,7 +249,7 @@ SQL> purge recyclebin;
 - Query : SELECT
 - DML : INSERT, UPDATE, DELETE (롤백이 여지가 있음.)
 - Transaction Control : COMMIT, ROLLBACK
-- DDL : CREATE, DROP, TRUNCATE, ALTER (롤백의 여지가 없다.)
+- DDL : CREATE, DROP, TRUNCATE, ALTER (**롤백의 여지가 없다.**)
 - DCL : GRANT, REVOKE
 
 
@@ -259,13 +270,3 @@ SQL> purge recyclebin;
 > 처음 시작시 데이터베이스의 생성(oracle에서는 스키마 생성)과  흐름을 이해하는게 부족한 것 같다. 
 >
 > 특히 select 문의 like 부분은 한번씩 와서 확인할 수 있도록 해보자. 나중에 도움이 될것같다.
-
-
-
-## 환경설정
-
-* [Database 18c Express Edition](https://www.oracle.com/database/technologies/xe-downloads.html) 이전버전 다운로드.
-
-* [SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html) 써도 되지만 이클리스에서 제공함. 
-
-  자바 환경이 구축된 공간에서는Windows 64-bit with JDK 8 included 으로 돌리는게 편함 .
