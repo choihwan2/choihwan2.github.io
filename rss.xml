@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Happy Hwan - rss]]></title><description><![CDATA[Hwan Log]]></description><link>https://choihwan2.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 04 Feb 2020 08:38:29 GMT</lastBuildDate><item><title><![CDATA[Spring 정리 -02]]></title><description><![CDATA[시작하기에 앞서 2일차 스프링과 3일차 스프링 정리 AOP(ASPECT ORIENTED PROGRAMMING) aspect…]]></description><link>https://choihwan2.github.io/spring-post-02/</link><guid isPermaLink="false">https://choihwan2.github.io/spring-post-02/</guid><pubDate>Tue, 04 Feb 2020 17:24:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Happy Hwan - rss]]></title><description><![CDATA[Hwan Log]]></description><link>https://choihwan2.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 05 Feb 2020 00:18:33 GMT</lastBuildDate><item><title><![CDATA[Spring 정리 -02]]></title><description><![CDATA[시작하기에 앞서 2일차 스프링과 3일차 스프링 정리 AOP(ASPECT ORIENTED PROGRAMMING) aspect…]]></description><link>https://choihwan2.github.io/spring-post-02/</link><guid isPermaLink="false">https://choihwan2.github.io/spring-post-02/</guid><pubDate>Tue, 04 Feb 2020 17:24:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
 &lt;p&gt;2일차 스프링과 3일차 스프링 정리&lt;/p&gt;
 &lt;h2&gt;AOP(ASPECT ORIENTED PROGRAMMING)&lt;/h2&gt;
 &lt;ul&gt;
@@ -479,9 +479,46 @@
 	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
-&lt;p&gt;이렇게 같은 url 요청이여도 그것이 어떤 방식으로 가냐에 따라서 다른 jsp 페이지를 요청 할 수도 있다는 것을 기억하자!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Spring 정리 -01]]></title><description><![CDATA[시작하기에 앞서 수업이 좀 진행되었지만 Spring 을 다시 정리하고자 글을 남긴다. 혼자 보기 용으로 쓴 글이라 매우 난잡.. spring_test 스프링 파일 정리 Maven: 프로젝트 관리 도구(?) (하는일: 구조를 만들어준다.) class…]]></description><link>https://choihwan2.github.io/spring-post-01/</link><guid isPermaLink="false">https://choihwan2.github.io/spring-post-01/</guid><pubDate>Fri, 31 Jan 2020 17:24:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
+&lt;p&gt;이렇게 같은 url 요청이여도 그것이 어떤 방식으로 가냐에 따라서 다른 jsp 페이지를 요청 할 수도 있다는 것을 기억하자!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Spring 정리 -01]]></title><description><![CDATA[시작하기에 앞서 수업이 좀 진행되었지만 Spring 을 다시 정리하고자 글을 남긴다. 혼자 보기 용으로 쓴 글이라 매우 난잡.. Spring 스프링의 기본구조 - 코어 위에서 다양한 동작을 독립적으로 사용가능하다 (ex: AOP와 DAO…]]></description><link>https://choihwan2.github.io/spring-post-01/</link><guid isPermaLink="false">https://choihwan2.github.io/spring-post-01/</guid><pubDate>Fri, 31 Jan 2020 17:24:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
 &lt;p&gt;수업이 좀 진행되었지만 Spring 을 다시 정리하고자 글을 남긴다. 혼자 보기 용으로 쓴 글이라 매우 난잡..&lt;/p&gt;
-&lt;h1&gt;spring_test&lt;/h1&gt;
+&lt;h1&gt;Spring&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;스프링의 기본구조 - 코어 위에서 다양한 동작을 독립적으로 사용가능하다 (ex: AOP와 DAO만 사용 등등)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5824bae3431d74442cfe4c799f7086ce/a5ace/Spring_basic.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 52.933673469387756%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACOElEQVQoz22SSW8TUQzH85E5IQESVCAk2nJDiFMLB5QmIUmTJpl9MkmTyWzZ96VtlmYhFCG+wR8/T6EcerCex2P/n/3zi4xmLqY3PtxAR8VWMSG/3Suj1SuhN6rCqxuouQZGMwedwSXFy+x7dR3Vms61g0kNk2sP0dgJIstNB9sfQxJUUSzlcLvrISdFkcx8YdFWtwSrnMfNqols/isS6dP7uAWjeEG1AwiN/a8x3rx9hkh/bGN85cF2ZehmBvPbJhVYCJoGrhZ1jmvGOaZzn4X8po7ZPEDVLaBo5fhbNCC6P3p/gIikxqGZSViXWajaBUxKMswsJ2tGBrl8AlW7CFVP84WiK53i59ko/HoZQctAInWC4bSGw+NXiIyJ4fWyAcdXWUz4XkOHW9fQH9nUqQnHM9Hul5GXY8jJZ9y1iNccgxlWnAJN1goFV9sudndD+CRSqhSw2nUha3HmJZbyl+Fi3WLORinNKBptk5kL/ot1mxhOcCQEmwRXFOpmCpKS5I0FLZMvEHHTykBW02h0imHnJNroiIWkOd4bVlCn/OHUwcHrp8RQSUDRkshLcXoeJvkpSkz+OwU717eYn8hT9RRbQY7DppHFf0n5xrHTz5/CZyPGWWzavGH2yZb0LUYTLGu+TJ3bWG07zOohP/TFub0b4MPHQ0Q2+z6/Pbbv90b+mk7B12to9EQkgh9gsx885P13Lumin79neHf0Uowco9Hij1gYV3SBJDRJjT2aV1DOYNKynr94gj+qQNTsDuG8WgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Spring_basic&quot;
+        title=&quot;&quot;
+        src=&quot;/static/5824bae3431d74442cfe4c799f7086ce/799d3/Spring_basic.png&quot;
+        srcset=&quot;/static/5824bae3431d74442cfe4c799f7086ce/00d96/Spring_basic.png 148w,
+/static/5824bae3431d74442cfe4c799f7086ce/0b23c/Spring_basic.png 295w,
+/static/5824bae3431d74442cfe4c799f7086ce/799d3/Spring_basic.png 590w,
+/static/5824bae3431d74442cfe4c799f7086ce/a5ace/Spring_basic.png 784w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
 &lt;p&gt;스프링 파일 정리&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Maven: 프로젝트 관리 도구(?) (하는일: 구조를 만들어준다.)&lt;/li&gt;
