@@ -1,4 +1,636 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Happy Hwan - rss]]></title><description><![CDATA[Hwan Log]]></description><link>https://choihwan2.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 05 Feb 2020 00:18:33 GMT</lastBuildDate><item><title><![CDATA[Spring 정리 -02]]></title><description><![CDATA[시작하기에 앞서 2일차 스프링과 3일차 스프링 정리 AOP(ASPECT ORIENTED PROGRAMMING) aspect…]]></description><link>https://choihwan2.github.io/spring-post-02/</link><guid isPermaLink="false">https://choihwan2.github.io/spring-post-02/</guid><pubDate>Tue, 04 Feb 2020 17:24:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Happy Hwan - rss]]></title><description><![CDATA[Hwan Log]]></description><link>https://choihwan2.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 24 Feb 2020 07:46:24 GMT</lastBuildDate><item><title><![CDATA[Hadoop 정리 -01]]></title><description><![CDATA[hadoop 환경설정 1> vm / 리눅스 설치 -yum 업데이트 방지 설정  CentOS-Baserepo 설정  CentOS-Sources.repo…]]></description><link>https://choihwan2.github.io/hadoop-post-01/</link><guid isPermaLink="false">https://choihwan2.github.io/hadoop-post-01/</guid><pubDate>Mon, 24 Feb 2020 16:12:00 GMT</pubDate><content:encoded>&lt;h2&gt;hadoop 환경설정&lt;/h2&gt;
+&lt;p&gt;1&gt; vm / 리눅스 설치&lt;/p&gt;
+&lt;p&gt;-yum 업데이트 방지 설정&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/42bb7a3516ab95f305b1bf4a6b5cd4ab/14e05/ifcfg-eno16777736.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 74.45312500000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAA7DAAAOwwHHb6hkAAADkUlEQVQ4y3WT+0/aVxjG+ZP2n+yHJUu2+duyLd3azaW1tRcvGYpirYiIIl+EiiByUfECKGCjVuvd6gTRiogX0I1LhXoBnX72hXSLW7YneXLOyUk+532fc44km4pzkkySTCT4kMlwcXbG+ekp11eXcP0HN1dX4vyWL/+5vrq85DKf5yqfI53NIPnqsYz7tQ3cqVFyr07FE1Un1YKJKn0PFcZeavucqNxuBN8Ygn+MDt8obaNu1K4R1INDKKw2pIKBijaBu3Ilkk9KSrlTVUPJUznW0VeYR8YwjYxidHsxesexTE4xND+Pe2kB/+oK/TNTtPg8NHpcyAecVJoslHXo+bq+mU8fSpF8ViblJ5kChd7I9laA4IboUIBQcI3N4CqboXWi4S12w+8IBYKi10mI8eQuzokcHqJyeWlxeqjtdvCjQofkmyo5FU1KDFYrO3sHRA/jxH9LkH7/noyYSSabvTVmSYh5X1xcUFA8mULjmxbbF6seGOep4EBS/kKJ0tCJ3ekgEomQSqW4ubnh/5QXLyCXyxXnsUQanX+Nds8Krc45ZOZxJLIOLXqriSHPING9PY6Oj4sVFKD/dkGFvb+A8cQJ7a4QGvemCFyjwTqLpM6gR9fXw6B3mN1otOiM+Hxu6zawACtUWdBxKovOs4PGFaZteIMG2xKSik6dePUmelxO9vb2icXjpNJpzs7POTs7L47XReB1EXIurk8+Hpg8OcU6ERWhYQTPBs/tC0i+b1XzWMxQ0+8gHosVM8x/bOk/M8zl/+4g8+GU4Tc7dPtDGH1rNPfPiMAWFc/0OtR2K0urq8wtr4heZnZxkfmVt0wvLBPc2iS8u81B7IDI3i77R3H2j5MEdo6wT24juAJoXSvIrVNIfm5WUidW2GoxojIZkGs7kLW3U9fRwZP2TkrVekx+D5sHQQ7SMXZFB45ieFejOGYiaIZDNNre8tw2T7nWi+RefSNSTTsqo54uh4XOXhOC1YLCbOKXXhvP+gawzE0SiG3zLhkj+PshU+EdbHMhOn1Bas2LSI1vqNS/4ju5+A6/fFRFaa2c6mYFTYIGpV5LU5eOGqOB+91dlDv70U758Kwv4t9ax7PxK71LywgTC9T3vaZMGKNM4+Kuws4XleJP+fxBNd9WynhY/0KEKqnXaJAJWqQi7JG5myf9dtT+Ucwzk1hmp+mefo0wPkHziI+qnmHKdX08UPfyQ+NLSipV/Ak08dgb90BEeQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;ifcfg-eno16777736&quot;
+        title=&quot;&quot;
+        src=&quot;/static/42bb7a3516ab95f305b1bf4a6b5cd4ab/799d3/ifcfg-eno16777736.png&quot;
+        srcset=&quot;/static/42bb7a3516ab95f305b1bf4a6b5cd4ab/00d96/ifcfg-eno16777736.png 148w,
+/static/42bb7a3516ab95f305b1bf4a6b5cd4ab/0b23c/ifcfg-eno16777736.png 295w,
+/static/42bb7a3516ab95f305b1bf4a6b5cd4ab/799d3/ifcfg-eno16777736.png 590w,
+/static/42bb7a3516ab95f305b1bf4a6b5cd4ab/2a3d6/ifcfg-eno16777736.png 885w,
+/static/42bb7a3516ab95f305b1bf4a6b5cd4ab/ae92f/ifcfg-eno16777736.png 1180w,
+/static/42bb7a3516ab95f305b1bf4a6b5cd4ab/14e05/ifcfg-eno16777736.png 1280w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CentOS-Baserepo 설정&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7cb604ce1a0a4296b13fa572c76fe8c3/14e05/CentOS-Base.repo.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 76.71875%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACUklEQVQ4y32Ue3PSQBTF8/2/gOKU/6otSlXAQrUVcBinUKQkgJX3AOExEEJ4hPAo5HjvQhAo48782GWzOffcu3ciFQsFlEtFVCplogJVVdFQG2h32qjV6yiVSijTfmVLrVYTz1rtFtrtNup0plqtCh5lGZKSyyBJi/TvHNKKjEz2EUpOQb7wBwVCzmRoL0P/83jKP4m5UCrsKJKZYrkoZn4u9fp9dHsa9IGBycQkJgeMmfEYlmUJptYU0+kh5tTEbDZDt9uFxD+dTge9Xg+apqGv69D1AXq0HlCQ4XCIgbEJZtv47+iTOYkPs4PRluFoBNM0MZ/PsVgsBMvlUsw2KZ5ivV4LQY0F2REffn5+3sEHnIMOq9Vqt8/D3rPrrIVgvdFAs9USdhmdArBLwxgSm5S5llyjGblmYUfkWFwIqs2mqNGC0nJS45c5ZXZ7athHxXwhKBySM5NujN3M5wuBRcLiZmnfsmYiEAc8FjoQZDG+XRYaiVQ3aRrby2JBDsTunXoeC70Q5JRFn83+udivkfOSI3aKXdvUG6pIuct9SBui/ygAY5BTcUE0c0Cu6/Korvaew9FoDEkjIZPSXdPtLbnn9rD5RtnBdnZYi//Ue6L/7M2axtScQHJ7PuLtJz+8X4L4HLqBNxCAx+/H5fU1zoNBeKMRfI3fI/yQQDj5gNtEAr7ID/iiMXhuvuPqNop3gW8494Xw5tIH6eKDF3fhCH7ex5FMpfDec4FXLhdcZ2d47XYjHItBztGHgz4ScjaL9JaUkhEk0zJ+pRXEk0lchaL4C/jbZZJbePAaAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;CentOS-Base.repo&quot;
+        title=&quot;&quot;
+        src=&quot;/static/7cb604ce1a0a4296b13fa572c76fe8c3/799d3/CentOS-Base.repo.png&quot;
+        srcset=&quot;/static/7cb604ce1a0a4296b13fa572c76fe8c3/00d96/CentOS-Base.repo.png 148w,
+/static/7cb604ce1a0a4296b13fa572c76fe8c3/0b23c/CentOS-Base.repo.png 295w,
+/static/7cb604ce1a0a4296b13fa572c76fe8c3/799d3/CentOS-Base.repo.png 590w,
+/static/7cb604ce1a0a4296b13fa572c76fe8c3/2a3d6/CentOS-Base.repo.png 885w,
+/static/7cb604ce1a0a4296b13fa572c76fe8c3/ae92f/CentOS-Base.repo.png 1180w,
+/static/7cb604ce1a0a4296b13fa572c76fe8c3/14e05/CentOS-Base.repo.png 1280w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CentOS-Sources.repo 설정&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/440e6940a36775f4a85b2f8b9d71aba6/a1c25/CentOS-Sources.repo.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 77.14061272584446%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAB8klEQVQ4y41U23KiQBDl///DlB+wtVWb5GmffHATBQRhFTEqIHfFC3g76R7AUrLlpqu6emaYPnP6hjQejWCNR7DtCSaTCRaOI9TzPEynU4wtCxadW5Wd2DZc173qbDYTfuzfVxRIstrDn947eqpM9g2y8oae3MPQ0DAcanjv96HQN93QoQ91YY2/xp2aI7NcmwYkL4jgLAO4ZOMkRZatsV6XmmXZdb3ZbLDb7bDdbr8of2PL96UoiuAHPuI4RkSaEGicJGKdpinS1Urs+fLlcsEjOZ1OkMIwIpAECTnXgAyyJTb7PEdeaVEUOJ/PAvRfynI8HiGtyLl24oPD4SBsLU2n/wLOFwtRVQ4po1xwvlaknJP9fi+YNcGacgfoLZciVE4sO+c3Yd4yvXVsgt4B2tMPfFAvBUEgGLJyGphhnhclS0rDtxna1Ly+H5Rlr8A45Ntwmzl8COjSRCw5bGof0XdV7xXF4VokbodHBflSFA6Xc7YjVnWjMltmKapOgI/AakC+KzmOSwx9BGEowq1ZCjB6sS7Ud4T7VORwNp/TtAQICdShgZ/T3qmG3/fLKarHjx/k9PDj9TkPBk8V76Xnl2d0u10o9KfQdR2/fv7A01ML7XYbrVYLnU4HpmlC0zTxnZXvDgYDqKoqznmtyH28/u7gExVPd9qrNCgcAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;CentOS-Sources.repo&quot;
+        title=&quot;&quot;
+        src=&quot;/static/440e6940a36775f4a85b2f8b9d71aba6/799d3/CentOS-Sources.repo.png&quot;
+        srcset=&quot;/static/440e6940a36775f4a85b2f8b9d71aba6/00d96/CentOS-Sources.repo.png 148w,
+/static/440e6940a36775f4a85b2f8b9d71aba6/0b23c/CentOS-Sources.repo.png 295w,
+/static/440e6940a36775f4a85b2f8b9d71aba6/799d3/CentOS-Sources.repo.png 590w,
+/static/440e6940a36775f4a85b2f8b9d71aba6/2a3d6/CentOS-Sources.repo.png 885w,
+/static/440e6940a36775f4a85b2f8b9d71aba6/ae92f/CentOS-Sources.repo.png 1180w,
+/static/440e6940a36775f4a85b2f8b9d71aba6/a1c25/CentOS-Sources.repo.png 1273w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;프로그램의 소프트웨어에서 자동업그레이드 켜져있는 것들을 다 꺼주면 된다. + 소프트웨어 공급원에서 확인도 안함으로 변경하기!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2&gt; selinux 방지설정&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/72683ed4ccadffb4e1cf79f863e19d9e/14e05/selinx-disabled.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 77.421875%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAA7DAAAOwwHHb6hkAAADnklEQVQ4y02TaU8bVxiF5+/0p1Tqp1ZV+6Xtl1aNopYgAUkNBEgAgV12LxgDxiteMFBsA20gIkDKUqUtOJTN2BhjB4ONwYDNztM7QxN1pKM7c6X7vOecq5E+K6lD02kiEokQ294mmUySSCTYjm0r2onvsLu7+2E/9e4dI3PztPoD6EYCaJweqrrMqLTdfF/fhvTRF49o7bVweXlJOp0mtb/PvtBeKqUonclQKBS4vr5WxM0NroV5Hg8NUekdpMLuodhg5uv6dj4uqUX6pPg5TWYXhfNzjo6PFcmQ7NERuVyOvIBdXV1xcXHB7e0dCE2tr9Ezv0jnyxm0Yy/RBSaotw/zQ0sv0jeVanRiinxIcXdwoDhLpe5dnotBMiiR2GVra5NoLMrK2irLKyH+Ci2zurFBLB5nKxrh1dwCUolGi23YL5LccHiYVXQgomezWcVlPp8XdVwRjoT5OxRiPbzBmnAYDq+xGV4XPUfYjm4RjYb5c/ktUk1nNwPj44qTdDqjuJSBspTo2SMx5JBM5pDTswInp6cciypyuZP7io6OyZ2c3idMZwWw24xvcgLu7jgQcTPisLzKF1Qo5EV350p/8iBZcXHj71Ok/xt8LMDX1zLwEKnM1Et3IEBKhsgw4SR1kFbe0/JB8S07Te2nhMvMB7C8pwwXQNn1rahsTwZ+p+3iSZ+N+n43z639lGr7eKrvRWt3UGe0oOqw4Qj62dnd5uwsr/QqR5YjvpcIpzyZbA7pQXsnFX1WGl1uGh1uyg0WBdhidVBjtKEyuPCISuLJGBfnF5wKN6cnJ0od+fwZl6KS/Jno8PKC5F4KqahVT53ZgtbtwuTz0W530WLpp8nmpsri4yfrMEOL8/wTW2M9HuFtLMxMaAX/7yHck0t0j7xBNzCH1jtNtSmA9LChhRqDiTaLhR6Ph06nE72I32DrR+X08cTnx7nwmuVkhNVMkqX9BBObURxzG+jGV6mw/sFT6zylxknxt3iRPi99xsNaDRUt7ai7TDT3mtFYrVTbnRQ5XJSN+DHOTuEPvWF0NcQvoSUsC8LV5CJV7lcUG3/lkT7Atxo3n6qMSF+W1fKgWsNjdRs17Xqedeio7NCjMvVQJODlAwMYJl9gn53G8XoWy/QMxhdTNI/8RpXDT3nPIKV6Nz82W/iqWofU0NRGd58dk9mG0+NDpzfQqFaj1mj4uakJj9fL6Ng4w4Egg/6gWEcZCQr9b/UHxwgEg3TZvPwLPkjbXLdEjZ8AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;selinx-disabled&quot;
+        title=&quot;&quot;
+        src=&quot;/static/72683ed4ccadffb4e1cf79f863e19d9e/799d3/selinx-disabled.png&quot;
+        srcset=&quot;/static/72683ed4ccadffb4e1cf79f863e19d9e/00d96/selinx-disabled.png 148w,
+/static/72683ed4ccadffb4e1cf79f863e19d9e/0b23c/selinx-disabled.png 295w,
+/static/72683ed4ccadffb4e1cf79f863e19d9e/799d3/selinx-disabled.png 590w,
+/static/72683ed4ccadffb4e1cf79f863e19d9e/2a3d6/selinx-disabled.png 885w,
+/static/72683ed4ccadffb4e1cf79f863e19d9e/ae92f/selinx-disabled.png 1180w,
+/static/72683ed4ccadffb4e1cf79f863e19d9e/14e05/selinx-disabled.png 1280w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;3&gt; 방화벽 해제(root)&lt;/p&gt;
+&lt;p&gt;systemctl status firewalld 확인후 해제&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/768c5678756e9a34acd1e3bd7394cfff/14e05/firewall_disabled.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 67.65625%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAA7DAAAOwwHHb6hkAAADgElEQVQ4y42TaU9bVxCG789qv/ZTv1RVpCpVqkiVglrUVIUgCDUg1hQSm9U4GDBgvGH7egPbrAUCJaUhbkA4YRFLDJjNOzYGAqjR02M3P6AjvZrR6N7nzHnvXOlucTmfP6jgy6InfP34Gd/WdnCvqYt7rToe9Fkotbup8/qo945QO+JB4XBQNmSj3GylrN/Iw45u7jc089XjBj4rKEMqfdbJd1UtFDY+p7S9j197TOJBC/Mrq6y9D7EW2mNDaHl9ncC7d6xsbrK2u8vu4RGh42O29/ZZCLyhUKXlTmUzUlFTJxUdOhp7BlGbbTSL01tHvGyHQsSjERKJKLHYKfFYjFg0SiKeyNdXl5d8uLoiF2fpDIruIQpU/Ui1Gh2dBjN6WcbsdtE/4kI/O0X4NMJ5NkM0JWDpCKn0mXgxTfbiggsBuxKwXL69vSWeTPGbeYwijQtJbbRgcjrwjI7g9LmRJ/wYp6fYF9fJZDJiwlRe8USCVCpFMpnM58tP0NvbGyLxJCp5AcXANFKfw4ndN4x30o/TP4xzchzD+Dgb2zuEw2GOBPhA5OOTE05OT4lEovmcOyw3XS5iiTOU9iVqzItI3S4XllEv9jEfRreHwWEfeu8YJ8Kv3AS5K2azWa6vr/OAm5xubvP1Px8//gdMplHKf1NnfY2ktMtohz10C1iLSUZlkOmWPZwL0P+NVDpLizNAg20JqXzQTMOQTL3JTolmkDL1AG2iFz46yk+W+xDn5+f5+uKTcvV5TqKf8zJ0cIjas0ij/BKpQm+iyWpHZXVQJXawsmsQlei1mxzU98r0eycI7gRJpKPEM3EOEie82dlnPriH79Uu+ok1ev3LtLpfCw/nkBr0RjpsNnRuNx1mOy0GsYtCDUYXxb1OtJMveHu4RfQqyemHM3bO4vyxdcxwIIx+JsRTeQ2lc5Ua40t+eT4u9lCro9VgQCf2UDtkpcsqfDTZqLa4xG/nRT0zy1/vN1iPHvI2esSr8D7u5S30c5uo3KtUDS5RZ1qkWDPO/Sc2pEdP26nt7KK1X4/aYKTNKCywWCk1CXm8tL2YYSQYYGZrnamtDTzBIPrFFdSTASpN85TpfqdEO0qB0sYdRQ/SNyU1/FDdyKPGZirbNCjUXTzWDfDTgIEfBbh+1E/P/CwDfy7Qt7CAZmYOpX8axZCfh91OCtutfN+k5261li9+buJfQS5879xKtCMAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;firewall_disabled&quot;
+        title=&quot;&quot;
+        src=&quot;/static/768c5678756e9a34acd1e3bd7394cfff/799d3/firewall_disabled.png&quot;
+        srcset=&quot;/static/768c5678756e9a34acd1e3bd7394cfff/00d96/firewall_disabled.png 148w,
+/static/768c5678756e9a34acd1e3bd7394cfff/0b23c/firewall_disabled.png 295w,
+/static/768c5678756e9a34acd1e3bd7394cfff/799d3/firewall_disabled.png 590w,
+/static/768c5678756e9a34acd1e3bd7394cfff/2a3d6/firewall_disabled.png 885w,
+/static/768c5678756e9a34acd1e3bd7394cfff/ae92f/firewall_disabled.png 1180w,
+/static/768c5678756e9a34acd1e3bd7394cfff/14e05/firewall_disabled.png 1280w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;rpm -qa | grep jdk 를 하면 자바가 잡힘&lt;/p&gt;
+&lt;p&gt;yum remove java 를 하면 삭제&lt;/p&gt;
+&lt;p&gt;후에 다시 쳐보면 잡히는게 없다 그후에 새로운 jdk 를 설치하자.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;jdk 설치는 스킵! 압축을 풀고 환경변수를 설정하자!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;4&gt; hadoop 설치&lt;/p&gt;
+&lt;p&gt;/root/다운로드/*&lt;/p&gt;
+&lt;p&gt;/home/사용자명디렉토리/다운로드/hadoop&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;우리는 완전분산 모드로 하둡을 구성한다&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;가상머신 세개를 더 만들어주면서 network 에서 새로운 키값을 생성한다음 넣어주자.&lt;/p&gt;
+&lt;p&gt;slave 1&lt;/p&gt;
+&lt;p&gt;00:50:56:3F:87:A4&lt;/p&gt;
+&lt;p&gt;slave2&lt;/p&gt;
+&lt;p&gt;00:50:56:2E:92:37&lt;/p&gt;
+&lt;p&gt;slave3&lt;/p&gt;
+&lt;p&gt;00:50:56:20:EE:19&lt;/p&gt;
+&lt;p&gt;gedit /etc/sysconfig/network-scripts/ifcfg-eno~~~ -&gt; 여기서 아이피설정&lt;/p&gt;
+&lt;p&gt;hostnamectl set-hostname [호스트네임]&lt;/p&gt;
+&lt;p&gt;systemctl restart network 로 네트워크 다시 설정하고 조금의 시간 이후 다시 변경됐는지 ifconfig 로 확인해보자.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/91c3c55e608749a812ca9a4dfdd9bcaf/14e05/master_host.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 80%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAA7DAAAOwwHHb6hkAAADiUlEQVQ4y52S+0+bZRTH3z+Ae6uMS7lYWqYjThejMf5i4n7xusRETbZMzYzRZCRAhAHLqMOVhYGEsc0x2MLGbZqNwViGgTjktlk2boVe3nJpqUBRaOvGCkOE8vHtCyTul2k8ySff5zzPeS7nnEe43d3One5uOrq6+cVgwNB7V6KXoSEjxuHh/8zg4CBd0j7h6YgwlGEhPBUeKhOpDCdSEbbhS/PK0GAUwUFEBG0ijRUhwTIRoSGESxoeEiTHKySEDw7mciBTx8eZx/j8cCGp+SdJKzhNRlE5aSUVZJ69iK6qDn1NPQU1deRfrEF34RK6iiq+/u48Od+eJvXoCT7L1bM3PQ8hZk8Ge9KO8soXRbyXe44j55spa+ygpLmb4lYDp+4Yqbg7RL3RxBWLKKmZqntDVN3u50xbD5nVzXxaUsPurFLUH+UgvPCJjvcPlbIvr5yssnoGRiw8fODF657nD49bVt/CA5YXfaw8eiTz59ISrP6FxTlDQWMnh6t/ZP+JOl49WILwrnRy1sla8isbKP+hBZvdycrKCr7FRRYWHsqs+f0EbH19XcbvX5d9k/M39Nf70Tf08uWZFt44VIXwfctPjI2PYx0dRZRwTNqZdE4y45rB4XAwYZ/g16kpXLMuXC6XPO+anWV6apJbhmEKrtvQXzORfqGHN49cQWhoa2d0zIY4JmKxWrCNmrGIZsYmpMMdE5IvYhVF7NLY7rDLjEuXTE9P0tkncrzJjr7JxleX7vFWXhNCm2EAn8/H3Lwbj9f7j7T8cqoB3fK3WF1bk1MWnR6Kb0xQdMNGVm0vb+saENr7hqXi+FmSir28vByoFP9m/vWNmPEZL2UtNkpbTOTU9vBO3mWEHqP1saCtFz6JraZYnW6OXTXxzdVBUit/Znd2HULXgEleXF1dfSytJ7G2ttH1Efsc2dV9ZFR2sfd4I6+lViB09Jv4vzbi+J0DZa3sK7zG6+nnUH+Yj3DzVide6QPPzc3j8XiwSx00m81YrVZsNhuz0hfxSs0KrG3hdrtZuH8fozhO8eVWCmtukn2qnv15ZxGitkUStS2K2NhYoqNjUCoUKDZRKpXExMQQFxcnoSJ+UwOoVCoS4uPRqhPRSARUnZiAoEpKQb0jhcg4NTtf2kXKrpdRJ2lITk5Gq9Wi0WhIkvzohCSUKjWR8RrintESr9ZKqiExaTva7Tt47vkXeTZlJ38DVpO+hEa8lz0AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;master_host&quot;
+        title=&quot;&quot;
+        src=&quot;/static/91c3c55e608749a812ca9a4dfdd9bcaf/799d3/master_host.png&quot;
+        srcset=&quot;/static/91c3c55e608749a812ca9a4dfdd9bcaf/00d96/master_host.png 148w,
+/static/91c3c55e608749a812ca9a4dfdd9bcaf/0b23c/master_host.png 295w,
+/static/91c3c55e608749a812ca9a4dfdd9bcaf/799d3/master_host.png 590w,
+/static/91c3c55e608749a812ca9a4dfdd9bcaf/2a3d6/master_host.png 885w,
+/static/91c3c55e608749a812ca9a4dfdd9bcaf/ae92f/master_host.png 1180w,
+/static/91c3c55e608749a812ca9a4dfdd9bcaf/14e05/master_host.png 1280w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;그후 셋다 systemctl restart network 후에 master에서 ping 으로 확인해보자&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/99a95bfbd7c80b68355f7226cfd4b6d3/14e05/network_ping.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 80%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAEFUlEQVQ4y22U61NTVxTF71/Tf8Qv7XSmry+tOjp1xHG0KFE0EpIgj5ACAUEJT4MIJIQYQoAQIAR5iFAhDQ+BUagGYyJ5ERMI8pL660ls+6HTM7Nmn3vvuevuvfbaV0rEgmxFIvh8PhLxOHu7KXZ3djg+OuTTxyP+FPH48D84Oso8T+Po4ICD/X0O9/aIbyeRfsgt42pxFd/nlnO5vJUbegvyRhs3DXZyH/ahsg6jGxqndnRSYIJq1xgVTjc6h4tK+xClJhuKxnZu1rZyXqNH+uJkPl9nF3FCVsO3igYuVZmQG3rJedDHNYsL5eAkJSOT3JmcRj8zS83UDBWPpyhxuFFaHOR29HKpvpMfSxs5cb0C6ctr1WSVNJFd2cEtfRe/eZeIRSOEQiHC4TChcIhAIEBEyLL34QO7KSHJ7i57qR2ml1Yp7h2nzD5OXms/P+s6kE4XNHK73ozW0ENNRz+exWVisRjRaCxDkt7vC43+by38sYFm4BnlA3NorE/4pb4fSVbVRr3ZQZPFSZvdhXdpOUMUDkeICrJINEpsaytznUgmSSQSbMXfC7pPeNf9aAdWBOEqpT1ebrZOIuU1dFFjHqCtz42x383S6kt2RJfTJOmXk4IkJcqMv39PcntbkMXFPvGZcC1AoW2digEfGtsqCpMHSWGwUS06aXCMcb93lPnlF8TjW5nM4vHPJKm/dTtK2+X4+N+SF9eDaHo2BOFbtPZ18jsXkK40Wyk0O6nqGaWsc5gnc4uiIZv4A0E2Q2ECwXeiMRERg5ms0zKk7x8Lj675I9wb8nPH6Rc2WkPZ5UU6dddEdoudPOMQOc19eFbWRDUf2f+wy8fDfWHkfREP2N7eIbWTIpkQEghJ0uttKEbL2AZ1I68F8Sq3LbNIZ6rbkbXYUJucqNqcNNpGsbqeCkzRNTyDxe1hYn6FV4E3vIuEeBN6x6vNMMsbIUbnfdS5fOj616joey6SmkG6UNVKvsFKeaeD6kfDKJvs3Ki1cqPeTlatgzO14iPjHp5v+vElt3iRiDL+Okj79AYNj4VtRFPU5mWUxjku1rqRzpU2kKfvQPvgEfeEfapNDqrMQ6jbnchMbq50T2B4tsBc0M+CyHBW6Nv/8g33p1+hG3xJbqsX+cNZchrHOFnajfSNmOHzxXquVzZT1GCiqKkTVbMlI8PZB3Yu2kbQTTzFvLBA98oKnYvPqZuep8zl4brxCef1I2TdHeDUrxa+kjchfSfTcDa/khxtHXJdk5iYLsqMvZRYB8nrGUY9OEbD02eYf5+ny7uIcW4ew5RH/CRmKOoeR2V0idl3INM/4qymBemnc5e4cDWHM1mXkSsVFGp1KJQq1AUFqAT+ibn5BWTfUiNTFIhzhdxS3c5AWVBMYXEpJdpy5OoS/gIANvGpEDR4JAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;network_ping&quot;
+        title=&quot;&quot;
+        src=&quot;/static/99a95bfbd7c80b68355f7226cfd4b6d3/799d3/network_ping.png&quot;
+        srcset=&quot;/static/99a95bfbd7c80b68355f7226cfd4b6d3/00d96/network_ping.png 148w,
+/static/99a95bfbd7c80b68355f7226cfd4b6d3/0b23c/network_ping.png 295w,
+/static/99a95bfbd7c80b68355f7226cfd4b6d3/799d3/network_ping.png 590w,
+/static/99a95bfbd7c80b68355f7226cfd4b6d3/2a3d6/network_ping.png 885w,
+/static/99a95bfbd7c80b68355f7226cfd4b6d3/ae92f/network_ping.png 1180w,
+/static/99a95bfbd7c80b68355f7226cfd4b6d3/14e05/network_ping.png 1280w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;후에 다른 slave로 접속할때 을 할때 비밀번호 입력을 피하기 위해서 암호키를 생성하고 복사해준다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;암호키생성(참고로 root 계정이 아닌 사용자계정인 hadoop 에서 작업한다.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;images/%ED%95%98%EB%91%A1%20%EC%95%94%ED%98%B8%ED%82%A4%20%EC%83%9D%EC%84%B1.PNG&quot; alt=&quot;하둡 암호키 생성&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;암호키 복사&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;images/%ED%95%98%EB%91%A1%ED%82%A4%20%EA%B3%B5%EC%9C%A0.PNG&quot; alt=&quot;하둡키 공유&quot;&gt;&lt;/p&gt;
+&lt;p&gt;그다음 master 계정에서 몇가지 파일을 수정해야한다. &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;images/%EB%A7%88%EC%8A%A4%ED%84%B0%EC%97%90%EC%84%9C%20hadoop-1.21.%EC%84%A4%EC%A0%95.PNG&quot; alt=&quot;마스터에서 hadoop-1.21.설정&quot;&gt;&lt;/p&gt;
+&lt;p&gt;요 빨간 네모들을 하나씩 수정해보자&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;hadoop-env.sh&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;images/hadoop-env.sh%20%EC%84%A4%EC%A0%95.PNG&quot; alt=&quot;hadoop-env.sh 설정&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;export 쪽이 주석되어있을텐데 바꿔줘야한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;masters&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;들어가보면 localhost 일텐데 그걸 마스터 다음의 슬레이브중에 하나로 설정을한다 ex)slave1 으로&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;slaves&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;images/slaves%20%EC%84%A4%EC%A0%95.PNG&quot; alt=&quot;slaves 설정&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;localhost 라고 되어있을텐데 slave가 될 아이들을 넣어준다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;마스터에서 xml 세개를 설정해준다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;xml&quot;&gt;
+      &lt;pre class=&quot;language-xml&quot;&gt;&lt;code class=&quot;language-xml&quot;&gt;gedit hadoop-1.2.1/conf/core-site.xml
+
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;configuration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  	  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;property&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    	    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;fs.default.name&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+            &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;hdfs://master:9000&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+          &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;property&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+          &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;property&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+            &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;hadoop.tmp.dir&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+            &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;/home/hadoop/hadoop-data/&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+          &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;property&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;configuration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+
+
+
+gedit hadoop-1.2.1/conf/hdfs-site.xml
+
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;configuration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  	  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;property&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    	    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;dfs.replication&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+     	    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;3&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  	  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;property&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  	  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;property&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    	    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;dfs.http.address&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    	    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;master:50070&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  	  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;property&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  	  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;property&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    	    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;dfs.secondary.http.address&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    	    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;slave1:50090&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  	  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;property&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;configuration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+
+
+
+
+gedit hadoop-1.2.1/conf/mapred-site.xml
+ 	&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;configuration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  	  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;property&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+   	    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;mapred.job.tracker&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+   	    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;master:9001&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  	  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;property&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;configuration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;scp hadoop-env.sh hadoop@slave1:/home/hadoop/hadoo-1.2.1/conf&lt;/p&gt;
+&lt;p&gt;-&gt; slave1에 hadoop-env.sh 파일을 보내준다. 뒤의 경로에&lt;/p&gt;
+&lt;p&gt;나머지 두개도 똑같이 진행한다.&lt;/p&gt;
+&lt;p&gt;scp *-site.xml hadoop@slave1:/home/hadoop-1.2.1/conf&lt;/p&gt;
+&lt;p&gt;로 변경한 xml 세개를 다 보내준후 source /home/hadoop/.bash_profile 로 변경사항을 적용한다&lt;/p&gt;
+&lt;p&gt;그후 hadoop namenode -format 이라는 명령어로 하둡을 포맷시켜 실행준비&lt;/p&gt;
+&lt;p&gt;start-all.sh 를 실행하여 하둡을 실행한다.&lt;/p&gt;
+&lt;p&gt;그다음 jps 로 연결이 되어있는지 각각 슬레이브들과 마스터에서 확인.&lt;/p&gt;
+&lt;p&gt;이렇게 하둡 설정이 완료된다.. 힘들어..&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Mybatis 정리 -01]]></title><description><![CDATA[Mybatis jdbc 에서 Mybatis로 기존의 jdbc 구조 try{  Class.forName("...") Connection c = DriverManaget.getConnection(jdbc,url,id,pw); sql - 결과 c.close…]]></description><link>https://choihwan2.github.io/mybatis-post-01/</link><guid isPermaLink="false">https://choihwan2.github.io/mybatis-post-01/</guid><pubDate>Sat, 15 Feb 2020 13:12:00 GMT</pubDate><content:encoded>&lt;h1&gt;Mybatis&lt;/h1&gt;
+&lt;h2&gt;jdbc 에서 Mybatis로&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;기존의 jdbc 구조&lt;/p&gt;
+&lt;p&gt;try{ &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Class.forName(&quot;...&quot;)&lt;/li&gt;
+&lt;li&gt;Connection c = DriverManaget.getConnection(jdbc,url,id,pw);&lt;/li&gt;
+&lt;li&gt;sql - 결과&lt;/li&gt;
+&lt;li&gt;c.close }&lt;/li&gt;
+&lt;li&gt;catch (Exception e) {&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;e.print&lt;/p&gt;
+&lt;p&gt;}&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;단점 : 코드 반복 많다. sql + 자바 언어가 섞인다. db 연결 복잡한 정보가 매번 작성되어야한다.&lt;/p&gt;
+&lt;p&gt;해결법 : 1~2 는 한번만 가져다 쓰기 4 는 Mybatis 에게 맡기기 // sql만 빼도록해보자&lt;/p&gt;
+&lt;p&gt;=&gt; db-config.xml 파일에 연결에 관한 작성.&lt;/p&gt;
+&lt;p&gt;=&gt;sql-mapping.xml 파일에 sql 언어를 작성,&lt;/p&gt;
+&lt;p&gt;위에 과정을 거치면&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;xml 설정 읽어라&lt;/li&gt;
+&lt;li&gt;db 연결 객체 가져옴&lt;/li&gt;
+&lt;li&gt;sql 정보도 가져와서 실행 요청 - 결과&lt;/li&gt;
+&lt;li&gt;출력&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;rownum&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;rownum 함수 : 조회 레코드 번호&lt;/li&gt;
+&lt;li&gt;&gt; &gt;= (단, 1 제외) 이유는 데이터를 본다음 rownum 이 매겨지기 때문.&lt;/li&gt;
+&lt;li&gt;employees 테이블에서 11~20번째 데이터 조회&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;
+      &lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; r&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; first_name&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; hire_date
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; rownum r&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; first_name&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; hire_date &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; employees&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; r &lt;span class=&quot;token operator&quot;&gt;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;11&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; r &lt;span class=&quot;token operator&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- 안된다 생각해봐&lt;/span&gt;
+
+&lt;span class=&quot;token number&quot;&gt;3.&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; r&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; first_name&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; hire_date
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2.&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; rownum r&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; first_name&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; hire_date &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1.&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; employees &lt;span class=&quot;token keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; hire_date &lt;span class=&quot;token keyword&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; r &lt;span class=&quot;token operator&quot;&gt;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;11&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; r &lt;span class=&quot;token operator&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- 1. 먼저 정렬을 하고 2. 그다음 생성 3. 그다음 조건을 거쳐서 보기&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;</content:encoded></item><item><title><![CDATA[Spring 정리 -03]]></title><description><![CDATA[시작하기에 앞서 4일차 스프링 정리 Spring Post 사용시 한글 깨짐 해결 web.xml…]]></description><link>https://choihwan2.github.io/spring-post-03/</link><guid isPermaLink="false">https://choihwan2.github.io/spring-post-03/</guid><pubDate>Thu, 06 Feb 2020 11:24:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
+&lt;p&gt;4일차 스프링 정리&lt;/p&gt;
+&lt;h2&gt;Spring Post 사용시 한글 깨짐 해결&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;web.xml 에 이런 코드를 작성한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;xml&quot;&gt;
+      &lt;pre class=&quot;language-xml&quot;&gt;&lt;code class=&quot;language-xml&quot;&gt;	&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;filter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+		&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;filter-name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;EncodingFilter&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;filter-name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+		&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;filter-class&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;filter-class&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+		&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;init-param&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+			&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;param-name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;encoding&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;param-name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+			&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;param-value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;UTF-8&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;param-value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+		&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;init-param&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+	&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;filter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+
+	&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;filter-mapping&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+		&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;filter-name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;EncodingFilter&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;filter-name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+		&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;url-pattern&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;/*&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;url-pattern&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+	&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;filter-mapping&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;왜 깨지는걸까?? 한번 생각해보자&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;컨트롤러 메소드 리턴타입&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;ModelAndView&lt;/code&gt; : 모델 + 뷰 가 둘다 필요할때 (명시하면 그대로, 아니면 자동)&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;String&lt;/code&gt; : 뷰(수동) (return &quot;뷰이름&quot;)&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;void&lt;/code&gt; : 뷰(url 자동)&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Map&lt;/code&gt; : 모델 + 뷰(url 자동)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;어떤 경우에도 뷰가 없을 수는 없다. 이유를 생각해보자.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;컨트롤러 메소드 매개변수&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;HttpServletRequest&lt;/code&gt; : 무언가 전달받아 그것을 Servlet 페이지로 전달할때 사용&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;
+      &lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token annotation punctuation&quot;&gt;@RequestMapping&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/login&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; method &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;RequestMethod&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;POST&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ModelAndView&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;loginSuccess&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;HttpServletRequest&lt;/span&gt; request&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; id &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; request&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getParameter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; pw &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; request&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getParameter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;pw&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token class-name&quot;&gt;ModelAndView&lt;/span&gt; mv &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ModelAndView&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;equalsIgnoreCase&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;spring&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; pw&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;spring&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        mv&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;addObject&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;loginresult&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        mv&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;addObject&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;loginresult&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    mv&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setViewName&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;loginsuccess&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; mv&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;String, int, double, boolean&lt;/code&gt; : form 에서 input 으로 전달되는 파라미터의 name이 같은 이름일 때 사용가능.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;
+      &lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token annotation punctuation&quot;&gt;@RequestMapping&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/login&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; method &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;RequestMethod&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;POST&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ModelAndView&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;loginSuccess&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; id&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; pw&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;//form input name = &quot;id&quot; : 요청파라미터이름이 id인 것으로 전송한다.&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;//요청 파라미터이름과 컨트롤러 메소드 매개변수 이름이 동일하면 자동으로 저장된다.&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;//form 입력 name 값 = 매개변수이름 동일 = db 컬럼명과 동일 하게 만들어서 저장하면 매우 단순해지고 좋음.&lt;/span&gt;
+    &lt;span class=&quot;token class-name&quot;&gt;ModelAndView&lt;/span&gt; mv &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ModelAndView&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;equalsIgnoreCase&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;spring&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; pw&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;spring&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        mv&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;addObject&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;loginresult&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        mv&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;addObject&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;loginresult&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    mv&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setViewName&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;loginsuccess&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; mv&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token annotation punctuation&quot;&gt;@RequestMapping&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/login&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; method &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;RequestMethod&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;POST&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ModelAndView&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;loginSuccess&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token annotation punctuation&quot;&gt;@RequestParam&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; id2&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; pw&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// @RequestParam(&quot;id&quot;)라고 써있는 부분 = &gt; id2 에 자동 저장되게 해줌.&lt;/span&gt;
+    위와 동일&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token annotation punctuation&quot;&gt;@RequestMapping&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/login&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; method &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;RequestMethod&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;POST&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ModelAndView&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;loginSuccess&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token annotation punctuation&quot;&gt;@RequestParam&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; required &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; defaultValue &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;spring&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; id2&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; pw&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; age&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;token comment&quot;&gt;//jsp 에서 age에 입력하는 값이 반드시 int 로 변형가능한 값이면 자동으로 연결해 준다.&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Object(객체)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;
+      &lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token annotation punctuation&quot;&gt;@RequestMapping&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/login&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; method &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;RequestMethod&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;POST&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ModelAndView&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;loginSuccess&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;LoginVO&lt;/span&gt; vo&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 요청 파라미터이름과 컨트롤러 메소드 매개변수가 객체일 떄 객체 내부 멤버 변수가 이름이 동일하면 자동 저장.&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;//컨트롤러 메소드 매개변수 객체일 때 자동 모델로 사용가능하다&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// 모델 이름은 클래스 이름으로 자동 결정이 된다: 앞글자 소문자로 만들고 사용 가능 &lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// 즉 mv.addObject(&quot;loginVO&quot;,vo);  라고 써준것과 같은 효과가 적용됨.&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;//ex)loginVO&lt;/span&gt;
+    &lt;span class=&quot;token class-name&quot;&gt;ModelAndView&lt;/span&gt; mv &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ModelAndView&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;vo&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getId&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;equalsIgnoreCase&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;spring&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; vo&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getPw&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;spring&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        mv&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;addObject&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;loginresult&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        mv&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;addObject&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;loginresult&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    mv&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setViewName&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;loginsuccess&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; mv&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token annotation punctuation&quot;&gt;@RequestMapping&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/login&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; method &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;RequestMethod&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;POST&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ModelAndView&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;loginSuccess&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token annotation punctuation&quot;&gt;@ModelAttribute&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;login&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;LoginVO&lt;/span&gt; vo&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;//이번에는 vo 객체를 &quot;login&quot;이란 이름으로 보낸닷!&lt;/span&gt;
+   &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;LoginVO.java&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;
+      &lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;token namespace&quot;&gt;edu&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;multi&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mvc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;LoginVO&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token comment&quot;&gt;// ID PW AGE 요청 파라미터 입력 저장 변수들&lt;/span&gt;
+	&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; id&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; pw&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; age&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getId&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; id&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setId&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; id&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; id&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getPw&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; pw&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setPw&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; pw&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pw &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; pw&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getAge&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; age&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setAge&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; age&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;age &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; age&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;loginform.jsp&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;
+      &lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+	pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;span class=&quot;token doctype&quot;&gt;&amp;lt;!DOCTYPE html&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;html&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;head&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;meta&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;charset&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;UTF-8&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;title&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Insert title here&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;title&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;head&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;body&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+	&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;loginform.jsp 파일이 보입니다.&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+	&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;form&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;http://localhost:8080/mvc/login&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;post&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+		ID: &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;input&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;text&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;br&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; 
+		PW : &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;input&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;password&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;pw&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;br&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; 
+		나이: &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;input&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;text&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;age&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;br&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; 
+		&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;input&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;submit&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;로그인&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+	&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;form&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;body&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;html&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h3&gt;컨트롤러 매핑된 메소드 매개 변수&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;@RequestParam(value = &amp;quot;&amp;quot;, required = , defaultValue= &amp;quot; &amp;quot;)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;@ModelAttribute(&amp;quot;&amp;quot;) LoginVO vo 또는 객체&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$(&quot;jquery&quot;)&lt;/p&gt;
+&lt;p&gt;${jspl}&lt;/p&gt;
+&lt;p&gt;초창기 ajax&lt;/p&gt;
+&lt;p&gt;asynchronous javascript and xml(초창기는 xml을 써서 xml로 주고받았지만 후에 태그가 너무 많다보니 json으로 많이쓴당)&lt;/p&gt;
+&lt;p&gt;json = javascript object notaion&lt;/p&gt;
+&lt;p&gt;javascript 의 객체는 var obj = {name:&quot;홍길동&quot;, age:21}&lt;/p&gt;
+&lt;p&gt;AJAX&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;요청1- 서버처리 -....&lt;/li&gt;
+&lt;li&gt;클라이언트 동시 브라우저 화면 구성&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;현재화면의 전체는 그대로 부분만 바꿔보자!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ajax클라이언트&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$.ajax(&lt;/p&gt;
+&lt;p&gt;{&lt;/p&gt;
+&lt;p&gt;url : &apos;/test&apos;&lt;/p&gt;
+&lt;p&gt;data : {&quot;id&quot; : &quot;spring&quot; }&lt;/p&gt;
+&lt;p&gt;type : &apos;get&apos;&lt;/p&gt;
+&lt;p&gt;dataType : &apos;json&apos;&lt;/p&gt;
+&lt;p&gt;success : function(server){&lt;/p&gt;
+&lt;p&gt;​			server = &quot;{\&quot;status\&quot; : true}&quot;; //이미 저장되어 있음.&lt;/p&gt;
+&lt;p&gt;​			$(&quot;div&quot;).html(server.status);&lt;/p&gt;
+&lt;p&gt;​			server.status&lt;/p&gt;
+&lt;p&gt;​		}&lt;/p&gt;
+&lt;p&gt;​	}&lt;/p&gt;
+&lt;p&gt;);&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ajax서버&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;@Controller&lt;/p&gt;
+&lt;p&gt;class A{&lt;/p&gt;
+&lt;p&gt;@RequestMapping(&quot;/test&quot;)&lt;/p&gt;
+&lt;p&gt;@ResponseBody&lt;/p&gt;
+&lt;p&gt;a(String id){&lt;/p&gt;
+&lt;p&gt;//처리&lt;/p&gt;
+&lt;p&gt;//결과 응답&lt;/p&gt;
+&lt;p&gt;return &quot;{\&quot;status\&quot; : true}&quot;;&lt;/p&gt;
+&lt;p&gt;}&lt;/p&gt;
+&lt;p&gt;}&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Spring 정리 -02]]></title><description><![CDATA[시작하기에 앞서 2일차 스프링과 3일차 스프링 정리 AOP(ASPECT ORIENTED PROGRAMMING) aspect…]]></description><link>https://choihwan2.github.io/spring-post-02/</link><guid isPermaLink="false">https://choihwan2.github.io/spring-post-02/</guid><pubDate>Tue, 04 Feb 2020 17:24:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
 &lt;p&gt;2일차 스프링과 3일차 스프링 정리&lt;/p&gt;
 &lt;h2&gt;AOP(ASPECT ORIENTED PROGRAMMING)&lt;/h2&gt;
 &lt;ul&gt;
@@ -129,7 +761,7 @@
       &lt;/div&gt;
 &lt;h3&gt;AOP in Annotaion&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;@Aspect`: 공통 관심 클래스 위에 선언&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;@Aspect&lt;/code&gt;: 공통 관심 클래스 위에 선언&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;@PointCut&lt;/code&gt;: 메소드 내 부 내용을 구현하지 않고 위에 선언후 경로를 설정.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;
@@ -432,9 +1064,9 @@
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;mv.setViewName 같은 경우 후에 다시 설명해준다고 하셨다. Annotaion 설정시 있어도 없어도 된다고는 하는데.. 한번 공부해보자.&lt;/p&gt;
-&lt;p&gt;@Controller&lt;/p&gt;
-&lt;p&gt;@RequestMapping(&quot;/context명&quot;)&lt;/p&gt;
-&lt;p&gt;@RequestMapping(name=&quot;/hello&quot; , method=RequestMethod.GET)&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;@Controller&lt;/code&gt; : 클래스 위에 선언&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;@RequestMapping(&amp;quot;/context명&amp;quot;)&lt;/code&gt; : 메소드(또는 클래스)&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;@RequestMapping(name=&amp;quot;/hello&amp;quot; , method=RequestMethod.GET)&lt;/code&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;GET&lt;/p&gt;
@@ -1944,675 +2576,4 @@ def render_template(str, **args) :
 &lt;h3&gt;참고링크&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://snacky.tistory.com/7&quot;&gt;jinja라이브러리&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[파이썬 정리 -01]]></title><description><![CDATA[시작하기에 앞서 멀티캠퍼스 3주차 깃 특강중에 배웠던 파이썬을 정리해보자.  정말 간단하게 배우고 있는 중이라 매우 기본적인 내용이 많다. String 문자열을 출력할때는 음수도 사용가능하다. -1이면 뒤부터 시작! List와 Dictionary…]]></description><link>https://choihwan2.github.io/python-post-01/</link><guid isPermaLink="false">https://choihwan2.github.io/python-post-01/</guid><pubDate>Thu, 19 Dec 2019 17:40:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
-&lt;p&gt;멀티캠퍼스 3주차 깃 특강중에 배웠던 파이썬을 정리해보자. &lt;/p&gt;
-&lt;p&gt;정말 간단하게 배우고 있는 중이라 매우 기본적인 내용이 많다.&lt;/p&gt;
-&lt;h2&gt;String&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;
-      &lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# 1. 글자 합체&lt;/span&gt;
-
-name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;happy&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;hacking&quot;&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;# 2. 글자 삽입&lt;/span&gt;
-
-first &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;tony&quot;&lt;/span&gt;
-age &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;
-
-text &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;안녕하세요. 제 이름은 {}입니다. 나이는 {}입니다.&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;first&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; age&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;# 문자열을 5번째 까지 출력한다.&lt;/span&gt;
-test_name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; text&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# 문자열을 5번째 부터 뒤를 출력한다.&lt;/span&gt;
-text_age &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; text&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;# 문자열을 자르는데 변수를 넣어줘서 자를수 있다. 기본값은 공백 &lt;/span&gt;
-text_split &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; text&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;split&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;blockquote&gt;
-&lt;p&gt;문자열을 출력할때는 음수도 사용가능하다. -1이면 뒤부터 시작!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;List와 Dictionary&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;
-      &lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# List&lt;/span&gt;
-menus &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;순남 시래기&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;양자강&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;20층...&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
-phone_nums &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;02-3441-5858&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;02-3818-7588&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;02-4343-9595&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;#추가하고 싶을때는 append를 사용하자!&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;# Dictionary { key : value } Map과 비슷 하지만 key 가 중복은 안됨.&lt;/span&gt;
-dict_nums &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token string&quot;&gt;&quot;순남 시래기&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;02-3441-5858&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;token string&quot;&gt;&quot;양자강&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;02-3818-7588&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;token string&quot;&gt;&quot;20층&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;02-4343-9595&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;dict_nums&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;순남 시래기&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;#value 값이 나온다.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;dictionary&lt;/code&gt;는 중괄호를 사용해서 감싸준다!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;if&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;
-      &lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; dust &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;150&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token comment&quot;&gt;#앞의 네칸을 띄워줘야 문법이 제대로 작동한다.&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;매우 나쁨&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; 
-&lt;span class=&quot;token keyword&quot;&gt;elif&lt;/span&gt; dust &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;나쁨&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;적당함&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;h2&gt;range&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;
-      &lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#인수 1개 - 시작 숫자를 지정해 주지 않으면 range 함수는 0부터 시작한다.&lt;/span&gt;
-&lt;span class=&quot;token builtin&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;# 인수 2개 - 입력으로 주어지는 2개의 인수는 시작 숫자와 끝 숫자를 나타낸다.&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# 단, 끝 숫자는 해당 범위에 포함되지 않는다는 것에 주의하자.&lt;/span&gt;
-&lt;span class=&quot;token builtin&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;# 인수 3개 - 세 번째 인수는 숫자 사이의 간격을 말한다.&lt;/span&gt;
-&lt;span class=&quot;token builtin&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
-
-&lt;span class=&quot;token builtin&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;18&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;14&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;h2&gt;for&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;
-      &lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;menus &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;순남 시래기&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;양자강&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;20층...&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;밥묵장&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;#menu 라는 변수에 menus에 있는 것을 한번씩 넣으면서 한번 순회한다.&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; menu &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; menus&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;menu&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;#i라는 변수에 0~4까지의 수를 넣으면서 한번 순회한다.&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;menus&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
-    &lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;blockquote&gt;
-&lt;p&gt;range 를 잘 사용하는 것이 후에 반복문에 큰 도움이 될 것 같다.&lt;/p&gt;
-&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[깃 정리 -03]]></title><description><![CDATA[시작하기에 앞서 깃 상태와 취소 그리고 Stash에 대해 알아보자. Git status & undoing git commit git status add 한 이전 add 한 이후 commit 메시지 작성하기 (메시지 없이 commit…]]></description><link>https://choihwan2.github.io/git-post-03/</link><guid isPermaLink="false">https://choihwan2.github.io/git-post-03/</guid><pubDate>Wed, 18 Dec 2019 17:20:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
-&lt;p&gt;깃 상태와 취소 그리고 Stash에 대해 알아보자.&lt;/p&gt;
-&lt;h1&gt;Git status &amp;#x26; undoing&lt;/h1&gt;
-&lt;h3&gt;git commit&lt;/h3&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#gogo.txt 를 생성하고 add하지 않고 commit 한 경우 &lt;/span&gt;
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit
-On branch master
-Your branch is up to &lt;span class=&quot;token function&quot;&gt;date&lt;/span&gt; with &lt;span class=&quot;token string&quot;&gt;&apos;origin/master&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;.&lt;/span&gt;
-
-Untracked files:
-        gogo.txt
-
-nothing added to commit but untracked files present
-&lt;span class=&quot;token comment&quot;&gt;#gogo.txt를 해결해야함 해결한 후&lt;/span&gt;
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit
-On branch master
-Your branch is up to &lt;span class=&quot;token function&quot;&gt;date&lt;/span&gt; with &lt;span class=&quot;token string&quot;&gt;&apos;origin/master&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;.&lt;/span&gt;
-
-nothing to commit, working tree clean&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;h3&gt;git status&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;add 한 이전&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; status
-On branch master
-Your branch is up to &lt;span class=&quot;token function&quot;&gt;date&lt;/span&gt; with &lt;span class=&quot;token string&quot;&gt;&apos;origin/master&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;.&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;#add를 하지 않고 생성만 한 후 status 를 본 상황.&lt;/span&gt;
-Untracked files:
-  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;token string&quot;&gt;&quot;git add &amp;lt;file&gt;...&quot;&lt;/span&gt; to include &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; what will be committed&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-        gogo.txt
-
-nothing added to commit but untracked files present &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;token string&quot;&gt;&quot;git add&quot;&lt;/span&gt; to track&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;ol start=&quot;2&quot;&gt;
-&lt;li&gt;add 한 이후&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; status
-On branch master
-Your branch is ahead of &lt;span class=&quot;token string&quot;&gt;&apos;origin/master&apos;&lt;/span&gt; by &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; commit.
-  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;token string&quot;&gt;&quot;git push&quot;&lt;/span&gt; to publish your &lt;span class=&quot;token builtin class-name&quot;&gt;local&lt;/span&gt; commits&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
-Changes to be committed:
-  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;token string&quot;&gt;&quot;git restore --staged &amp;lt;file&gt;...&quot;&lt;/span&gt; to unstage&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-        new file:   gogo.txt&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;h3&gt;commit 메시지 작성하기 (메시지 없이 commit 한 경우)&lt;/h3&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit
-&lt;span class=&quot;token comment&quot;&gt;# Please enter the commit message for your changes. Lines starting&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# with &apos;#&apos; will be ignored, and an empty message aborts the commit.&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# On branch master&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# Your branch is ahead of &apos;origin/master&apos; by 1 commit.&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;#   (use &quot;git push&quot; to publish your local commits)&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# Changes to be committed:&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;#       new file:   gogo.txt&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;#빔 상황에 빠졌다!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;편집(입력모드) :  단축키 &lt;code class=&quot;language-text&quot;&gt;I&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;문서 편집이 가능&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;명령 모드 : &lt;code class=&quot;language-text&quot;&gt;esc&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;dd&lt;/code&gt; : 라인삭제&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;wq&lt;/code&gt;: 저장 및 종료 (&lt;code class=&quot;language-text&quot;&gt;w:write&lt;/code&gt; 저장 &lt;code class=&quot;language-text&quot;&gt;q:quit&lt;/code&gt; 종료)&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;q!&lt;/code&gt; 강제 종료 (&lt;code class=&quot;language-text&quot;&gt;q:quit&lt;/code&gt;종료 &lt;code class=&quot;language-text&quot;&gt;!&lt;/code&gt;강제)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;vim adventure 라는 게임을 통해 vim 을 학습 할수 있다. 시간이 나면 해보자&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://vim-adventures.com/&quot;&gt;고고&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3&gt;log&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;커밋은 해시 값에 의해서 구분된다.&lt;/p&gt;
-&lt;p&gt;(commit 옆의 값)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; log
-commit 75767bea66848e61476fb098e1833d80449ee1cb &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;HEAD -&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; master&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-Author: choihwan2 &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;choihwan2@naver.com&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
-Date:   Wed Dec &lt;span class=&quot;token number&quot;&gt;18&lt;/span&gt; 09:40:03 &lt;span class=&quot;token number&quot;&gt;2019&lt;/span&gt; +0900
-
-    Add a. txt
-
-    * a.txt 내용 추가
-    * blahblah
-&lt;span class=&quot;token comment&quot;&gt;#~~~밑에 줄줄줄&lt;/span&gt;
-
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; log -1
-commit 75767bea66848e61476fb098e1833d80449ee1cb &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;HEAD -&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; master&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-Author: choihwan2 &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;choihwan2@naver.com&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
-Date:   Wed Dec &lt;span class=&quot;token number&quot;&gt;18&lt;/span&gt; 09:40:03 &lt;span class=&quot;token number&quot;&gt;2019&lt;/span&gt; +0900
-
-    Add a. txt
-
-    * a.txt 내용 추가
-    * blahblah
-    
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; log -1 --oneline
-75767be &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;HEAD -&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; master&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; Add a. txt&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;blockquote&gt;
-&lt;p&gt;좋은 commit 메시지를 위해 언제나 노력하자 다양한 회사 기술블로그를 참고하는게 좋음.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://meetup.toast.com/posts/106&quot;&gt;참고링크&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3&gt;commit undoing&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;커밋 메시지 수정&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit --amend
-Add a. txt
-
-* a.txt 내용 추가
-* blahblah
-
-&lt;span class=&quot;token comment&quot;&gt;# Please enter the commit message for your changes. Lines starting&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# with &apos;#&apos; will be ignored, and an empty message aborts the commit.&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# Date:      Wed Dec 18 09:40:03 2019 +0900&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# On branch master&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# Your branch is ahead of &apos;origin/master&apos; by 2 commits.&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;#   (use &quot;git push&quot; to publish your local commits)&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# Changes to be committed:&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;#       new file:   gogo.txt&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# Changes not staged for commit:&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;#       modified:   Git status &amp;amp; undoing.md&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;#&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;p&gt;커밋 메시지 수정하는 경우 해시값이 변경되므로, 다른 이력으로 관리가 된다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;따라서, 공개된 저장소[원격저장소]에 이미 push 한 경우 절대 수정해서는 안된다.&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;commit 을 역사라고 생각하고 역사를 바꾸려는 시도는 가능하면 하지말자.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol start=&quot;2&quot;&gt;
-&lt;li&gt;
-&lt;p&gt;특정 파일 추가하기&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;c.txt&lt;/code&gt; 파일을 같이 커밋하려고 했는데 &lt;code class=&quot;language-text&quot;&gt;add&lt;/code&gt; 를 하지 않고 커밋 해버린 경우.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; c.txxt
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit --amend
-&lt;span class=&quot;token comment&quot;&gt;# add하지 않았던 c.txt를 add하고 commit --amend 로 시점을 돌려서 commit 을 한다고 생각.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;h3&gt;Staging area&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;커밋 이력이 있는 파일 수정 하는 경우&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; status
-On branch master
-&lt;span class=&quot;token comment&quot;&gt;#변경 사항인데 staging은 아닌 상황.&lt;/span&gt;
-Your branch is ahead of &lt;span class=&quot;token string&quot;&gt;&apos;origin/master&apos;&lt;/span&gt; by &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt; commits.
-  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;token string&quot;&gt;&quot;git push&quot;&lt;/span&gt; to publish your &lt;span class=&quot;token builtin class-name&quot;&gt;local&lt;/span&gt; commits&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
-Changes not staged &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; commit:
-  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;token string&quot;&gt;&quot;git add &amp;lt;file&gt;...&quot;&lt;/span&gt; to update what will be committed&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;token string&quot;&gt;&quot;git restore &amp;lt;file&gt;...&quot;&lt;/span&gt; to discard changes &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; working directory&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-        modified:   a.txt
-
-no changes added to commit &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;token string&quot;&gt;&quot;git add&quot;&lt;/span&gt; and/or &lt;span class=&quot;token string&quot;&gt;&quot;git commit -a&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; a.txt
-&lt;span class=&quot;token comment&quot;&gt;# git add로 staging에 올림.&lt;/span&gt;
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; status
-On branch master
-Your branch is ahead of &lt;span class=&quot;token string&quot;&gt;&apos;origin/master&apos;&lt;/span&gt; by &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt; commits.
-  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;token string&quot;&gt;&quot;git push&quot;&lt;/span&gt; to publish your &lt;span class=&quot;token builtin class-name&quot;&gt;local&lt;/span&gt; commits&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
-Changes to be committed:
-  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;token string&quot;&gt;&quot;git restore --staged &amp;lt;file&gt;...&quot;&lt;/span&gt; to unstage&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-        modified:   a.txt&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;h3&gt;add 취소하기&lt;/h3&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; restore --staged &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;file&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# 다시 내려와!!&lt;/span&gt;
-
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; status
-On branch master
-Your branch is ahead of &lt;span class=&quot;token string&quot;&gt;&apos;origin/master&apos;&lt;/span&gt; by &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt; commits.
-  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;token string&quot;&gt;&quot;git push&quot;&lt;/span&gt; to publish your &lt;span class=&quot;token builtin class-name&quot;&gt;local&lt;/span&gt; commits&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-Changes not staged &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; commit:
-  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;token string&quot;&gt;&quot;git add &amp;lt;file&gt;...&quot;&lt;/span&gt; to update what will be committed&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;token string&quot;&gt;&quot;git restore &amp;lt;file&gt;...&quot;&lt;/span&gt; to discard changes &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; working directory&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-        modified:   a.txt
-&lt;span class=&quot;token comment&quot;&gt;# 내려왔음 ㅠㅠ..&lt;/span&gt;
-no changes added to commit &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;token string&quot;&gt;&quot;git add&quot;&lt;/span&gt; and/or &lt;span class=&quot;token string&quot;&gt;&quot;git commit -a&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;구 버전의 git 에서는 아래의 명령어를 사용해야 한다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; reset HEAD &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;file&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;WD 변화 삭제하기(되돌리기)&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;git에서는 모든 commit 시점으로 되돌릴 수는 있다.&lt;/p&gt;
-&lt;p&gt;다만 WD 삭제하는 것은 되돌릴 수가 없다. &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; status
-&lt;span class=&quot;token comment&quot;&gt;#지워진 파일 확인&lt;/span&gt;
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; status
-On branch master
-Your branch is ahead of &lt;span class=&quot;token string&quot;&gt;&apos;origin/master&apos;&lt;/span&gt; by &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt; commits.
-  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;token string&quot;&gt;&quot;git push&quot;&lt;/span&gt; to publish your &lt;span class=&quot;token builtin class-name&quot;&gt;local&lt;/span&gt; commits&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
-Changes not staged &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; commit:
-  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;token string&quot;&gt;&quot;git add/rm &amp;lt;file&gt;...&quot;&lt;/span&gt; to update what will be committed&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;use &lt;span class=&quot;token string&quot;&gt;&quot;git restore &amp;lt;file&gt;...&quot;&lt;/span&gt; to discard changes &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; working directory&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-        deleted:    .gitignore
-        modified:   Git status &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; undoing.md
-        deleted:    a.txt
-        deleted:    b.txt
-        deleted:    c.txt
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; resotre &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;file&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# 지워진 파일을 돌아가자. 혹은 그 시점으로 돌아간다&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;구버전 git 에서는 아래의 명령어를 사용해야 한다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout -- &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;file&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# 과거에 친구와 함께 팀플할때는 이거 썼었는데..&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h1&gt;Stash&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;변경사항을 임시로 저장 해놓는 공간.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;1. feature branch에서 a.txt 변경 및 커밋
-2. master branch에서 a.txt 수정 (add commit 상태)
-3. merge &lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;p&gt;stash 저장&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; stash
-Saved working directory and index state WIP on master: c489627 Update:Git status.md&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;p&gt;stash 목록&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; stash list
-stash@&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;: WIP on master: c489627 Update:Git status.md&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;h3&gt;해결&lt;/h3&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; stash &lt;span class=&quot;token comment&quot;&gt;# 임시 공간 저장&lt;/span&gt;
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; merge feature &lt;span class=&quot;token comment&quot;&gt;# 병합&lt;/span&gt;
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; stash pop &lt;span class=&quot;token comment&quot;&gt;# 임시 공간에서 병합.&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;# 충돌 발생, 해결 후 작업 이어가기&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;h2&gt;Reset vs Revert&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt; 공개된 저장소[원격 저장소]에 push 된 이력은 절대 reset 하지 않는다.&lt;/p&gt;
-&lt;p&gt;혼자 하던 일을 지워버리고 잊어버리는건 가능하지만. 팀으로 할 경우 충돌이 일어난다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; reset &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;해시코드&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;기본 [--mixed]&lt;/code&gt;: 이후 변경 사항을 WD에 위치시켜줌&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;--hard&lt;/code&gt;: 이후 변경 사항이 모두 삭제함.&lt;strong&gt;주의&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;--sort&lt;/code&gt;: 지금 작업하고 있는 내용(WD) 및 변경 사항을 WD에 유지시켜줌.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Revert&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;해당 커밋 으로 되돌렸다는 이력 (rever commit)을 남긴다. 즉, 다른 사람과의 작업에 방해가 적어진다. 지금까지 해왔던 것 위에 새로운 commit 을 생성하는 것이니&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; revert &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;해시코드&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;vim -&gt; 커밋 메시지 작성&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;후에 찾아보기&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;github student pack&lt;/li&gt;
-&lt;li&gt;jetbrains 학생 - IDE(통합개발환경)&lt;/li&gt;
-&lt;li&gt;notion student&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[깃 정리 -02]]></title><description><![CDATA[시작하기에 앞서 저번 깃 정리의 이어서 이번엔 Git을 좀 더 효율적으로 관리하는 git flow 에 대해 알아보고 다양한 상황에서의 해결을 보여주고자 한다. Git flow 상황 1. fast-foward fast-foward는 feature…]]></description><link>https://choihwan2.github.io/git-post-02/</link><guid isPermaLink="false">https://choihwan2.github.io/git-post-02/</guid><pubDate>Wed, 18 Dec 2019 17:14:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
-&lt;p&gt;저번 깃 정리의 이어서 이번엔 Git을 좀 더 효율적으로 관리하는 git flow 에 대해 알아보고 다양한 상황에서의 해결을 보여주고자 한다.&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://drive.google.com/open?id=1bkvYHMN2Rz8b0GZNw7GY5-flTOKF8pZj&quot;&gt;Git flow&lt;/a&gt;&lt;/h2&gt;
-&lt;h3&gt;상황 1. fast-foward&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;fast-foward는 feature 브랜치 생성된 이후 master 브랜치에 변경 사항이 없는 상황&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;feature/test branch 생성 및 이동&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout -b feature/test
-Switched to a new branch &lt;span class=&quot;token string&quot;&gt;&apos;feature/test&apos;&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;feature/test&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; $&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;작업 완료 후 commit&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;touch&lt;/span&gt; test.txt
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; text.txt
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit -m &lt;span class=&quot;token string&quot;&gt;&quot;Complete test&quot;&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;feature/test c6a0e86&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; Complete &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt;
-&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; changed, &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; insertions&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;, &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; deletions&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;-&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-create mode &lt;span class=&quot;token number&quot;&gt;100644&lt;/span&gt; test.txt&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;master 이동&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout master
-Switched to branch &lt;span class=&quot;token string&quot;&gt;&apos;master&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;master에 병합&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;master&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; $ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; merge feature/test
-Updating c08aa0a&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;c6a0e86
-Fast-forward
-test.txt &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
-&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; changed, &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; insertions&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;, &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; deletions&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;-&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-create mode &lt;span class=&quot;token number&quot;&gt;100644&lt;/span&gt; test.txt&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;결과 -&gt; fast-foward (단순히 HEAD를 이동)&lt;/li&gt;
-&lt;li&gt;branch 삭제&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h3&gt;상황 2. merge commit&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;서로 다른 이력(commit)을 병합(merge)하는 과정에서 다른 파일이 수정되어 있는 상황&lt;/p&gt;
-&lt;p&gt;git이 auto merging을 진행하고, commit이 발생된다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;feature/signout branch 생성 및 이동&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout -b feature/signout
-Switched to a new branch &lt;span class=&quot;token string&quot;&gt;&apos;feature/signout&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;작업 완료 후 commit&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; signout
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit -m &lt;span class=&quot;token string&quot;&gt;&quot;Add:signout&quot;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;feature/signout 1c3facd&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; Add:signout
-&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; changed, &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; insertions&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;, &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; deletions&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;-&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-create mode &lt;span class=&quot;token number&quot;&gt;100644&lt;/span&gt; signout
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout master
-Switched to branch &lt;span class=&quot;token string&quot;&gt;&apos;master&apos;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;master&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; log --oneline
-1c3facd &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;HEAD -&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; feature/signout&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; Add:signout
-c6a0e86 &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;master&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; Complete &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt;
-c08aa0a Add:aaa.txt
-fe93429 Add README.MD&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;master 이동&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout master
-Switched to branch &lt;span class=&quot;token string&quot;&gt;&apos;master&apos;&lt;/span&gt;
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; log --oneline
-c6a0e86 &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;HEAD -&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; master&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; Complete &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt;
-c08aa0a Add:aaa.txt
-fe93429 Add README.MD&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;master에 추가 commit 이 발생시키기!!&lt;/em&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;다른 파일을 수정 혹은 생성하세요!&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;touch&lt;/span&gt; hotfix.txt
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;.&lt;/span&gt;
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit -m &lt;span class=&quot;token string&quot;&gt;&quot;hotfix on master&quot;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;master 28d7a84&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; hotfix on master
-&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; changed, &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; insertions&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;, &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; deletions&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;-&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-create mode &lt;span class=&quot;token number&quot;&gt;100644&lt;/span&gt; hotfix.txt
-
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; log --oneline
-28d7a84 &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;HEAD -&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; master&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; hotfix on master
-c6a0e86 Complete &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt;
-c08aa0a Add:aaa.txt
-fe93429 Add README.MD&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;master에 병합&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;master&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; $ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; merge feature/signout&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;결과 -&gt; 자동으로 &lt;em&gt;merge commit 발생&lt;/em&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;vim 편집기 화면이 나타납니다.&lt;/li&gt;
-&lt;li&gt;자동으로 작성된 커밋 메시지를 확인하고, &lt;code class=&quot;language-text&quot;&gt;esc&lt;/code&gt;를 누른 후 &lt;code class=&quot;language-text&quot;&gt;:wq&lt;/code&gt;를 입력하여 저장 및 종료를 합니다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;w&lt;/code&gt; : write&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;q&lt;/code&gt; : quit&lt;/li&gt;
-&lt;li&gt;커밋이 확인 해봅시다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; merge feature/signout
-Merge made by the &lt;span class=&quot;token string&quot;&gt;&apos;recursive&apos;&lt;/span&gt; strategy.
-signout &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
-&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; changed, &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; insertions&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;, &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; deletions&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;-&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-create mode &lt;span class=&quot;token number&quot;&gt;100644&lt;/span&gt; signout&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;그래프 확인하기&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; log --oneline
-5b87e65 &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;HEAD -&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; master&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; Merge branch &lt;span class=&quot;token string&quot;&gt;&apos;feature/signout&apos;&lt;/span&gt;
-28d7a84 hotfix on master
-1c3facd &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;feature/signout&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; Add:signout
-c6a0e86 Complete &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt;
-c08aa0a Add:aaa.txt
-fe93429 Add README.MD&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;branch 삭제&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h3&gt;상황 3. merge commit 충돌&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;서로 다른 이력(commit)을 병합(merge)하는 과정에서 동일 파일이 수정되어 있는 상황&lt;/p&gt;
-&lt;p&gt;git이 auto merging을 하지 못하고, 해당 파일의 위치에 라벨링을 해준다.&lt;/p&gt;
-&lt;p&gt;원하는 형태의 코드로 직접 수정을 하고 merge commit을 발생 시켜야 한다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;feature/board branch 생성 및 이동&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout -b feature/board&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;작업 완료 후 commit&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;board&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; $ &lt;span class=&quot;token function&quot;&gt;touch&lt;/span&gt; board.html
-&lt;span class=&quot;token comment&quot;&gt;# README.md 수정&lt;/span&gt;
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;.&lt;/span&gt;
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit -m &lt;span class=&quot;token string&quot;&gt;&quot;Complete board &amp;amp; update README.md&quot;&lt;/span&gt;
-
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; log --oneline
-5b87e65 &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;HEAD -&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; feature/board, master&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; Merge branch &lt;span class=&quot;token string&quot;&gt;&apos;feature/signout&apos;&lt;/span&gt;
-28d7a84 hotfix on master
-1c3facd Add:signout
-c6a0e86 Complete &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt;
-c08aa0a Add:aaa.txt
-fe93429 Add README.MD&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;master 이동&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout master&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;master에 추가 commit 이 발생시키기!!&lt;/em&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;.&lt;/span&gt;
-$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit -m &lt;span class=&quot;token string&quot;&gt;&quot;add:board and board branch&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;동일 파일을 수정 혹은 생성하세요!&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;README.md 파일 수정&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;master에 병합&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; merge feature/boarding
-Auto-merging README.md
-CONFLICT &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;content&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;: Merge conflict &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; README.md
-Automatic merge failed&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; fix conflicts and &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt; commit the result
-
-&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;master&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;MERGING&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;결과 -&gt; &lt;em&gt;merge conflict발생&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;충돌 확인 및 해결&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;visual code&lt;/code&gt; 에서 확인후에 고쳐나감.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;merge commit 진행&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ git commit&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;vim 편집기 화면이 나타납니다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;Merge branch &lt;span class=&quot;token string&quot;&gt;&apos;feature/boarding&apos;&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;# Conflicts:&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;#       README.md&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# It looks like you may be committing a merge.&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# If this is not correct, please remove the file&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;#       .git/MERGE_HEAD&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# and try again.&lt;/span&gt;
-
-
-&lt;span class=&quot;token comment&quot;&gt;# Please enter the commit message for your changes. Lines starting&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# with &apos;#&apos; will be ignored, and an empty message aborts the commit.&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# On branch master&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# All conflicts fixed but you are still merging.&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# Changes to be committed:&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;#       modified:   README.md&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;#       new file:   boarding.html&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;#&lt;/span&gt;
-~&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;자동으로 작성된 커밋 메시지를 확인하고, &lt;code class=&quot;language-text&quot;&gt;esc&lt;/code&gt;를 누른 후 &lt;code class=&quot;language-text&quot;&gt;:wq&lt;/code&gt;를 입력하여 저장 및 종료를 합니다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;w&lt;/code&gt; : write&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;q&lt;/code&gt; : quit&lt;/li&gt;
-&lt;li&gt;커밋이 확인 해봅시다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;master d8b8c95&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; Merge branch &lt;span class=&quot;token string&quot;&gt;&apos;feature/boarding&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;그래프 확인하기&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; log --oneline
-d8b8c95 &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;HEAD -&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; master&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; Merge branch &lt;span class=&quot;token string&quot;&gt;&apos;feature/boarding&apos;&lt;/span&gt;
-3bcec90 Update:README.md
-3c365ef &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;feature/boarding&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; update:README.md
-3275a17 Complete boarding
-48b58ea add:board
-dbc3d10 add:board and board branch
-5b87e65 Merge branch &lt;span class=&quot;token string&quot;&gt;&apos;feature/signout&apos;&lt;/span&gt;
-28d7a84 hotfix on master
-1c3facd Add:signout
-c6a0e86 Complete &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt;
-c08aa0a Add:aaa.txt
-fe93429 Add README.MD&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;p&gt;중간에 이것저것 하느라 조금 지저분하다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;branch 삭제&lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item></channel></rss>
+&lt;/ul&gt;</content:encoded></item></channel></rss>
