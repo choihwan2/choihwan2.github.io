@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Happy Hwan - rss]]></title><description><![CDATA[Hwan Log]]></description><link>https://choihwan2.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 24 Feb 2020 07:46:24 GMT</lastBuildDate><item><title><![CDATA[Hadoop 정리 -01]]></title><description><![CDATA[hadoop 환경설정 1> vm / 리눅스 설치 -yum 업데이트 방지 설정  CentOS-Baserepo 설정  CentOS-Sources.repo…]]></description><link>https://choihwan2.github.io/hadoop-post-01/</link><guid isPermaLink="false">https://choihwan2.github.io/hadoop-post-01/</guid><pubDate>Mon, 24 Feb 2020 16:12:00 GMT</pubDate><content:encoded>&lt;h2&gt;hadoop 환경설정&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Happy Hwan - rss]]></title><description><![CDATA[Hwan Log]]></description><link>https://choihwan2.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 09 Mar 2020 00:35:33 GMT</lastBuildDate><item><title><![CDATA[Hadoop 정리 -01]]></title><description><![CDATA[hadoop 환경설정 1> vm / 리눅스 설치 -yum 업데이트 방지 설정  CentOS-Baserepo 설정  CentOS-Sources.repo…]]></description><link>https://choihwan2.github.io/hadoop-post-01/</link><guid isPermaLink="false">https://choihwan2.github.io/hadoop-post-01/</guid><pubDate>Mon, 24 Feb 2020 16:12:00 GMT</pubDate><content:encoded>&lt;h2&gt;hadoop 환경설정&lt;/h2&gt;
 &lt;p&gt;1&gt; vm / 리눅스 설치&lt;/p&gt;
 &lt;p&gt;-yum 업데이트 방지 설정&lt;/p&gt;
 &lt;p&gt;
@@ -291,18 +291,158 @@
 &lt;ul&gt;
 &lt;li&gt;암호키생성(참고로 root 계정이 아닌 사용자계정인 hadoop 에서 작업한다.)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;images/%ED%95%98%EB%91%A1%20%EC%95%94%ED%98%B8%ED%82%A4%20%EC%83%9D%EC%84%B1.PNG&quot; alt=&quot;하둡 암호키 생성&quot;&gt;&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/35113c8d2476551046b866b27ccc91fe/14e05/hadoop_password_make.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 80%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAA7DAAAOwwHHb6hkAAADEklEQVQ4y4VUWy9jURg9P8qbhBCXoepWt6IUqUtVtXWZ3qszo5j5DV49ehhvIxlU1BAJZkSC4mHcpq2iSOq6Zq/Nkb7Zycre/c7u+r5vre8c5SJxgvNYDPsHh0gmL3B7e4ub6xs8PDzg8fHxXdzf30vcpdM4v76G4rDbEPrkRU9vL7xeL8bGxt4wPj6OiYmJN/A346FQCKOjowgGg3C73RgaGoLD4YDZYoHyobgIRkM9ampqUFdXJ9HQ0AC9Xo/GxkY0NTXJnbH6+nrUiue1tbXQ6XSoqqpCZWUlysrKUFhYiJycHCi8ZO61oKWlBW1tbZiamkIkEkE4HEZ4cVHuP2Znxb6I9fV1rK2tYXl5GUtLS5icnJQJmZwFkVgSGo2tMBgMEiS4ukoheXGB82RSnK8Q3T/A7z9b2NrexsHhIdTFxOyIpKy6vLz8hbCjowNWq1Xq8WtlBf/+xfD36AhHx8eIxeI4PTvDmUAsHpdJaALX/Py8JFIJKyoqoFCbQCAgy5+ensbm5ibiiQROTk/lnkqlcC1cTwkHLy8v5W9OANfc3JzUkRzV1dXQaDRQKHhzczNaW1tF60ZEhD7puzvZalqMAkfj+flZ4unpSe6Mcf0UhGyT1dGc0tJSKBSUZO3t7bL11dVVeZlVZBKpZIRa4cLCgiSk46rbUkOaQYdJvLGxIS+T4L1Fx+ku/0fi4uJiKAywSrbN9r/PzCAajWJnZwe7u7uv51153tvbE4hiT8QSQt950TKHmh64XC4pmaLVaqWg1EEdanWwM8Fk6tnpdMJsNssWBwcHJaHf74fJZIJSVFQkH1ADapH5xlAOQk2ivi014p7uFTSCrebl5SErKwtKdnY28vPzQGKNplSSE9SE4GwRTJgJxnivpKQEBQUFyM3NBbkUrQgy08v4GNDd1SWHnLD198Nms8Fut4uX344B8QHgbhcfFD6z9vWJ1nvQ2dkpTDVCLzpQ9G3dMPVZYejowUePCyOhr3B7PPD5ffD6fPC9YsDlg2XYA5vTh2FPQNz1S3j8QYwEv2B0/Bt8wc/4Dz5sYFGXqQEnAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;하둡 암호키 생성&quot;
+        title=&quot;&quot;
+        src=&quot;/static/35113c8d2476551046b866b27ccc91fe/799d3/hadoop_password_make.png&quot;
+        srcset=&quot;/static/35113c8d2476551046b866b27ccc91fe/00d96/hadoop_password_make.png 148w,
+/static/35113c8d2476551046b866b27ccc91fe/0b23c/hadoop_password_make.png 295w,
+/static/35113c8d2476551046b866b27ccc91fe/799d3/hadoop_password_make.png 590w,
+/static/35113c8d2476551046b866b27ccc91fe/2a3d6/hadoop_password_make.png 885w,
+/static/35113c8d2476551046b866b27ccc91fe/ae92f/hadoop_password_make.png 1180w,
+/static/35113c8d2476551046b866b27ccc91fe/14e05/hadoop_password_make.png 1280w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;암호키 복사&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;images/%ED%95%98%EB%91%A1%ED%82%A4%20%EA%B3%B5%EC%9C%A0.PNG&quot; alt=&quot;하둡키 공유&quot;&gt;&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/8836fde552401270bad6e36709762416/14e05/hadoop_key_share.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 80%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAA7DAAAOwwHHb6hkAAADC0lEQVQ4y4VUSU9aURh9P8qdCYbGGecJUVGIMwIyqC0gIHH2P7isSzc1Jlpr4mzd1mhiFRfVioIGFCs4nd5z8bFo2vQmJzd3Ot/3nfO9p9xEzxG7vET49BQ3Nze4v79H8i6Jp6cnPD8//xePj48S6VQK13d3UPrtNowGPbD09WF4eBiTk5MSU1PEFKanp7PgmmcTExMYHx9HKBSC1+vF4OAg3C4XLFYrlOLiIpiMetTV1aGhoUGisbERBoMBTU1NaG5uluCa+3q9HvX19aitrUV1dTWqqqpQVlaGgoICaDQaKLxg6bOitbUVZrMZH+fmsLOzg7W1NaxvbGB9fR2Li4v4vLKC3d1deUZsbW1hdnY2G4wJkVgSmkxtMBqNEl/39sBBfdTx+vqKv409cZdZk5RZV1RUZAjb29tht9vh8XhweHgoL6fTj/jXeHl5kfP29raUQCWsrKyEwgjBYFCmPz8/j2/7+0jc3iKeSOBWzMlkEvF4IrsmotGoJNzc3JQ6kqOmpgY6nQ4KhW9paUFbW5vU8MvqKq7Eg7Pzc1xcRPDj7Aw/Ly4QEa3F/dj1NWKxmCSkrsyK2dGc0tJSKBRUJevo6BAmbIiM4ri8ukJUPLwVvfXr4UH2JfuNc0r0HMfS0pLUjY6rbksNaQYJSayakkzeI5VOZ/XiICHNUk2ihiyV70hcVFQEhXYzS5bN8j8tLODk5AQHBwc4OjrCqfiCwuGwnL8fH4uzMCKRCO5E5svLy3C7B6QHNNRkMkEpLy+XUaiD2tQSb43NQH/C5/PBYrHIEgcGMoSBQACdnZ1QCgsL5QE1oBbMWCVXQVkIBuKa91TQCJaq1WqRk5MDJTc3F+/eaUFina5UkhPUhKCLBANmkPncuMd7JSUlyM/PhyYvD+RSysUmI2XKM6Knu1s2OeHo74fD4YDT6YTL5ZQ/AM5Op0Oe2W02UXovurq6pKkGUYFiMPeg02aHsb0X730ejEzMwCs08gf8GPb74X+D2+OHdcgHxwc/hnxBcTcg4QuEMBIaw9jUDPyhUfwGZZBh7SKf1DoAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;하둡키 공유&quot;
+        title=&quot;&quot;
+        src=&quot;/static/8836fde552401270bad6e36709762416/799d3/hadoop_key_share.png&quot;
+        srcset=&quot;/static/8836fde552401270bad6e36709762416/00d96/hadoop_key_share.png 148w,
+/static/8836fde552401270bad6e36709762416/0b23c/hadoop_key_share.png 295w,
+/static/8836fde552401270bad6e36709762416/799d3/hadoop_key_share.png 590w,
+/static/8836fde552401270bad6e36709762416/2a3d6/hadoop_key_share.png 885w,
+/static/8836fde552401270bad6e36709762416/ae92f/hadoop_key_share.png 1180w,
+/static/8836fde552401270bad6e36709762416/14e05/hadoop_key_share.png 1280w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
 &lt;p&gt;그다음 master 계정에서 몇가지 파일을 수정해야한다. &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;images/%EB%A7%88%EC%8A%A4%ED%84%B0%EC%97%90%EC%84%9C%20hadoop-1.21.%EC%84%A4%EC%A0%95.PNG&quot; alt=&quot;마스터에서 hadoop-1.21.설정&quot;&gt;&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/bfedc0f1642a22e43286bd5038d2d557/14e05/hadoop-1.21.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 77.03125%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAA7DAAAOwwHHb6hkAAADJUlEQVQ4y21TWUubQRT9fpSPKmpx39dETTTiviCtKNQFxUJcKBT6Ayw+STe1NrFVSMEYo1AVS2mrYpUiQlyTGDWLWU7vGY0PpQOH+ebOfGfOPfeO1vXkMUaeDaC1vR0DAwMYHR19wNjYGMbHxx/ANeMjIyMwm80YHh5GX18fenp60NXVhbaODmhZmRkwGXUoKytDRUWFgl6vR2VlJaqqqh7ANeM62S8vL0dpaSmKi4tRVFSEvLw8pKenIzk5GZpOp0NbewdqampQV1eHqakprK6uYnl5GUt2Oz4vLGBhcRE22xfYZe10OrG2tqbmiYkJVFdXq8soiMSK0GSqhdFoVKQk8Xi9cHs8uHC71bff70c4HMa/Y339q1JNUqouKCi4I6yvr0dnZyf6+/thF2WnZ+dwnd/AHwggFAohHAwifHKCiFwSvbpCyC/xGOCUTPh/nLCwsBAabxgaGsIrkT89M4PNb99xKyS3rlNEL9yI+Xy4DYRw5fMjFr5FLBJBWBAVhY6VFfGyRJGWlJQgNzcXGg03GAyora1VHi7ZHfBd+nBxdAS/24MbrwfBQBAByTh2n2pECDmczhVVFKrjnJOTA42GxskaGhqw5HDgRLxznZ7h+uYu7aAo5oiKl1FZR6JRtXbIWaZJdfFqKw9ZEJMQmkwmrMx/gmdnF9fHx+qni73fcP34iZB4d+O9hEfip+fnam9zc1NVl4JYkMzMTGgMUGW1pE1zZycnsS1t8WtrC9s7O9jd2MDe+joO9/fx5/AQ+wcHOBI7vFJ9m82G7u5uVYPe3l4lSMvPz1eS6QObWiee6oVYJ5dQvUFaySAKDJKFQeL0my+qXV4WixAnHBwcRGNjI7SMjAyVOz1g91MxyfkiSFhxPxPsCK55Lg4WgqmmpqYiISEBWmJiIh6lpSErK0sRUzGN5gUEnxfBLAiScGasUHyjSopKSUlBUlKSvOXsbEXAg1TBalN6U1OTQnNzM1paWu7Q2qrmZgH32BU8bxRbWAdepHU/7ceweQzPzON4/uIl3ryfgXV+HhaLBRarFdZ7fPhoxfScBbMyz1n+A4m/fvsOfwGqqht1FSYP2AAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;마스터에서 hadoop-1.21.설정&quot;
+        title=&quot;&quot;
+        src=&quot;/static/bfedc0f1642a22e43286bd5038d2d557/799d3/hadoop-1.21.png&quot;
+        srcset=&quot;/static/bfedc0f1642a22e43286bd5038d2d557/00d96/hadoop-1.21.png 148w,
+/static/bfedc0f1642a22e43286bd5038d2d557/0b23c/hadoop-1.21.png 295w,
+/static/bfedc0f1642a22e43286bd5038d2d557/799d3/hadoop-1.21.png 590w,
+/static/bfedc0f1642a22e43286bd5038d2d557/2a3d6/hadoop-1.21.png 885w,
+/static/bfedc0f1642a22e43286bd5038d2d557/ae92f/hadoop-1.21.png 1180w,
+/static/bfedc0f1642a22e43286bd5038d2d557/14e05/hadoop-1.21.png 1280w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
 &lt;p&gt;요 빨간 네모들을 하나씩 수정해보자&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;hadoop-env.sh&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;images/hadoop-env.sh%20%EC%84%A4%EC%A0%95.PNG&quot; alt=&quot;hadoop-env.sh 설정&quot;&gt;&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/eafd45caec143296de7adfbbfd65d24e/14e05/hadoop-env.sh.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 80%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAA7DAAAOwwHHb6hkAAADE0lEQVQ4y4WTW08bVxDH9+PwnL7BAyCqiJKKIkxEo6JwCVQgKIFSpVQQU1okLPWl4fLIF0Dim1RtjAPG1Obi+23Bxt71ZS+/zB7HTaiU5Eg/zdnRnP/OzJmjFbJxCpkMaUHXdcrlMuVSmXq9TrPZpNFo3MPze7T3pmliGAamYaJXKmjh01MiZ2EuLmLEYjHiiQQJwbPRWMunuLjg8vKSVDpFOp1WJJNJ5YtGoxwcHPBsZhot+CbIX8HXHJ+GCIb+4c3J34ROgkTOTwiHQ7w+DnIcCnJ2fkY4Eibyb+Qeni+ZTrId2OaLBw/QsrkKubxBoVgjn68q1HfBoFIxuLtr4ZXWLu9DKlKmt/b29ujt7UW7jsP1NeRyiAgi2CKbRXoKxSIixEeX67rK7u7u0tfXh1YqGtze2NzeNrkr16hWGlQNRwW2kWP3vj/Etu2WoGSoBAs5i0LelSY7kplNterIjXmB4NgujvNxMQ/HcZTgzs4OPT09aJmsq8qTS1NW2vIOl0YTLPvT5bYF/3z1iu7ubskwLxkWXIWuuzKHLpU7D6ibLjURtxqtTFXG/8u6LeiVrDIsnp2TTdVIxk0ySbnFhI0dlcCwHIjC3YVFLlEjnTAp38ig1x0Z6nc95n0P9/f36ezsRMsny6RTFom4RSppUSnKgRuXulhLsjVLNqWShVG1qNfs95m5jsquLXh4eMjo6KjXw9bIeNzcwG0ZyjJaTYkza1Cry77BZ9fR0RFjY2NoV1cFeUI68bj+n726bO0TCZ1MRpf+6jKPunrrBRnWrPw9L8NalCFNpVJq4AOBAB0dHWi9vd08fPgljx59xeDg1wwPDzEyMiz4ePzYh883LL77DA0NKQYHv2FgYID+/n71Srq6utBGfD7GvhtjamqK6ekZxp8+ZXx8nImJCSYnJ5mfn2dpaUnx4/ISy8ve/jnPFxdZWFhgbm5Wzk2r+CdPvkV7Nr/Cyto6s4s/8dv2Fi/W/EzPfC+Bc8wKq6ur+P0brPzykh9erLO06ufntQ1W1zfE+lnzb/Lr5hZbgT94ufk7bwE1MT/5XBqk4wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;hadoop-env.sh 설정&quot;
+        title=&quot;&quot;
+        src=&quot;/static/eafd45caec143296de7adfbbfd65d24e/799d3/hadoop-env.sh.png&quot;
+        srcset=&quot;/static/eafd45caec143296de7adfbbfd65d24e/00d96/hadoop-env.sh.png 148w,
+/static/eafd45caec143296de7adfbbfd65d24e/0b23c/hadoop-env.sh.png 295w,
+/static/eafd45caec143296de7adfbbfd65d24e/799d3/hadoop-env.sh.png 590w,
+/static/eafd45caec143296de7adfbbfd65d24e/2a3d6/hadoop-env.sh.png 885w,
+/static/eafd45caec143296de7adfbbfd65d24e/ae92f/hadoop-env.sh.png 1180w,
+/static/eafd45caec143296de7adfbbfd65d24e/14e05/hadoop-env.sh.png 1280w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;export 쪽이 주석되어있을텐데 바꿔줘야한다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -313,7 +453,42 @@
 &lt;ul&gt;
 &lt;li&gt;slaves&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;images/slaves%20%EC%84%A4%EC%A0%95.PNG&quot; alt=&quot;slaves 설정&quot;&gt;&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c056c594bfff94959cba6139d7119444/14e05/slaves.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 76.32812499999999%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAB10lEQVQ4y61TzWvicBDNv+RZDx4UFUUUv8BVUBHU/lMtnorbPXXBlPXowS+0aUpiEquNelBRlFbFXdS3mV9Jt7vLHtx24PHezGRekt8kHM+X0X/oQVVVaJoGXdfxqD9iPB5jMBhAoXqvx3oP/T6rj0YjxsPhEH2jRr2v19conJ2BuyxdQpRlCPcCOkIH4n0Ht3cdyIoEpStBuLs1IBi5jK7ShaIpr1A1FV21C32k4+rLFaxWK7gyf4Pd9x94Xq+xNrDZGLwx9eYlf9V/4+n5CYfDAdVqFR6PBxyJ98TxeGTcarXg9XrBkaDY7/eseSpojqLZbL4YkqCgxzbvdkq8NXS73b8b/k+Yho1GAy6X62MN2VJIfIRhvV6Hw+EAR+KUpZhnbbJpKIoiksnkr1d+b8jGz5HJZMBVKhXsdjssFgssl8t/YrVaYT6fYzqdMp7NZqw+mUyw3W7B8zwsFgs4u93O1u3z+RAIBBAKhRCJRBCNRhGLxRi/BfUIdB3B7/ezWafTCZvNBi4YDLLBRCKBVCpl8CfE43GWE7LZLPL5PEOhUGAgncvlWC+dTrOzo5lwOAyu9LnEPsparYZ2u41vN2VcXJyjWCwy0NIURYEkSeyc/oRZJyafnyhxEhI4aT2sAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;slaves 설정&quot;
+        title=&quot;&quot;
+        src=&quot;/static/c056c594bfff94959cba6139d7119444/799d3/slaves.png&quot;
+        srcset=&quot;/static/c056c594bfff94959cba6139d7119444/00d96/slaves.png 148w,
+/static/c056c594bfff94959cba6139d7119444/0b23c/slaves.png 295w,
+/static/c056c594bfff94959cba6139d7119444/799d3/slaves.png 590w,
+/static/c056c594bfff94959cba6139d7119444/2a3d6/slaves.png 885w,
+/static/c056c594bfff94959cba6139d7119444/ae92f/slaves.png 1180w,
+/static/c056c594bfff94959cba6139d7119444/14e05/slaves.png 1280w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;localhost 라고 되어있을텐데 slave가 될 아이들을 넣어준다.&lt;/p&gt;
 &lt;/blockquote&gt;
