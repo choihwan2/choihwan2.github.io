@@ -1,5 +1,5 @@
 ---
-title: 프로그래머스 2020 Dev-Matching: 웹 백엔드 개발자 코딩테스트 후기
+title: 프로그래머스 2020 Dev Matching 웹 백엔드 개발자 코딩테스트 후기
 date: 2020-04-18 22:04:00
 tags:
  - algorithm
