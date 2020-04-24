@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://choihwan2.github.io/Algorithm-6/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://choihwan2.github.io/Algorithm-5/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://choihwan2.github.io/Algorithm-4/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://choihwan2.github.io/programmers-backend/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://choihwan2.github.io/Algorithm-03/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://choihwan2.github.io/Algorithm-02 /</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://choihwan2.github.io/Algorithm-01/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://choihwan2.github.io/Algorithm-3/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://choihwan2.github.io/Algorithm-2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://choihwan2.github.io/Algorithm-1/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://choihwan2.github.io/R-01/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://choihwan2.github.io/hadoop-post-01/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://choihwan2.github.io/mybatis-post-01/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -22,8 +25,8 @@
 <url> <loc>https://choihwan2.github.io/first-blog/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://choihwan2.github.io/tags</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://choihwan2.github.io/tags/algorithm/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://choihwan2.github.io/tags/codingtest/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://choihwan2.github.io/tags/simulation/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://choihwan2.github.io/tags/codingtest/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://choihwan2.github.io/tags/r/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://choihwan2.github.io/tags/til/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://choihwan2.github.io/tags/hadoop/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>

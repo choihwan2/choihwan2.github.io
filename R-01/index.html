@@ -27,7 +27,7 @@
 <p>여기서 적혀있는 것들을 한번 더 찾아서 공부해보자!</p>
 </blockquote>
 <h4><i>그렇다면 데이터 분석을 하기 위해서 R이 최선일까??</i></h4>
-<p>-> <b>NO!</b> SAS ,SPSS라는 것들도 있음 하지만 유로툴이고 통계 전문가들이 사용할 때 편의 일반인들이 사용하기 난이도가 너무 높다.</p>
+-> <b>NO!</b> SAS ,SPSS라는 것들도 있음 하지만 유로툴이고 통계 전문가들이 사용할 때 편의 일반인들이 사용하기 난이도가 너무 높다.
 <p>Excel 도 있다. 기본적인 통계기능을 포함한다. </p>
 <p>그래서 일반적으로 R을 많이 사용한다. 무료고 유료툴에 버금가는 기능! + 코드 베이스(재연성을 보장한다.)</p>
 <blockquote>
@@ -50,7 +50,9 @@
 <p>Code 의 Soft-wrap 체크 , Saving에서 문자를 UTF-8 로 변경</p>
 <h2>R의 기본</h2>
 <ul>
-<li>주석과 변수 선언</li>
+<li>
+<h4>주석과 변수 선언</h4>
+</li>
 </ul>
 <div class="gatsby-highlight" data-language="r">
       <pre class="language-r"><code class="language-r"># R의 주석은 #을 이용한다.
@@ -69,7 +71,9 @@ a &lt;- 300 #R에서는 이게 기본이다.
 200 -&gt; a #이것도 가능..</code></pre>
       </div>
 <ul>
-<li>사칙연산과 출력</li>
+<li>
+<h4>사칙연산과 출력</h4>
+</li>
 </ul>
 <div class="gatsby-highlight" data-language="r">
       <pre class="language-r"><code class="language-r"># data type(자료형) , data structure(자료구조)
@@ -116,7 +120,9 @@ result = var1 %% var2 # 나머지를 구할때 사용
 result # 1</code></pre>
       </div>
 <ul>
-<li>비교 연산과 논리연산</li>
+<li>
+<h4>비교 연산과 논리연산</h4>
+</li>
 </ul>
 <div class="gatsby-highlight" data-language="r">
       <pre class="language-r"><code class="language-r">#비교 연산 =&gt; 다른 언어와 같습니다
@@ -141,7 +147,9 @@ c(TRUE,FALSE) &amp;&amp; c(TRUE,FALSE)</code></pre>
       </div>
 <h2>R의 데이터 타입</h2>
 <ul>
-<li>R의 기본적인 데이터 타입</li>
+<li>
+<h4>R의 기본적인 데이터 타입</h4>
+</li>
 </ul>
 <div class="gatsby-highlight" data-language="r">
       <pre class="language-r"><code class="language-r"># R의 데이터 타입
@@ -160,7 +168,9 @@ sqrt(-9) # NaN
 3 / 0 # Inf</code></pre>
       </div>
 <ul>
-<li>R에서 사용하는 기본적인 함수 2개</li>
+<li>
+<h4>R에서 사용하는 기본적인 함수 2개</h4>
+</li>
 </ul>
 <div class="gatsby-highlight" data-language="r">
       <pre class="language-r"><code class="language-r"># R에서 제공하는 기본적인 함수 2개
@@ -172,7 +182,9 @@ mode(var1) # &quot;numeric&quot;
 is.numeric(var1) #TRUE</code></pre>
       </div>
 <ul>
-<li>R에서 데이터 타입의 입력 우선순위</li>
+<li>
+<h4>R에서 데이터 타입의 입력 우선순위</h4>
+</li>
 </ul>
 <div class="gatsby-highlight" data-language="r">
       <pre class="language-r"><code class="language-r">#데이터 타입 입력 우선순위
@@ -355,4 +367,4 @@ var2 = 3:7 # 3 4 5 6 7
 union(var1,var2) # 합집합: 1 2 3 4 5 6 7 
 intersect(var1,var2) # 교집합: 3 4 5
 setdiff(var1,var2) # 차집합: 1 2 </code></pre>
-      </div></div></div><div class="blog-post-nav"><div class="prev"><div class="nav-wrap"><div class="angle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-left" class="svg-inline--fa fa-caret-left fa-w-6 fa-fw " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M192 127.338v257.324c0 17.818-21.543 26.741-34.142 14.142L29.196 270.142c-7.81-7.81-7.81-20.474 0-28.284l128.662-128.662c12.599-12.6 34.142-3.676 34.142 14.142z"></path></svg></div><a rel="prev" href="/hadoop-post-01/"><div><p>Previous Post</p><span>Hadoop 정리 -01</span></div></a></div></div><div class="next"><div class="nav-wrap"><a rel="next" href="/Algorithm-01/"><div><p>Next Post</p><span>알고리즘 스터디 1주차 문제1 (로봇 청소기)</span></div></a><div class="angle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-right" class="svg-inline--fa fa-caret-right fa-w-6 fa-fw " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M0 384.662V127.338c0-17.818 21.543-26.741 34.142-14.142l128.662 128.662c7.81 7.81 7.81 20.474 0 28.284L34.142 398.804C21.543 411.404 0 402.48 0 384.662z"></path></svg></div></div></div></div></article><aside class="ad"><ins class=" adsbygoogle" style="display:block" data-ad-client="ca-pub-5001380215831339" data-ad-slot="5214956675" data-ad-layout="" data-ad-layout-key="" data-ad-format="auto" data-full-width-responsive="true"></ins></aside><div class="comments"><div id="disqus_thread"></div></div></div></div><footer id="footer"><div class="copyright"><span>© <a href="mailto:junhobaik@gmail.com">Junho Baik</a> 2019, All rights reserved. Powered by <!-- --> <a href="https://www.gatsbyjs.org/">Gatsby</a></span></div><div class="submenu"></div></footer></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/R-01/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-06ac46419331a964679b.js"],"component---src-templates-blog-post-index-js":["/component---src-templates-blog-post-index-js-1e0d592f4eb108dddfc1.js"],"component---src-templates-tag-list-index-js":["/component---src-templates-tag-list-index-js-225793ddcf2ace5b2ea9.js"],"component---src-pages-404-js":["/component---src-pages-404-js-e8ff675466d04ca8cfe7.js"],"component---src-pages-index-js":["/component---src-pages-index-js-9d652d16064e22a73a85.js"],"component---src-pages-search-js":["/component---src-pages-search-js-3368256743291e3aa4f8.js"]};/*]]>*/</script><script src="/component---src-templates-blog-post-index-js-1e0d592f4eb108dddfc1.js" async=""></script><script src="/commons-41a2113f1c151c4d4234.js" async=""></script><script src="/styles-eb3159db7bb5a6ca3dfa.js" async=""></script><script src="/app-06ac46419331a964679b.js" async=""></script><script src="/webpack-runtime-0934cafff036e17c7a2c.js" async=""></script></body></html>
+      </div></div></div><div class="blog-post-nav"><div class="prev"><div class="nav-wrap"><div class="angle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-left" class="svg-inline--fa fa-caret-left fa-w-6 fa-fw " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M192 127.338v257.324c0 17.818-21.543 26.741-34.142 14.142L29.196 270.142c-7.81-7.81-7.81-20.474 0-28.284l128.662-128.662c12.599-12.6 34.142-3.676 34.142 14.142z"></path></svg></div><a rel="prev" href="/hadoop-post-01/"><div><p>Previous Post</p><span>Hadoop 정리 -01</span></div></a></div></div><div class="next"><div class="nav-wrap"><a rel="next" href="/Algorithm-1/"><div><p>Next Post</p><span>알고리즘 스터디 1주차 문제1 (로봇 청소기)</span></div></a><div class="angle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-right" class="svg-inline--fa fa-caret-right fa-w-6 fa-fw " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M0 384.662V127.338c0-17.818 21.543-26.741 34.142-14.142l128.662 128.662c7.81 7.81 7.81 20.474 0 28.284L34.142 398.804C21.543 411.404 0 402.48 0 384.662z"></path></svg></div></div></div></div></article><aside class="ad"><ins class=" adsbygoogle" style="display:block" data-ad-client="ca-pub-5001380215831339" data-ad-slot="5214956675" data-ad-layout="" data-ad-layout-key="" data-ad-format="auto" data-full-width-responsive="true"></ins></aside><div class="comments"><div id="disqus_thread"></div></div></div></div><footer id="footer"><div class="copyright"><span>© <a href="mailto:junhobaik@gmail.com">Junho Baik</a> 2019, All rights reserved. Powered by <!-- --> <a href="https://www.gatsbyjs.org/">Gatsby</a></span></div><div class="submenu"></div></footer></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/R-01/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-06ac46419331a964679b.js"],"component---src-templates-blog-post-index-js":["/component---src-templates-blog-post-index-js-1e0d592f4eb108dddfc1.js"],"component---src-templates-tag-list-index-js":["/component---src-templates-tag-list-index-js-225793ddcf2ace5b2ea9.js"],"component---src-pages-404-js":["/component---src-pages-404-js-e8ff675466d04ca8cfe7.js"],"component---src-pages-index-js":["/component---src-pages-index-js-9d652d16064e22a73a85.js"],"component---src-pages-search-js":["/component---src-pages-search-js-3368256743291e3aa4f8.js"]};/*]]>*/</script><script src="/component---src-templates-blog-post-index-js-1e0d592f4eb108dddfc1.js" async=""></script><script src="/commons-41a2113f1c151c4d4234.js" async=""></script><script src="/styles-eb3159db7bb5a6ca3dfa.js" async=""></script><script src="/app-06ac46419331a964679b.js" async=""></script><script src="/webpack-runtime-0934cafff036e17c7a2c.js" async=""></script></body></html>
