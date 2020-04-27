@@ -1,4 +1,41 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Happy Hwan - rss]]></title><description><![CDATA[Hwan Log]]></description><link>https://choihwan2.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 25 Apr 2020 09:11:33 GMT</lastBuildDate><item><title><![CDATA[알고리즘 스터디 2주차 문제5 (체스판 다시 칠하기)]]></title><description><![CDATA[…]]></description><link>https://choihwan2.github.io/Algorithm-8/</link><guid isPermaLink="false">https://choihwan2.github.io/Algorithm-8/</guid><pubDate>Sat, 25 Apr 2020 18:07:34 GMT</pubDate><content:encoded>&lt;h2&gt;문제&lt;a href=&quot;https://www.acmicpc.net/problem/1018&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Happy Hwan - rss]]></title><description><![CDATA[Hwan Log]]></description><link>https://choihwan2.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 27 Apr 2020 15:28:54 GMT</lastBuildDate><item><title><![CDATA[소프트웨어 마에스트로 2차 온라인 코딩테스트 후기]]></title><description><![CDATA[저번주 일요일인 어제 소프트웨어 마에스트로…]]></description><link>https://choihwan2.github.io/software-maestro-after/</link><guid isPermaLink="false">https://choihwan2.github.io/software-maestro-after/</guid><pubDate>Mon, 27 Apr 2020 22:33:00 GMT</pubDate><content:encoded>&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d91f030945d6c42521fa2a1409f5b242/0781d/software-maestro.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGQABAAIDAAAAAAAAAAAAAAAAAAQFAQID/8QAFwEAAwEAAAAAAAAAAAAAAAAAAAIDAf/aAAwDAQACEAMQAAABt8RtKSsHIjyBjAH/xAAeEAACAQMFAAAAAAAAAAAAAAABAgMABBMQERIhIv/aAAgBAQABBQLKm+aOlYODB7Fv1FHwXX//xAAaEQABBQEAAAAAAAAAAAAAAAARAAEDEEFR/9oACAEDAQE/ATJxMdv/xAAYEQACAwAAAAAAAAAAAAAAAAAAEQECEP/aAAgBAgEBPwFUJW//xAAcEAACAgIDAAAAAAAAAAAAAAAAEQECEiAhMkH/2gAIAQEABj8CWR2HWWTbk9Fp/8QAHBABAAIBBQAAAAAAAAAAAAAAAQARISAxQXGB/9oACAEBAAE/IUHVZvMC0olcAlvMK4iiFy6nptH/2gAMAwEAAgADAAAAEJPfPP/EABoRAQABBQAAAAAAAAAAAAAAAAEhABBBgfD/2gAIAQMBAT8QcA7dJEJv/8QAGhEAAQUBAAAAAAAAAAAAAAAAAQAQESExUf/aAAgBAgEBPxAdEEqx/wD/xAAeEAEBAAIBBQEAAAAAAAAAAAABEQAhUSAxYXGh0f/aAAgBAQABPxBIU4AWOeyyxzZYZTnGc0iILb5xxZ5mn3LFr3bnB+dH/9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;software-maestro&quot;
+        title=&quot;&quot;
+        src=&quot;/static/d91f030945d6c42521fa2a1409f5b242/88218/software-maestro.jpg&quot;
+        srcset=&quot;/static/d91f030945d6c42521fa2a1409f5b242/7237a/software-maestro.jpg 148w,
+/static/d91f030945d6c42521fa2a1409f5b242/0cfdf/software-maestro.jpg 295w,
+/static/d91f030945d6c42521fa2a1409f5b242/88218/software-maestro.jpg 590w,
+/static/d91f030945d6c42521fa2a1409f5b242/77d57/software-maestro.jpg 885w,
+/static/d91f030945d6c42521fa2a1409f5b242/0781d/software-maestro.jpg 960w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt; 저번주 일요일인 어제 소프트웨어 마에스트로 2차 온라인 코딩테스트가 있었다. 지금 국비지원을 받으며 수업을 들으며 취준을 하며 이번 하반기를 어떻게 준비하며 보낼까 고민하면서 찾다가 알게된 과정이였다. 알고리즘을 시작한지 얼마 되지 않은 상태로 첫번재 코딩테스틀 봤었고 운이 좋게 합격했었다. 문제는 알고리즘 3문제, SQL 1문제, 웹 1문제로 구성이 되어 있었고 이번에 보는 2차도 마찬가지였다. 저번 1차 코딩테스트에서 아쉽게 웹 문제를 반만 풀고 나머지 반을 못풀었던 기억에 이번에는 좀 더 준비해보고자 주변 지인들에게 도움도 받고 몰랐던 부분들을 좀 더 검색하며 준비하였다. 알고리즘은 거의 하루에 한문제 정도를 목표로 하며 준비를 해왔었고 나름 자신이 있는 상태로 시험을 시작하게 되었다.&lt;/p&gt;
+&lt;p&gt;그러나... 처음 SQL 긴장을 한 탓인지 문제가 잘 읽히지 않았고 시간을 허비하다가 웹 문제로 넘어가 버렸다. 웹 문제도 얼핏 보기엔 쉬워보였지만 저번과 다르게 형식을 주지않고 형식부터 구현하는 형태로 문제가 제출되었다. 너무 당연히 &apos;이렇게 문제가 나오겠지&apos; 라고 생각했던 나머지 그 부분에 많은 준비를 하지 못한것이다. 이때, 웹 문제를 깔끔하게 포기하거나 정말 끝까지 풀었다면.. 결과가 조금 달라졌을거라 생각하는데 조금 도전을 해보다가 잘 해결되지 않는 것 같아 시간만 허비하고 알고리즘 문제로 돌아갔다. 이렇게 문제를 풀지 못하고 넘어가다 보니.. 멘탈은 흔들리기 시작했고 문제에 너무 집중이 안되기 시작했다. 머리속에는 &apos;아.. 한문제도 못풀면 어쩌지?&apos; 이런 생각이 자꾸 들었고 자꾸 어렵다고만 생각이 들었다. 그 상태에서 문제 2번 , 3번을 보고 다시 SQL 문제로 돌아가고.. 정말 코딩테스트를 보면서 하면 안될 행동들을 전부다 했던 것 같다. 그래도 다시 한번 마음을 좀 가다듬고 SQL부터 풀기 시작했고 조금 진정이 되자 쉬운 문제였던걸 알게되었다. 그렇게 SQL 문제를 한 문제 풀고 1번 알고리즘으로 돌아왔을때 시간이 한 30분정도 남아있던 것 같다. 거의다 풀었다고 생각했지만 시간에 쫓기다보니 더 좋은 방향으로 문제를 풀 수 있었는데 그러지 못했고 결국 1번 문제도 풀지 못하고 시간이 끝이 났다...&lt;/p&gt;
+&lt;p&gt;시험이 끝났을 때, 좀 많이 허탈한 느낌과 내가 지금까지 무엇을 했나 많은 고민을 하게 되었다. 몇 개월간 공부를 하면서 나름 열심히 한다고 생각했었지만, 너무나도 부족한 현실이였던 것 같다. 시험이 끝나고 그날 하루동안은 앞으로 어떻게 공부방향을 잡아야할지 정해야 된다고 생각했다. 그래서 나온 결론은.. 더 계획적으로 알고리즘을 공부하고 나아가는 것. 생각해보면 많은 사람들이 반년 혹은 1년넘게 계속 공부한 것을 짧은 시간만에 따라잡는것 자체가 너무 욕심이 많은 생각이였던 것 같다. 지금 나의 위치를 알았으니 더 열심히 하는 것이 정답일 것 같다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[알고리즘 스터디 2주차 문제5 (체스판 다시 칠하기)]]></title><description><![CDATA[…]]></description><link>https://choihwan2.github.io/Algorithm-8/</link><guid isPermaLink="false">https://choihwan2.github.io/Algorithm-8/</guid><pubDate>Sat, 25 Apr 2020 18:07:34 GMT</pubDate><content:encoded>&lt;h2&gt;문제&lt;a href=&quot;https://www.acmicpc.net/problem/1018&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1132,366 +1169,4 @@
 &lt;ul&gt;
 &lt;li&gt;String.trim() 은 문자열이 시작되기 전과 후의 공백만 없애준다. 문자열 사이의 공백을 없애주려면 String.replace(&quot; &quot;, &quot;&quot;)을 이용하자&lt;/li&gt;
 &lt;li&gt;복잡해보여도 문제를 좀 더 차분히 읽고 풀 수 있다는 생각으로 접근하자!&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[R 정리 -01]]></title><description><![CDATA[시작하기에 앞서 코로나가 나라를 뒤덮고 있는 바람에 멀티캠퍼스 수업이 2주간 휴강을 하게 되었다. 그래서 그전에 배우던 Hadoop의 수업이 뒤로 밀리게 되어버렸고.. 갑작스럽게 R…]]></description><link>https://choihwan2.github.io/R-01/</link><guid isPermaLink="false">https://choihwan2.github.io/R-01/</guid><pubDate>Mon, 09 Mar 2020 17:04:00 GMT</pubDate><content:encoded>&lt;h2&gt;시작하기에 앞서&lt;/h2&gt;
-&lt;p&gt;코로나가 나라를 뒤덮고 있는 바람에 멀티캠퍼스 수업이 2주간 휴강을 하게 되었다. 그래서 그전에 배우던 Hadoop의 수업이 뒤로 밀리게 되어버렸고.. 갑작스럽게 R을 시작하게 되었다. 선생님도 새로운 분이 오셨는데 개인적으로 전의 선생님도 좋았지만 지금이 최고가 될 것 같은 느낌..? 소마도 지원해보고.. CGV 인턴도 지원하고 살짝 마음이 붕뜨고 있는데 잘 잡아보며 나아갈수 있도록 해야겠다.&lt;/p&gt;
-&lt;h1&gt;R&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;h4&gt;R은 통계계산을 위해서 만들어지 프로그래밍 언어이면서 소프트웨어&lt;/h4&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;어떻게 하면 통계적 지식이 별로 없이 데이터 분석을 잘 할 수 있을까? *통계가 아예 필요없는건 아니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3&gt;R로 무엇을 할 수 있을까?&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;통계분석 : 기초 통계, 가설검정&lt;/li&gt;
-&lt;li&gt;머신러닝 &lt;/li&gt;
-&lt;li&gt;텍스트 마이닝&lt;/li&gt;
-&lt;li&gt;그외 등등..&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;여기서 적혀있는 것들을 한번 더 찾아서 공부해보자!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4&gt;&lt;i&gt;그렇다면 데이터 분석을 하기 위해서 R이 최선일까??&lt;/i&gt;&lt;/h4&gt;
--&gt; &lt;b&gt;NO!&lt;/b&gt; SAS ,SPSS라는 것들도 있음 하지만 유로툴이고 통계 전문가들이 사용할 때 편의 일반인들이 사용하기 난이도가 너무 높다.
-&lt;p&gt;Excel 도 있다. 기본적인 통계기능을 포함한다. &lt;/p&gt;
-&lt;p&gt;그래서 일반적으로 R을 많이 사용한다. 무료고 유료툴에 버금가는 기능! + 코드 베이스(재연성을 보장한다.)&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;재연성이란? =&gt; 코드를 써놓으면 고대로~ 나오는 것. printf(&quot;Hello Wolrd!&quot;) =&gt; Hello World! 출력&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;b&gt;이제 R을 시작해보자!&lt;/b&gt;&lt;/p&gt;
-&lt;h2&gt;설치&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;R 설치&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://cran.r-project.org/&quot;&gt;CRAN&lt;/a&gt; 여기로 들어가서 다운을 받아보자!&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;IDE 인 R Studio 를 설치해보자&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://rstudio.com/products/rstudio/download/#download&quot;&gt;링크&lt;/a&gt; 들어가서 OS에 맞는걸 선택하자.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;설정&lt;/h2&gt;
-&lt;p&gt;R Studio 의 들어가서 Tools- Global Setting 을 해보자.&lt;/p&gt;
-&lt;p&gt;Code 의 Soft-wrap 체크 , Saving에서 문자를 UTF-8 로 변경&lt;/p&gt;
-&lt;h2&gt;R의 기본&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;h4&gt;주석과 변수 선언&lt;/h4&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;r&quot;&gt;
-      &lt;pre class=&quot;language-r&quot;&gt;&lt;code class=&quot;language-r&quot;&gt;# R의 주석은 #을 이용한다.
-
-# Ctrl + Shift + C 여러줄 주석
-# 한 라인에 하나의 statement만 존재한다면 ; 생략가능!
-# 작성된 코드를 실행하려면 ctrl + enter
-# case-sensitive(대소문자를 구별합니다.)
-# camel-case notaion 을 사용하자.
-# 변수 선언과 사칙연산
-# weak type 언어라 =&amp;gt; 변수 선언시 type을 명시하지 않는다.
-
-
-a = 100 #이것도 가능하지만
-a &amp;lt;- 300 #R에서는 이게 기본이다.
-200 -&amp;gt; a #이것도 가능..&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;h4&gt;사칙연산과 출력&lt;/h4&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;r&quot;&gt;
-      &lt;pre class=&quot;language-r&quot;&gt;&lt;code class=&quot;language-r&quot;&gt;# data type(자료형) , data structure(자료구조)
-# vector : 1차원, 같은 데이터 타입만 사용할 수 있음.
-# vecotr 중에 원소가 1개만 있는 vector =&amp;gt; scalar
-
-myvar &amp;lt;- 300 #vector 이면서 scalar 지만 scalar 라고 부르자.
-result = myvar - 200;
-
-result
-#[1] 100 이라는 값이 나온다.
-# R은 index 가 0이 아니라 1부터 시작한다.
-
-#print라는 함수로는 하나의 값만이 출력가능하다.
-print(result)
-
-#두개 이상의 값 출력에는 cat을 사용하자! (linux?)
-cat(result,myvar)
-
-#경로안의 파일에 가서 값을 입력하고 싶을때. 기존의 내용에다가 덮어씀..
-cat(&amp;quot;결과값은 : &amp;quot;, result, myvar, file=&amp;quot;C:/R_workspace/R_lecture/test.txt&amp;quot;)
-
-#그렇다면 추가하고싶다면? append =TRUE 를 붙여보자. append =T 도 가능.
-cat(&amp;quot;결과값은 : &amp;quot;, result, myvar, file=&amp;quot;C:/R_workspace/R_lecture/test.txt&amp;quot;,append=TRUE)
-
-
-# 기본적인 연산자는 다른 언어와 상당히 유사
-var1 &amp;lt;- 100
-var2 &amp;lt;- 3
-
-result &amp;lt;- var1 / var2
-
-result # 33.33333 (총 7개의 digits로 표현 - default 가 7개 로 정해져있는 것이다.)
-options(digits = 5) # 옵션 변경또한 가능.
-result # 33.333
-
-# c와 java 처리 format 을 이용한 출력도 가능
-sprintf(&amp;quot;%.8f&amp;quot;, result)
-
-result = var1 %/% var2 # 몫을 구할때 사용
-result # 33
-
-result = var1 %% var2 # 나머지를 구할때 사용
-result # 1&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;h4&gt;비교 연산과 논리연산&lt;/h4&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;r&quot;&gt;
-      &lt;pre class=&quot;language-r&quot;&gt;&lt;code class=&quot;language-r&quot;&gt;#비교 연산 =&amp;gt; 다른 언어와 같습니다
-var1 = 100
-var2 = 200
-
-var1 == var2
-var1 != var2
-
-# 논리 연산 =&amp;gt; 약간의 주의 필요
-
-# &amp;amp;, &amp;amp;&amp;amp; =&amp;gt; 의미는 같다.
-# |, || =&amp;gt; 의미는 같다.
-#하나짜리와 두개짜라는 vector 인지 scalar 인지에 따라서 동작이 달라집니다.
-
-#combine 함수를 이용해서 vector 를 생성 = &amp;gt; c()
-c(TRUE,FALSE) &amp;amp; c(TRUE,FALSE) # &amp;amp;이면 앞에 것 한번 뒤에것 한번 즉 벡터화 연산을 수행한다.
-
-
-#&amp;amp;&amp;amp;를 이용하면 맨 처음에 있는 요소를 가지고 연산
-c(TRUE,FALSE) &amp;amp;&amp;amp; c(TRUE,FALSE)&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;h2&gt;R의 데이터 타입&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;h4&gt;R의 기본적인 데이터 타입&lt;/h4&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;r&quot;&gt;
-      &lt;pre class=&quot;language-r&quot;&gt;&lt;code class=&quot;language-r&quot;&gt;# R의 데이터 타입
-# 1. numberic(수치형) : 정수와 실수를 구분하지 않음.
-#   100, 100.3 (둘다 실수) 10L(정수)
-# 2. character(문자형) : 하나의 문자, 문자열 둘 다 문자열로 간주되고 &amp;#39;&amp;#39;, &amp;quot;&amp;quot; 둘다 혼용해서 사용이 가능하다!
-# 3. logical(논리형) : TRUE(T) FALSE(F) 
-# 4. complex(복소수형) : 4 - 3i 
-
-# 특수데이터 타입
-# 1. NULL : 가르키는 객체가 없다. (java와 유사)
-# 2. NA(Not Available) : 유효하지 않다. 일반적으로 결측치(ex: 센서에서 값을 가져오다가 날아가는경우)를 표현할때 사용(missing value)
-# 3. NAN(Not A Number) : 수치 값이지만 숫자로 표현이 안되는 값
-sqrt(-9) # NaN
-# 4 . Inf(Infinite) : 양의 무한대
-3 / 0 # Inf&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;h4&gt;R에서 사용하는 기본적인 함수 2개&lt;/h4&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;r&quot;&gt;
-      &lt;pre class=&quot;language-r&quot;&gt;&lt;code class=&quot;language-r&quot;&gt;# R에서 제공하는 기본적인 함수 2개
-# mode() 해당 데이터의 타입을 알려줌
-var1 &amp;lt;- 200
-mode(var1) # &amp;quot;numeric&amp;quot;
-
-# is 계열의 함수
-is.numeric(var1) #TRUE&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;h4&gt;R에서 데이터 타입의 입력 우선순위&lt;/h4&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;r&quot;&gt;
-      &lt;pre class=&quot;language-r&quot;&gt;&lt;code class=&quot;language-r&quot;&gt;#데이터 타입 입력 우선순위
-#character &amp;gt; complex &amp;gt; numberic &amp;gt; logical
-
-#기본적으로 사용되는 자료구조가 vector
-myvar = c(10,20,30,40)
-myvar
-
-myvar = c(10,20,30,FALSE)
-myvar
-
-myvar = c(10,&amp;quot;뿡&amp;quot;,30,FALSE)
-myvar
-
-#as 계열의 함수를 이용한 casting(형변환)
-myvar = &amp;quot;100&amp;quot;
-as.numeric(myvar)&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;h2&gt;R Package&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;r&quot;&gt;
-      &lt;pre class=&quot;language-r&quot;&gt;&lt;code class=&quot;language-r&quot;&gt;# R package
-
-# R의 package는 처리할 Data + 기능(함수, 알고리즘) 
-# R의 package 시스템은
-# 1. base System (기본적으로 R설치시 따라오는것)
-#   - base package (리얼 기본)
-#   - recommended package (자주 사용하는 애들)
-# 2. other package(그 외의 모든것.) 로 구성된다.
-
-# 간단하게 package를 하나 설치해 보아요!
-install.packages(&amp;quot;ggplot2&amp;quot;)
-
-# package 삭제하려면
-# remove.packages(&amp;quot;ggplot2&amp;quot;)
-
-# 어디에 설치 되었는지 확인해 보자
-.libPaths()
-
-# 경로를 바꾸려면?
-.libPaths(&amp;quot;C:/myLib&amp;quot;)
-
-#이렇게 package를 설치한 후 사용을 하기이해서는
-# 메모리에 loading 을 해야해요!
-library(ggplot2)
-require(ggplot2)
-
-myvar = c(&amp;quot;남자&amp;quot;,&amp;quot;여자&amp;quot;,&amp;quot;여자&amp;quot;,&amp;quot;여자&amp;quot;,&amp;quot;여자&amp;quot;,&amp;quot;남자&amp;quot;)
-
-qplot(myvar)
-
-# 평균
-help(mean)
-# help()를 이용해도 좋으나 RDcoumentation.org 사이트를 이용하는게 더 좋아보인다!&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;h2&gt;R의 자료구조&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;r&quot;&gt;
-      &lt;pre class=&quot;language-r&quot;&gt;&lt;code class=&quot;language-r&quot;&gt;## 자료구조
-
-## 자료형은 저장된 데이터의 타입을 지칭
-## 자료구조는 데이터가 메모리에 어떤 방식으로 저장되어 있는가
-
-## homogeneous (동질의 = 같은 종류의) 데이터 종류가 같은 애들의 집합
-#   - 1. vector : 1 차원 선형구조, 순서개념이 존재.
-#                 같은 종류의 데이터 타입을 이용
-#   - 2. metrix : 2 차원 구조. 인덱스를 사용할 수 있음.
-#                 같은 종류의 데이터 타입을 이용.
-#   - 3. array  : 3 차원 이상의 구조. 인덱스를 사용할 수 있음.
-#                 같은 종류의 데이터 타입을 이용.
-
-
-## heterogeneous(다른 종류의) 데이터 종류가 다른 집합
-#   - 1. list   : 1 차원 선형구조, 순서개념이 존재.
-#                 실제 저장되는 구조는 map구조
-#   - 2. data frame : 2차원 테이블 구조 &lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;h2&gt;Vector&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;r&quot;&gt;
-      &lt;pre class=&quot;language-r&quot;&gt;&lt;code class=&quot;language-r&quot;&gt;# vector : 1차원 선형자료구조. 순서의 개념이 있다. 
-#          index를 이용하여 vector 를 사용 할 수 있다.
-#          index의 시작은 1.
-#          []를 이용하여 각 요소를 access 할 수 있다.
-#          요소가 1개짜리 vector =&amp;gt; scalar
-myvar = c(100)
-
-# vector 를 만드는 방법
-# 1. combine() 함수를 이용하기 =&amp;gt; c()
-#    vector를 만드는 가장 대표적인 방법이다.
-#    2개 이상의 vector 를 하나의 vector로 만들때도 사용할 수 있다!
-myVar1 = c(10,20,30)
-myVar2 = c(3.14,10,100) 
-
-myVar1
-myVar2 #3.14 10.00 100.00 형태를 같게 만들어준다
-
-result &amp;lt;- c(myVar1,myVar2) #합치기!
-
-# 2. &amp;quot;:&amp;quot; 을 이용해서 만들수 있다!
-#     수치형 데이터에만 사용할 수 있고
-#     단조증가,단조감소 형태의 vector를 생성
-myVar = 1:10
-myVar # 1 2 3 4 5 6 7 8 9 10
-myVar = 8.7 : 2
-myVar # 8.7 7.7 6.7 5.7 4.7 3.7 2.7
-
-# 3. 2번의 일반형
-myVar = seq(1,10,2)
-myVar # 1 3 5 7 9
-
-myVar = seq(from = 10, to = 3, by = -3); #가능하면 이렇게 사용
-myVar # 10 7 4
-
-# 4. 반복적인 값을 이용해서 vector 생성
-#     rep()
-myVar = rep(1:3, times =3)
-myVar # 1 2 3 1 2 3 1 2 3
-
-myVar = rep(1:3, each=3)
-myVar # 1 1 1 2 2 2 3 3 3
-
-# 많이 사용하는 함수중 하나가 vector안의 요소 개수를
-# 알아 내는 함수
-length(myVar)
-
-# vector 요소의 사용(indexing 방식)
-myVar = c(3.14, 100, &amp;quot;Hello&amp;quot;, TRUE, 300)
-myVar
-
-# *****
-myVar[1] # 첫번째 요소
-myVar[length(myVar)] # 마지막 요소를 access
-
-result = myVar[2:4] # 2~4 번째 요소를 가져오자
-                    # slicing
-result # &amp;quot;100&amp;quot; &amp;quot;Hello&amp;quot; &amp;quot;TRUE&amp;quot;
-
-result =  myVar[c(2,3,5)] # 2,3,5 번째 요소를 가져오자
-                          # fancy indexing
-result # &amp;quot;100&amp;quot; &amp;quot;Hello&amp;quot; &amp;quot;300&amp;quot;
-
-myVar[-1] # 1번빼고 나머지!
-myVar[-(3:4)] # 3 ~ 4 번째 빼고 나머지
-myVar[-c(1,4,5)] # 1,4,5 번째 뺴고 나머지!
-
-### Vector 데이터에 이름을 붙여보자
-myVar = c(10,20,30,40,50)
-
-names(myVar) # NULL 이름을 아직 정해주지 않았다.
-
-names(myVar) = c(&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;c&amp;quot;,&amp;quot;d&amp;quot;,&amp;quot;e&amp;quot;)
-
-names(myVar) # &amp;quot;a&amp;quot; &amp;quot;b&amp;quot; &amp;quot;c&amp;quot; &amp;quot;d&amp;quot; &amp;quot;e&amp;quot;
-
-myVar 
-# a  b  c  d  e 
-# 10 20 30 40 50 
-myVar[1] # a 10
-myVar[&amp;quot;a&amp;quot;] # a 10
-
-###################################
-
-# vector : 연산
-
-myVar1 = 1:3 # 1 2 3
-myVar2 = 4:6 # 4 5 6
-
-result = myVar1 + myVar2
-result # 5 7 9
-
-myVar3 = 1:6 # 1 2 3 4 5 6
-
-result = myVar1 + myVar3 #(rectcle rule)
-      #1 2 3 1 2 3  1 2 3 4 5 6
-result#2 4 6 5 7 9
-
-# vector에 대한 집합연산(합집합, 교집합, 차집합)
-var1 = 1:5 # 1 2 3 4 5
-var2 = 3:7 # 3 4 5 6 7
-
-union(var1,var2) # 합집합: 1 2 3 4 5 6 7 
-intersect(var1,var2) # 교집합: 3 4 5
-setdiff(var1,var2) # 차집합: 1 2 &lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;</content:encoded></item></channel></rss>
+&lt;/ul&gt;</content:encoded></item></channel></rss>
