@@ -62,7 +62,14 @@ const configs = {
       },
     },
     'gatsby-plugin-sharp',
-    'gatsby-plugin-robots-txt',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://choihwan2.github.io',
+        sitemap: 'https://choihwan2.github.io/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },,
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-typography`,
