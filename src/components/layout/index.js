@@ -60,6 +60,7 @@ const Layout = ({ children, data, location }) => (
               { name: 'og:description', content: config.description },
               { name: 'og:image', content: config.titleLogo() },
               { name: 'og:url', content: siteUrl },
+              { name: 'google-site-verification', content :'1ePjBmUVXB5R-1xjGLNnAx9YlIC6gUqfe-Cm2dEdRXc'}
             ]}
           >
             {/* html lang set */}
