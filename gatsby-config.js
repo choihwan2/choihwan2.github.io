@@ -1,31 +1,37 @@
-require('dotenv').config();
 const config = require('./config');
+const { title, description, author, googleAnalytics, siteUrl } = config;
 
-console.log(process.env.NODE_ENV);
+const gatsbyConfig = {
+  siteMetadata: { title, description, author, siteUrl },
 
-const configs = {
-  siteMetadata: {
-    title: config.title,
-    author: config.author,
-    description: config.description,
-    siteUrl: config.siteUrl,
-  },
   plugins: [
-    'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-plugin-sass`,
-      options: {},
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: googleAnalytics,
+      },
     },
+
+    `gatsby-plugin-react-helmet`,
+
+    `gatsby-plugin-typescript`,
+
+    `gatsby-plugin-theme-ui`,
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `markdown-pages`,
         path: `${__dirname}/_posts`,
-        name: 'markdown-pages',
       },
     },
+
     {
       resolve: `gatsby-transformer-remark`,
       options: {
+        tableOfContents: {
+          maxDepth: 3,
+        },
         plugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -58,32 +64,92 @@ const configs = {
               },
             },
           },
+          `gatsby-remark-autolink-headers`,
+          `gatsby-remark-katex`,
+          {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+              target: '_blank',
+            },
+          },
         ],
       },
     },
-    'gatsby-plugin-sharp',
+
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        host: 'https://choihwan2.github.io',
-        sitemap: 'https://choihwan2.github.io/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }]
-      }
-    },,
-    `gatsby-plugin-sitemap`,
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+
+    `gatsby-transformer-sharp`,
+
+    `gatsby-plugin-sharp`,
+
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: title,
+        short_name: title,
+        description: description,
+        start_url: `/`,
+        lang: 'ko',
+        background_color: `#fff`,
+        theme_color: `#fff`,
+        display: `standalone`,
+        icon: 'src/images/icon.png',
+        legacy: false,
+        include_favicon: false,
+      },
+    },
+
+    `gatsby-plugin-sass`,
+
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/utils/typography`,
+        pathToConfigModule: `src/utils/typography.ts`,
       },
     },
+
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-sitemap`,
       options: {
-        trackingId: config.googleAnalyticsTrackingId,
+        output: `/sitemap.xml`,
+        query: `
+          {
+          site {
+              siteMetadata {
+                  siteUrl
+              }
+          }
+
+          allSitePage {
+            edges {
+              node {
+                path
+                context {
+                  lastmod
+                }
+              }
+            }
+          }
+      }`,
+        serialize: ({ site, allSitePage }) => {
+          return allSitePage.edges.map(edge => {
+            return {
+              url: site.siteMetadata.siteUrl + edge.node.path,
+              changefreq: `daily`,
+              lastmod: edge.node.context.lastmod,
+              priority: 0.7,
+            };
+          });
+        },
       },
     },
-    'gatsby-plugin-no-sourcemaps',
+
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -132,22 +198,30 @@ const configs = {
               }
             `,
             output: '/rss.xml',
-            title: `${config.title} - rss`,
+            title: `${title} | Feed`,
           },
         ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: siteUrl,
+        sitemap: `${siteUrl}${siteUrl[siteUrl.length - 1] !== '/' ? '/' : ''}sitemap.xml`,
+        policy: [{ userAgent: '*', allow: '/' }],
       },
     },
   ],
 };
 
 if (process.env.NODE_ENV === 'development') {
-  configs.plugins.push({
+  gatsbyConfig.plugins.push({
     resolve: `gatsby-source-filesystem`,
     options: {
-      path: `${__dirname}/_posts`,
+      path: `${__dirname}/_drafts`,
       name: 'markdown-pages',
     },
   });
 }
 
-module.exports = configs;
+module.exports = gatsbyConfig;
