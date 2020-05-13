@@ -11,7 +11,7 @@ keywords:
 
 ## 문제[#](https://www.acmicpc.net/problem/14888)
 
-<img src="algorithm-5-1.png" alt="algorithm-5-1" style="zoom:150%;" />
+![problem](problem.png)
 
 ## 풀이 및 주저리..
 
