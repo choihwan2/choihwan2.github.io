@@ -13,7 +13,7 @@ module.exports = {
     // If the file does not exist, it is replaced by a random image.
 
   /** Home > Bio information*/
-  comment: 'Studying / Android, java...',
+  comment: 'Studying / Java, Backend...',
   name: 'Hwan Choi',
   company: 'Seoul',
   location: 'Korea',
