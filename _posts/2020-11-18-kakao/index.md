@@ -17,8 +17,6 @@ keywords:
 
 ## 보관용..
 
-![problem](pass.png)
-
-
+![pass](pass.png)
 
 > 참고로 지원한 부분은 카카오 본사 Programming 분야이다.
